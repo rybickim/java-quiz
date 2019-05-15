@@ -1,0 +1,181 @@
+2019-05-15 13:56:29.992  INFO 1908 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 1908 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-05-15 13:56:29.992 DEBUG 1908 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-15 13:56:29.992  INFO 1908 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-05-15 13:56:30.072  INFO 1908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-15 13:56:30.072  INFO 1908 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-15 13:56:31.742  INFO 1908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 13:56:31.792  INFO 1908 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 0 repository interfaces.
+2019-05-15 13:56:32.242  INFO 1908 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a8f3312b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 13:56:33.022  INFO 1908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-15 13:56:33.062  INFO 1908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-15 13:56:33.062  INFO 1908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-15 13:56:33.352  INFO 1908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-15 13:56:33.362  INFO 1908 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3270 ms
+2019-05-15 13:56:33.602  INFO 1908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-15 13:56:33.762  INFO 1908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-15 13:56:33.892  INFO 1908 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 13:56:34.081  INFO 1908 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 13:56:34.081  INFO 1908 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 13:56:34.531  INFO 1908 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 13:56:34.781  INFO 1908 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 13:56:34.991  INFO 1908 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@468a7fea'
+2019-05-15 13:56:34.991  INFO 1908 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 13:56:35.031  INFO 1908 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-15 13:56:35.041 DEBUG 1908 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 13:56:35.041 DEBUG 1908 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 13:56:35.061 DEBUG 1908 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@65772bf8
+2019-05-15 13:56:35.061 DEBUG 1908 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@4b685c63
+2019-05-15 13:56:35.271  INFO 1908 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 13:56:35.311  WARN 1908 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 13:56:35.391  WARN 1908 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-05-15 13:56:35.581  INFO 1908 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-15 13:56:35.591  INFO 1908 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 6.179 seconds (JVM running for 10.539)
+2019-05-15 14:37:33.079  INFO 11940 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 11940 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-05-15 14:37:33.099 DEBUG 11940 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-15 14:37:33.109  INFO 11940 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-05-15 14:37:33.219  INFO 11940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-15 14:37:33.219  INFO 11940 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-15 14:37:34.469  INFO 11940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 14:37:34.499  INFO 11940 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-05-15 14:37:34.899  INFO 11940 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c90e292] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 14:37:38.579  INFO 11940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-15 14:37:38.699  INFO 11940 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-15 14:37:38.699  INFO 11940 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-15 14:37:39.479  INFO 11940 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-15 14:37:39.479  INFO 11940 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6260 ms
+2019-05-15 14:37:41.138  INFO 11940 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-15 14:37:41.388  INFO 11940 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-15 14:37:41.568  INFO 11940 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 14:37:41.758  INFO 11940 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 14:37:41.758  INFO 11940 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 14:37:42.168  INFO 11940 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 14:37:42.418  INFO 11940 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 14:37:42.698  INFO 11940 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@28e8f040'
+2019-05-15 14:37:42.708  INFO 11940 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 14:37:42.758  INFO 11940 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-15 14:37:42.758 DEBUG 11940 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:37:42.758 DEBUG 11940 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:37:42.778 DEBUG 11940 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@3740aa98
+2019-05-15 14:37:42.778 DEBUG 11940 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@6d383f69
+2019-05-15 14:37:43.308  INFO 11940 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 14:37:43.338  WARN 11940 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 14:37:43.588  INFO 11940 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-15 14:37:43.598  INFO 11940 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 11.439 seconds (JVM running for 13.682)
+2019-05-15 14:38:08.388  INFO 11940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-15 14:38:08.389  INFO 11940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-15 14:38:08.671  INFO 11940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 282 ms
+2019-05-15 14:44:47.524  INFO 12644 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 12644 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-05-15 14:44:47.524 DEBUG 12644 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-15 14:44:47.524  INFO 12644 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-05-15 14:44:47.714  INFO 12644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-15 14:44:47.714  INFO 12644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-15 14:44:48.944  INFO 12644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 14:44:48.974  INFO 12644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-05-15 14:44:49.344  INFO 12644 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1889fd54] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 14:44:49.944  INFO 12644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-15 14:44:49.974  INFO 12644 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-15 14:44:49.974  INFO 12644 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-15 14:44:50.194  INFO 12644 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-15 14:44:50.194  INFO 12644 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2480 ms
+2019-05-15 14:44:50.334  INFO 12644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-15 14:44:50.434  INFO 12644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-15 14:44:50.504  INFO 12644 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 14:44:50.564  INFO 12644 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 14:44:50.564  INFO 12644 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 14:44:50.684  INFO 12644 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 14:44:50.974  INFO 12644 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 14:44:51.253  INFO 12644 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@3d8db63'
+2019-05-15 14:44:51.253  INFO 12644 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 14:44:51.293  INFO 12644 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-15 14:44:51.303 DEBUG 12644 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:44:51.303 DEBUG 12644 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:44:51.323 DEBUG 12644 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@ab63f3f
+2019-05-15 14:44:51.323 DEBUG 12644 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@42d69f4f
+2019-05-15 14:44:51.543  INFO 12644 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 14:44:51.603  WARN 12644 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 14:44:51.893  INFO 12644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-15 14:44:51.903  INFO 12644 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 5.079 seconds (JVM running for 7.217)
+2019-05-15 14:45:24.233  INFO 12644 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-15 14:45:24.234  INFO 12644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-15 14:45:24.299  INFO 12644 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 65 ms
+2019-05-15 14:46:29.424  INFO 2664 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 2664 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-05-15 14:46:29.434 DEBUG 2664 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-15 14:46:29.434  INFO 2664 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-05-15 14:46:29.534  INFO 2664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-15 14:46:29.534  INFO 2664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-15 14:46:30.894  INFO 2664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 14:46:30.934  INFO 2664 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-05-15 14:46:31.304  INFO 2664 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5f7816b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 14:46:31.724  INFO 2664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-15 14:46:31.754  INFO 2664 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-15 14:46:31.754  INFO 2664 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-15 14:46:31.974  INFO 2664 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-15 14:46:31.974  INFO 2664 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2440 ms
+2019-05-15 14:46:32.134  INFO 2664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-15 14:46:32.234  INFO 2664 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-15 14:46:32.294  INFO 2664 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 14:46:32.354  INFO 2664 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 14:46:32.354  INFO 2664 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 14:46:32.474  INFO 2664 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 14:46:32.604  INFO 2664 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 14:46:32.784  INFO 2664 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5284296e'
+2019-05-15 14:46:32.794  INFO 2664 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 14:46:32.834  INFO 2664 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-15 14:46:32.834 DEBUG 2664 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:46:32.834 DEBUG 2664 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:46:32.854 DEBUG 2664 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@613f506e
+2019-05-15 14:46:32.854 DEBUG 2664 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@30bc25d1
+2019-05-15 14:46:33.054  INFO 2664 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 14:46:33.094  WARN 2664 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 14:46:33.384  INFO 2664 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-15 14:46:33.384  INFO 2664 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 4.68 seconds (JVM running for 6.601)
+2019-05-15 14:46:45.561  INFO 2664 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-15 14:46:45.562  INFO 2664 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-15 14:46:45.572  INFO 2664 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-05-15 14:50:14.260  INFO 4996 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 4996 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-05-15 14:50:14.260 DEBUG 4996 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-05-15 14:50:14.270  INFO 4996 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-05-15 14:50:14.400  INFO 4996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-05-15 14:50:14.400  INFO 4996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-05-15 14:50:15.620  INFO 4996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-05-15 14:50:15.670  INFO 4996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 0 repository interfaces.
+2019-05-15 14:50:16.120  INFO 4996 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e5f10129] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-05-15 14:50:16.630  INFO 4996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-05-15 14:50:16.660  INFO 4996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-05-15 14:50:16.660  INFO 4996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-05-15 14:50:16.880  INFO 4996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-05-15 14:50:16.880  INFO 4996 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2480 ms
+2019-05-15 14:50:17.030  INFO 4996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-05-15 14:50:17.120  INFO 4996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-05-15 14:50:17.180  INFO 4996 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-05-15 14:50:17.250  INFO 4996 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-05-15 14:50:17.260  INFO 4996 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-05-15 14:50:17.400  INFO 4996 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-05-15 14:50:17.550  INFO 4996 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-05-15 14:50:17.730  INFO 4996 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6cec51e1'
+2019-05-15 14:50:17.740  INFO 4996 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-05-15 14:50:17.780  INFO 4996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-05-15 14:50:17.790 DEBUG 4996 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:50:17.790 DEBUG 4996 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-05-15 14:50:17.810 DEBUG 4996 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@4d234270
+2019-05-15 14:50:17.810 DEBUG 4996 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@6267ac09
+2019-05-15 14:50:18.050  INFO 4996 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-05-15 14:50:18.090  WARN 4996 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-05-15 14:50:18.370  INFO 4996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-05-15 14:50:18.370  INFO 4996 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 4.88 seconds (JVM running for 6.64)
+2019-05-15 14:50:34.321  INFO 4996 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-05-15 14:50:34.323  INFO 4996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-05-15 14:50:34.334  INFO 4996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-05-15 14:50:34.446 DEBUG 4996 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-05-15 14:50:34.447 DEBUG 4996 --- [http-nio-8080-exec-1] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-05-15 14:50:34.450 DEBUG 4996 --- [http-nio-8080-exec-1] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Gallahad'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]

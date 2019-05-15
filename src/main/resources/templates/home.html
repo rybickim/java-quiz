@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>My quiz</title>
+</head>
+<body>
+<h1>My quiz</h1>
+
+<table>
+    <thead>
+    <th>Question</th>
+    <th>Answer</th>
+    </thead>
+    <tbody>
+    <th:block th:each="quiz : ${quizzes}">
+        <tr>
+            <td th:text="${quiz.question}">green</td>
+            <td th:text="${quiz.answer}">Toyota</td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
