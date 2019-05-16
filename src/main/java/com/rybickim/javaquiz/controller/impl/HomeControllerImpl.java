@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class HomeControllerImpl implements HomeController {
@@ -29,8 +30,12 @@ public class HomeControllerImpl implements HomeController {
         logger.debug("homePage()");
 
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
+        Integer quizExerciseCount = quizExercisesToShow.size();
+        int index = (int) Math.floor(Math.random() * quizExerciseCount.intValue());
 
-        dataModel.addAttribute("quizzes", quizExercisesToShow);
+        dataModel.addAttribute("quiz", quizExercisesToShow.get(index));
+        dataModel.addAttribute("count", quizExerciseCount);
+        dataModel.addAttribute("index", index);
 
         return "home";
     }
