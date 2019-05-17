@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>My quiz</h1>
-    <button type="button" class="btn btn-draw" th:onclick="'alert(\'' + ${count} + '\');'">Draw a question</button><br>
+    <button type="button" class="btn btn-draw" th:onclick="$();">Draw a question</button><br>
     <p><td th:text="${count}">Number of quizzes</td></p>
     <p><td th:text="${index}">Quiz index</td></p>
     <h3 class="question"><td th:text="${quiz.getQuestion()}">A question</td></h3>

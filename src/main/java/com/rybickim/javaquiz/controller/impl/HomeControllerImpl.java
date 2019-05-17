@@ -24,6 +24,10 @@ public class HomeControllerImpl implements HomeController {
         this.startService = startService;
     }
 
+    public int generateIndex(int listSize){
+        return (int) Math.floor(Math.random() * listSize);
+    }
+
     @GetMapping({"/","/home"})
     @Override
     public String homePage(Model dataModel) {
@@ -31,7 +35,7 @@ public class HomeControllerImpl implements HomeController {
 
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
         Integer quizExerciseCount = quizExercisesToShow.size();
-        int index = (int) Math.floor(Math.random() * quizExerciseCount.intValue());
+        int index = generateIndex(quizExerciseCount.intValue());
 
         dataModel.addAttribute("quiz", quizExercisesToShow.get(index));
         dataModel.addAttribute("count", quizExerciseCount);
