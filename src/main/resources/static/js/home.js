@@ -1,8 +1,12 @@
-function drawQuestion(){
-    document.querySelector(".question").textContent=/*[[${count}]]*/ 'defaultQuestion';
+function drawQuestion(question){
+    document.querySelector(".question").textContent="" + question;
+    console.log(42);
 }
 
-function showAnswer(){
-    document.querySelector(".answer").textContent="Answer was...?";
+function showAnswer(count){
+    document.querySelector(".answer").textContent="Answer was..." + count + "?";
+}
 
+function generateRandomIndex(count){
+    document.querySelector(".question").textContent= "" + Math.floor(Math.random() * count);
 }

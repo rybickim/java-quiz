@@ -37,9 +37,10 @@ public class HomeControllerImpl implements HomeController {
         Integer quizExerciseCount = quizExercisesToShow.size();
         int index = generateIndex(quizExerciseCount.intValue());
 
-        dataModel.addAttribute("quiz", quizExercisesToShow.get(index));
+        dataModel.addAttribute("quizzes", quizExercisesToShow);
         dataModel.addAttribute("count", quizExerciseCount);
         dataModel.addAttribute("index", index);
+        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
 
         return "home";
     }

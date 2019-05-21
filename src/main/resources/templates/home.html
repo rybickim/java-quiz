@@ -3,19 +3,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../static/css/quiz.css"/>
+    <link rel="stylesheet" type="text/css" href="css/quiz.css"/>
     <title>My quiz</title>
 </head>
 <body>
     <h1>My quiz</h1>
-    <button type="button" class="btn btn-draw" th:onclick="$();">Draw a question</button><br>
+<!--  this.getAttribute w onclick też dobrze działa  -->
+    <button type="button" class="btn btn-draw" th:data-random="'generateRandomIndex(' + ${count} + ')'" th:data-question="${quizzes.get(0).getQuestion()}" onclick="generateRandomIndex(3)">Draw a question</button><br>
     <p><td th:text="${count}">Number of quizzes</td></p>
     <p><td th:text="${index}">Quiz index</td></p>
-    <h3 class="question"><td th:text="${quiz.getQuestion()}">A question</td></h3>
-    <button type="button" class="btn btn-show" onclick="showAnswer()">Show answer</button><br>
-    <div class="answer"><td th:text="${quiz.getAnswer()}"></td></div>
+    <h3 class="question"><td th:text="${quizzes.get(index).getQuestion()}">A question</td></h3>
+    <button type="button" class="btn btn-show" th:onclick="'showAnswer(' + ${count} + ')'">Show answer</button><br>
+    <div class="answer"><td th:text="${quizzes.get(index).getAnswer()}"></td></div>
 
     <footer>Copyright by Marcin Rybicki 2019</footer>
 </body>
-<script src="../static/js/home.js"></script>
+<script src="js/home.js"></script>
 </html>
