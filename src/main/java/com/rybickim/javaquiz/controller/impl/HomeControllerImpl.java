@@ -10,8 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 @Controller
 public class HomeControllerImpl implements HomeController {
@@ -34,13 +36,16 @@ public class HomeControllerImpl implements HomeController {
         logger.debug("homePage()");
 
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
-        Integer quizExerciseCount = quizExercisesToShow.size();
-        int index = generateIndex(quizExerciseCount.intValue());
+        int quizExerciseCount = quizExercisesToShow.size();
+        int index = generateIndex(quizExerciseCount);
+        Set<Integer> questionsDrawn = new HashSet<>();
+        questionsDrawn.add(8);
 
         dataModel.addAttribute("quizzes", quizExercisesToShow);
         dataModel.addAttribute("count", quizExerciseCount);
         dataModel.addAttribute("index", index);
-        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
+        dataModel.addAttribute("questionsDrawn", questionsDrawn);
+//        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
 
         return "home";
     }

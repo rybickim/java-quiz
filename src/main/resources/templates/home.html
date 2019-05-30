@@ -13,8 +13,9 @@
             th:onclick="'generateRandomIndex(' + ${count} + ')'">Draw a question</button><br>
     <p><td th:text="'Number of quizzes: ' + ${count}">Number of quizzes</td></p>
     <p><td th:text="'Quiz index: ' + ${index}">Quiz index</td></p>
+    <p><td th:text="'Questions drawn: ' + ${questionsDrawn}">Questions drawn</td></p>
     <h3 class="question"><td th:text="${quizzes.get(index).getQuestion()}">A question</td></h3>
-    <button type="button" class="btn btn-show" onclick="showAnswer(42)">Show answer</button><br>
+    <button type="button" class="btn btn-show" onclick="showAnswer(randomQuestionIndex)">Show answer</button><br>
     <div class="answer"><td th:text="${quizzes.get(index).getAnswer()}"></td></div>
 
     <footer>Copyright by Marcin Rybicki 2019</footer>

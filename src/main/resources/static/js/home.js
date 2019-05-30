@@ -1,4 +1,4 @@
-randomQuestionIndex = 0;
+var randomQuestionIndex;
 console.log(randomQuestionIndex);
 
 function drawQuestion(question){
@@ -9,13 +9,13 @@ function drawQuestion(question){
 function showAnswer(count){
     console.log(randomQuestionIndex);
     console.log(count);
-    alert('JC! A bomb!');
+    alert('showAnswer(), count: ' + count);
     document.querySelector(".answer").textContent="Answer was..." + count + "?";
 }
 
 function generateRandomIndex(count){
     randomQuestionIndex = Math.floor(Math.random() * count);
     console.log(randomQuestionIndex);
-    alert('JC! A bomb!');
+    alert('generateRandomIndex(), randomQuestionIndex: ' + randomQuestionIndex);
     document.querySelector(".question").textContent= "" + randomQuestionIndex;
 }
