@@ -18,4 +18,18 @@ function generateRandomIndex(count){
     console.log(randomQuestionIndex);
     alert('generateRandomIndex(), randomQuestionIndex: ' + randomQuestionIndex);
     document.querySelector(".question").textContent= "" + randomQuestionIndex;
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/",
+        data: randomQuestionIndex,
+        timeout: 100000,
+        success: function(){
+            var json = JSON.parse(randomQuestionIndex);
+        },
+        error: function(e){
+            console.log("ERROR: ", e);
+        },
+        done: function(e) {}
+        });
 }

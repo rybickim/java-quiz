@@ -4,6 +4,6 @@ import org.springframework.ui.Model;
 
 public interface HomeController {
 
-    String homePage(Model dataModel);
+    String homePage(Model dataModel, String data);
 
 }

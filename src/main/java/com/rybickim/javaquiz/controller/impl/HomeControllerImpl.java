@@ -3,12 +3,14 @@ package com.rybickim.javaquiz.controller.impl;
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.StartService;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.HashSet;
 import java.util.List;
@@ -32,8 +34,16 @@ public class HomeControllerImpl implements HomeController {
 
     @GetMapping({"/","/home"})
     @Override
-    public String homePage(Model dataModel) {
+    public String homePage(Model dataModel, @RequestBody(required = false) String data) {
         logger.debug("homePage()");
+        JSONObject jsonObject;
+        if (null != data){
+             jsonObject = new JSONObject(data);
+        } else {
+            jsonObject = new JSONObject("{}");
+        }
+
+        logger.debug("jsonObject: " + jsonObject);
 
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
         int quizExerciseCount = quizExercisesToShow.size();
