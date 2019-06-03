@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.HashSet;
@@ -32,18 +33,26 @@ public class HomeControllerImpl implements HomeController {
         return (int) Math.floor(Math.random() * listSize);
     }
 
-    @GetMapping({"/","/home"})
+    @PostMapping({"/","/home"})
     @Override
-    public String homePage(Model dataModel, @RequestBody(required = false) String data) {
-        logger.debug("homePage()");
+    public String postJson(Model dataModel, @RequestBody(required = false) String data){
+        logger.debug("postJson()");
         JSONObject jsonObject;
         if (null != data){
-             jsonObject = new JSONObject(data);
+            jsonObject = new JSONObject(data);
         } else {
             jsonObject = new JSONObject("{}");
         }
 
         logger.debug("jsonObject: " + jsonObject);
+
+        return "home";
+    }
+
+    @GetMapping({"/","/home"})
+    @Override
+    public String homePage(Model dataModel) {
+        logger.debug("homePage()");
 
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
         int quizExerciseCount = quizExercisesToShow.size();

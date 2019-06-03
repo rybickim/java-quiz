@@ -19,17 +19,19 @@ function generateRandomIndex(count){
     alert('generateRandomIndex(), randomQuestionIndex: ' + randomQuestionIndex);
     document.querySelector(".question").textContent= "" + randomQuestionIndex;
     $.ajax({
-        type: "POST",
+        method: "post",
         contentType: "application/json",
         url: "/",
-        data: randomQuestionIndex,
-        timeout: 100000,
-        success: function(){
-            var json = JSON.parse(randomQuestionIndex);
+        data: JSON.stringify(randomQuestionIndex),
+        dataType: "json",
+        success: function(response){
+            console.log(response);
         },
         error: function(e){
             console.log("ERROR: ", e);
         },
-        done: function(e) {}
+        complete: function() {
+            console.log("AJAX call done")
+        }
         });
 }

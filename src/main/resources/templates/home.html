@@ -9,16 +9,16 @@
 <body>
     <h1>My quiz</h1>
 <!--  this.getAttribute w onclick też dobrze działa  -->
-    <button type="button" class="btn btn-draw" th:data-random="'generateRandomIndex(' + ${count} + ')'" th:data-question="${quizzes.get(0).getQuestion()}"
-            th:onclick="'generateRandomIndex(' + ${count} + ')'">Draw a question</button><br>
+    <button type="button" class="btn btn-draw" th:onclick="'generateRandomIndex(' + ${count} + ')'">Draw a question</button><br>
     <p><td th:text="'Number of quizzes: ' + ${count}">Number of quizzes</td></p>
     <p><td th:text="'Quiz index: ' + ${index}">Quiz index</td></p>
     <p><td th:text="'Questions drawn: ' + ${questionsDrawn}">Questions drawn</td></p>
-    <h3 class="question"><td th:text="${quizzes.get(index).getQuestion()}">A question</td></h3>
+    <h3 class="question"><td th:text="${quizzes?.get((index))?.getQuestion()?:'Unknown question'}">A question</td></h3>
     <button type="button" class="btn btn-show" onclick="showAnswer(randomQuestionIndex)">Show answer</button><br>
-    <div class="answer"><td th:text="${quizzes.get(index).getAnswer()}"></td></div>
+    <div class="answer"><td th:text="${quizzes?.get((index))?.getAnswer()?:'Unknown answer'}"></td></div>
 
     <footer>Copyright by Marcin Rybicki 2019</footer>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="js/home.js"></script>
 </html>
