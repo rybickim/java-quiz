@@ -19,10 +19,10 @@ function generateRandomIndex(count){
     alert('generateRandomIndex(), randomQuestionIndex: ' + randomQuestionIndex);
     document.querySelector(".question").textContent= "" + randomQuestionIndex;
     $.ajax({
-        method: "post",
+        type: "POST",
         contentType: "application/json",
         url: "/",
-        data: JSON.stringify(randomQuestionIndex),
+        data: JSON.stringify({index: randomQuestionIndex}),
         dataType: "json",
         success: function(response){
             console.log(response);

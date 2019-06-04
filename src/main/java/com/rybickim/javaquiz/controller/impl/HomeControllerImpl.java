@@ -24,9 +24,11 @@ public class HomeControllerImpl implements HomeController {
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
     private StartService startService;
+    private Set<Integer> questionsDrawn;
 
     public HomeControllerImpl(@Qualifier("dummyService") StartService startService) {
         this.startService = startService;
+        this.questionsDrawn = new HashSet<>();
     }
 
     public int generateIndex(int listSize){
@@ -44,6 +46,7 @@ public class HomeControllerImpl implements HomeController {
             jsonObject = new JSONObject("{}");
         }
 
+        questionsDrawn.add(Integer.parseInt(jsonObject.get("index").toString()));
         logger.debug("jsonObject: " + jsonObject);
 
         return "home";
@@ -57,8 +60,6 @@ public class HomeControllerImpl implements HomeController {
         List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
         int quizExerciseCount = quizExercisesToShow.size();
         int index = generateIndex(quizExerciseCount);
-        Set<Integer> questionsDrawn = new HashSet<>();
-        questionsDrawn.add(8);
 
         dataModel.addAttribute("quizzes", quizExercisesToShow);
         dataModel.addAttribute("count", quizExerciseCount);
