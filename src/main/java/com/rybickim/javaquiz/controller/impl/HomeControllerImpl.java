@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 public class HomeControllerImpl implements HomeController {
@@ -25,10 +22,12 @@ public class HomeControllerImpl implements HomeController {
 
     private StartService startService;
     private Set<Integer> questionsDrawn;
+    private List<QuizExercise> quizExercisesToShow;
 
     public HomeControllerImpl(@Qualifier("dummyService") StartService startService) {
         this.startService = startService;
         this.questionsDrawn = new HashSet<>();
+        this.quizExercisesToShow = startService.getQuizExercises();
     }
 
     public int generateIndex(int listSize){
@@ -46,8 +45,13 @@ public class HomeControllerImpl implements HomeController {
             jsonObject = new JSONObject("{}");
         }
 
-        questionsDrawn.add(Integer.parseInt(jsonObject.get("index").toString()));
+        int value = Integer.parseInt(jsonObject.get("index").toString());
+
+        questionsDrawn.add(value);
         logger.debug("jsonObject: " + jsonObject);
+
+        quizExercisesToShow.remove(value);
+        logger.debug("list element removed");
 
         return "home";
     }
@@ -57,13 +61,12 @@ public class HomeControllerImpl implements HomeController {
     public String homePage(Model dataModel) {
         logger.debug("homePage()");
 
-        List<QuizExercise> quizExercisesToShow = startService.getQuizExercises();
         int quizExerciseCount = quizExercisesToShow.size();
-        int index = generateIndex(quizExerciseCount);
+//        int index = generateIndex(quizExerciseCount);
 
         dataModel.addAttribute("quizzes", quizExercisesToShow);
         dataModel.addAttribute("count", quizExerciseCount);
-        dataModel.addAttribute("index", index);
+        dataModel.addAttribute("index", 0);
         dataModel.addAttribute("questionsDrawn", questionsDrawn);
 //        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
 

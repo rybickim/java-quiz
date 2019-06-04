@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>My quiz</h1>
-<!--  this.getAttribute w onclick też dobrze działa  -->
     <button type="button" class="btn btn-draw" th:onclick="'generateRandomIndex(' + ${count} + ')'">Draw a question</button><br>
     <p><td th:text="'Number of quizzes: ' + ${count}">Number of quizzes</td></p>
     <p><td th:text="'Quiz index: ' + ${index}">Quiz index</td></p>

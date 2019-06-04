@@ -544,3 +544,445 @@ org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 
 2019-06-04 11:37:02.894 DEBUG 9940 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : homePage()
 2019-06-04 11:37:02.894 DEBUG 9940 --- [http-nio-8080-exec-6] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
 2019-06-04 11:37:02.895 DEBUG 9940 --- [http-nio-8080-exec-6] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:36:00.589  INFO 10370 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on marcin-HP-ProBook-6470b with PID 10370 (/home/marcin/IdeaProjects/java-quiz/target/classes started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-06-04 21:36:00.591 DEBUG 10370 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-04 21:36:00.592  INFO 10370 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-04 21:36:00.759  INFO 10370 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-04 21:36:00.760  INFO 10370 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-04 21:36:03.135  INFO 10370 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-04 21:36:03.178  INFO 10370 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-06-04 21:36:03.689  INFO 10370 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db9fd28b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-04 21:36:04.413  INFO 10370 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-04 21:36:04.468  INFO 10370 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-04 21:36:04.469  INFO 10370 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-04 21:36:04.703  INFO 10370 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-04 21:36:04.703  INFO 10370 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3943 ms
+2019-06-04 21:36:05.063  INFO 10370 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-04 21:36:05.310  INFO 10370 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-04 21:36:05.512  INFO 10370 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-04 21:36:05.601  INFO 10370 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-04 21:36:05.609  INFO 10370 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-04 21:36:06.276  INFO 10370 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-04 21:36:06.693  INFO 10370 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-04 21:36:07.245  INFO 10370 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5618aefb'
+2019-06-04 21:36:07.282  INFO 10370 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 21:36:07.367  INFO 10370 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-04 21:36:07.374 DEBUG 10370 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:36:07.374 DEBUG 10370 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:36:07.388 DEBUG 10370 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@337399f8
+2019-06-04 21:36:07.390 DEBUG 10370 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@7b1b86e6
+2019-06-04 21:36:07.881  INFO 10370 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-04 21:36:07.928  WARN 10370 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-04 21:36:08.365  INFO 10370 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-04 21:36:08.388  INFO 10370 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 9.445 seconds (JVM running for 13.092)
+2019-06-04 21:36:51.131  INFO 10370 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-04 21:36:51.132  INFO 10370 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-04 21:36:51.140  INFO 10370 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-06-04 21:36:51.272 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 21:36:51.272 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 21:36:51.275 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:37:16.833 DEBUG 10370 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:37:16.851 DEBUG 10370 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:37:27.095 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 21:37:27.096 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 21:37:27.096 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:38:15.562 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:15.565 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:38:18.206 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:18.207 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:38:19.535 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 21:38:19.535 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 21:38:19.535 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:38:43.710 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:43.712 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:38:46.541 DEBUG 10370 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:46.542 DEBUG 10370 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:38:49.758 DEBUG 10370 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:49.759 DEBUG 10370 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:38:52.226 DEBUG 10370 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:52.227 DEBUG 10370 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:38:54.960 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:54.961 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:38:57.197 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:38:57.198 DEBUG 10370 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:38:58.833 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 21:38:58.834 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 21:38:58.834 DEBUG 10370 --- [http-nio-8080-exec-2] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:39:01.621 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:39:01.621 DEBUG 10370 --- [http-nio-8080-exec-6] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:39:03.839 DEBUG 10370 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:39:03.839 DEBUG 10370 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 21:39:06.131 DEBUG 10370 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:39:06.132 DEBUG 10370 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 21:39:08.431 DEBUG 10370 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 21:39:08.432 DEBUG 10370 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":0}
+2019-06-04 21:39:09.576 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 21:39:09.577 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 21:39:09.577 DEBUG 10370 --- [http-nio-8080-exec-10] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 21:58:49.203  INFO 10370 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-04 21:58:49.220  INFO 10370 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 21:58:49.221  INFO 10370 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-04 21:58:49.331  INFO 10370 --- [Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-06-04 21:58:49.332  INFO 10370 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-04 21:58:49.356  INFO 10370 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-04 22:03:49.737  INFO 12160 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on marcin-HP-ProBook-6470b with PID 12160 (/home/marcin/IdeaProjects/java-quiz/target/classes started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-06-04 22:03:49.739 DEBUG 12160 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-04 22:03:49.741  INFO 12160 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-04 22:03:49.882  INFO 12160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-04 22:03:49.883  INFO 12160 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-04 22:03:51.218  INFO 12160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-04 22:03:51.285  INFO 12160 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-06-04 22:03:51.797  INFO 12160 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$92e672c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-04 22:03:52.606  INFO 12160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-04 22:03:52.642  INFO 12160 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-04 22:03:52.643  INFO 12160 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-04 22:03:53.011  INFO 12160 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-04 22:03:53.012  INFO 12160 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3129 ms
+2019-06-04 22:03:53.353  INFO 12160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-04 22:03:53.548  INFO 12160 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-04 22:03:53.752  INFO 12160 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-04 22:03:53.808  INFO 12160 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-04 22:03:53.809  INFO 12160 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-04 22:03:54.021  INFO 12160 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-04 22:03:54.182  INFO 12160 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-04 22:03:54.541  INFO 12160 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@288e4db2'
+2019-06-04 22:03:54.554  INFO 12160 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:03:54.641  INFO 12160 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-04 22:03:54.647 DEBUG 12160 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:03:54.691 DEBUG 12160 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@1fc38bfe
+2019-06-04 22:03:54.693 DEBUG 12160 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@766038e7
+2019-06-04 22:03:55.023  INFO 12160 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:03:55.069  WARN 12160 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-04 22:03:55.361  INFO 12160 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-04 22:03:55.370  INFO 12160 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 7.18 seconds (JVM running for 9.758)
+2019-06-04 22:04:12.242  INFO 12160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-04 22:04:12.244  INFO 12160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-04 22:04:12.308  INFO 12160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 63 ms
+2019-06-04 22:04:12.546 DEBUG 12160 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:04:12.547 DEBUG 12160 --- [http-nio-8080-exec-1] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:04:12.550 DEBUG 12160 --- [http-nio-8080-exec-1] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:04:56.601 DEBUG 12160 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:04:56.624 DEBUG 12160 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 22:04:57.972 DEBUG 12160 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:04:57.972 DEBUG 12160 --- [http-nio-8080-exec-5] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:04:57.972 DEBUG 12160 --- [http-nio-8080-exec-5] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:04:59.901 DEBUG 12160 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:04:59.902 DEBUG 12160 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 22:05:01.994 DEBUG 12160 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:05:01.994 DEBUG 12160 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":0}
+2019-06-04 22:05:02.530 DEBUG 12160 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:05:02.530 DEBUG 12160 --- [http-nio-8080-exec-9] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:05:02.531 DEBUG 12160 --- [http-nio-8080-exec-9] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:05:10.598  INFO 12160 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:05:10.599  INFO 12160 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:05:10.600  INFO 12160 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-04 22:05:10.610  INFO 12160 --- [Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-06-04 22:05:10.610  INFO 12160 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-04 22:05:10.622  INFO 12160 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-04 22:12:20.034  INFO 12712 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on marcin-HP-ProBook-6470b with PID 12712 (/home/marcin/IdeaProjects/java-quiz/target/classes started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-06-04 22:12:20.040 DEBUG 12712 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-04 22:12:20.042  INFO 12712 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-04 22:12:20.123  INFO 12712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-04 22:12:20.124  INFO 12712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-04 22:12:21.250  INFO 12712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-04 22:12:21.266  INFO 12712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
+2019-06-04 22:12:21.605  INFO 12712 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$40b34f97] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-04 22:12:21.950  INFO 12712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-04 22:12:21.982  INFO 12712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-04 22:12:21.983  INFO 12712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-04 22:12:22.062  INFO 12712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-04 22:12:22.062  INFO 12712 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1937 ms
+2019-06-04 22:12:22.196  INFO 12712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-04 22:12:22.265  INFO 12712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-04 22:12:22.304  INFO 12712 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-04 22:12:22.336  INFO 12712 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-04 22:12:22.337  INFO 12712 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-04 22:12:22.420  INFO 12712 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-04 22:12:22.508  INFO 12712 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-04 22:12:22.656  INFO 12712 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1d4d242d'
+2019-06-04 22:12:22.658  INFO 12712 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:12:22.695  INFO 12712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-04 22:12:22.701 DEBUG 12712 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:12:22.714 DEBUG 12712 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@4827b22c
+2019-06-04 22:12:22.716 DEBUG 12712 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@32058ec3
+2019-06-04 22:12:22.888  INFO 12712 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:12:22.925  WARN 12712 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-04 22:12:23.151  INFO 12712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-04 22:12:23.155  INFO 12712 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 3.674 seconds (JVM running for 4.722)
+2019-06-04 22:12:33.807  INFO 12712 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-04 22:12:33.808  INFO 12712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-04 22:12:33.823  INFO 12712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-06-04 22:12:33.899 DEBUG 12712 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:12:33.899 DEBUG 12712 --- [http-nio-8080-exec-1] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:12:33.903 DEBUG 12712 --- [http-nio-8080-exec-1] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:12:41.133 DEBUG 12712 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:12:41.138 DEBUG 12712 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 22:12:48.335 DEBUG 12712 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:12:48.335 DEBUG 12712 --- [http-nio-8080-exec-5] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:12:48.335 DEBUG 12712 --- [http-nio-8080-exec-5] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:12:52.189 DEBUG 12712 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:12:52.189 DEBUG 12712 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":2}
+2019-06-04 22:12:53.693 DEBUG 12712 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:12:53.694 DEBUG 12712 --- [http-nio-8080-exec-8] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:12:53.694 DEBUG 12712 --- [http-nio-8080-exec-8] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:13:32.638  INFO 12712 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:13:32.639  INFO 12712 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:13:32.640  INFO 12712 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-04 22:13:32.647  INFO 12712 --- [Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-06-04 22:13:32.648  INFO 12712 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-04 22:13:32.651  INFO 12712 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-04 22:28:27.388  INFO 13611 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on marcin-HP-ProBook-6470b with PID 13611 (/home/marcin/IdeaProjects/java-quiz/target/classes started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-06-04 22:28:27.396 DEBUG 13611 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-04 22:28:27.400  INFO 13611 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-04 22:28:27.481  INFO 13611 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-04 22:28:27.486  INFO 13611 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-04 22:28:28.514  INFO 13611 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-04 22:28:28.535  INFO 13611 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2019-06-04 22:28:28.867  INFO 13611 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f58e1307] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-04 22:28:29.238  INFO 13611 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-04 22:28:29.267  INFO 13611 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-04 22:28:29.267  INFO 13611 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-04 22:28:29.366  INFO 13611 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-04 22:28:29.367  INFO 13611 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1880 ms
+2019-06-04 22:28:29.502  INFO 13611 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-04 22:28:29.571  INFO 13611 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-04 22:28:29.610  INFO 13611 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-04 22:28:29.641  INFO 13611 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-04 22:28:29.642  INFO 13611 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-04 22:28:29.716  INFO 13611 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-04 22:28:29.791  INFO 13611 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-04 22:28:29.920  INFO 13611 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@12ff2825'
+2019-06-04 22:28:29.924  INFO 13611 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:28:29.961  INFO 13611 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-04 22:28:29.968 DEBUG 13611 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:28:29.980 DEBUG 13611 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@2cefe177
+2019-06-04 22:28:29.981 DEBUG 13611 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-04 22:28:29.985 DEBUG 13611 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-04 22:28:29.987 DEBUG 13611 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@4fee6362
+2019-06-04 22:28:30.163  INFO 13611 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:28:30.193  WARN 13611 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-04 22:28:30.433  INFO 13611 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-04 22:28:30.439  INFO 13611 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 3.612 seconds (JVM running for 4.547)
+2019-06-04 22:28:48.568  INFO 13611 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-04 22:28:48.569  INFO 13611 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-04 22:28:48.592  INFO 13611 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2019-06-04 22:28:48.686 DEBUG 13611 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:29:00.175 DEBUG 13611 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:29:00.179 DEBUG 13611 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":0}
+2019-06-04 22:29:00.179 DEBUG 13611 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-04 22:29:03.569 DEBUG 13611 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:29:10.249 DEBUG 13611 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:29:10.250 DEBUG 13611 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":1}
+2019-06-04 22:29:10.250 DEBUG 13611 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-04 22:29:11.968 DEBUG 13611 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:29:19.383 DEBUG 13611 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : postJson()
+2019-06-04 22:29:19.384 DEBUG 13611 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : jsonObject: {"index":0}
+2019-06-04 22:29:19.384 DEBUG 13611 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-04 22:29:20.990 DEBUG 13611 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-04 22:29:21.043 ERROR 13611 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "home": An error happened during template parsing (template: "class path resource [templates/home.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/home.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "quizzes?.get((index))?.getQuestion()?:'Unknown question'" (template: "home" - line 15, col 30)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 52 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "quizzes?.get((index))?.getQuestion()?:'Unknown question'" (template: "home" - line 15, col 30)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 54 common frames omitted
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559) ~[na:na]
+	at java.base/java.util.LinkedList.get(LinkedList.java:480) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:130) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:111) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:94) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:59) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:89) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.Elvis.getValueInternal(Elvis.java:53) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 73 common frames omitted
+
+2019-06-04 22:29:21.051 ERROR 13611 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/home.html]")] with root cause
+
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:559) ~[na:na]
+	at java.base/java.util.LinkedList.get(LinkedList.java:480) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:130) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:111) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:94) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueRef(CompoundExpression.java:59) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:89) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.Elvis.getValueInternal(Elvis.java:53) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328) ~[spring-expression-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.17.jar:9.0.17]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2019-06-04 22:29:55.688  INFO 13611 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-04 22:29:55.689  INFO 13611 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-04 22:29:55.689  INFO 13611 --- [Thread-8] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-04 22:29:55.696  INFO 13611 --- [Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2019-06-04 22:29:55.697  INFO 13611 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-04 22:29:55.700  INFO 13611 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
