@@ -21,37 +21,22 @@ public class HomeControllerImpl implements HomeController {
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
     private StartService startService;
-    private Set<Integer> questionsDrawn;
     private List<QuizExercise> quizExercisesToShow;
 
     public HomeControllerImpl(@Qualifier("dummyService") StartService startService) {
         this.startService = startService;
-        this.questionsDrawn = new HashSet<>();
         this.quizExercisesToShow = startService.getQuizExercises();
-    }
-
-    public int generateIndex(int listSize){
-        return (int) Math.floor(Math.random() * listSize);
     }
 
     @PostMapping({"/","/home"})
     @Override
-    public String postJson(Model dataModel, @RequestBody(required = false) String data){
-        logger.debug("postJson()");
-        JSONObject jsonObject;
-        if (null != data){
-            jsonObject = new JSONObject(data);
-        } else {
-            jsonObject = new JSONObject("{}");
+    public String removeElement(){
+        logger.debug("removeElement()");
+
+        if(!quizExercisesToShow.isEmpty()){
+            quizExercisesToShow.remove(0);
+            logger.debug("list element removed");
         }
-
-        int value = Integer.parseInt(jsonObject.get("index").toString());
-
-//        questionsDrawn.add(value);
-        logger.debug("jsonObject: " + jsonObject);
-
-        quizExercisesToShow.remove(0);
-        logger.debug("list element removed");
 
         return "home";
     }
@@ -62,16 +47,18 @@ public class HomeControllerImpl implements HomeController {
         logger.debug("homePage()");
 
         int quizExerciseCount = quizExercisesToShow.size();
-//        int index = generateIndex(quizExerciseCount);
 
-        dataModel.addAttribute("question", quizExercisesToShow.get(0).getQuestion());
-        dataModel.addAttribute("answer", quizExercisesToShow.get(0).getAnswer());
+        String question = "";
+        String answer = "";
 
-//        dataModel.addAttribute("quizzes", quizExercisesToShow);
+        if (!quizExercisesToShow.isEmpty()){
+            question = quizExercisesToShow.get(0).getQuestion();
+            answer = quizExercisesToShow.get(0).getAnswer();
+        }
+
+        dataModel.addAttribute("question", question);
+        dataModel.addAttribute("answer", answer);
         dataModel.addAttribute("count", quizExerciseCount);
-//        dataModel.addAttribute("index", 0);
-//        dataModel.addAttribute("questionsDrawn", questionsDrawn);
-//        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
 
         return "home";
     }

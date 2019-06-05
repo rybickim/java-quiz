@@ -8,13 +8,13 @@
 </head>
 <body>
     <h1>My quiz</h1>
-    <button type="button" class="btn btn-draw" th:onclick="'drawQuestion(\'' + ${question} + '\')'">Draw a question</button><br>
+    <button type="button" class="btn btn-draw" th:data-question="${question?:'Out of questions'}"
+            onclick="drawQuestion(this.getAttribute('data-question'))">Draw a question</button><br>
     <p><td th:text="'Number of questions left: ' + ${count}">Number of questions left</td></p>
-<!--    <p><td th:text="'Quiz index: ' + ${index}">Quiz index</td></p>-->
-<!--    <p><td th:text="'Questions drawn: ' + ${questionsDrawn}">Questions drawn</td></p>-->
-    <h3 class="question"><td th:text="'Out of questions'">A question</td></h3>
-    <button type="button" class="btn btn-show" th:onclick="'showAnswer(\'' + ${answer} + '\')'">Show answer</button><br>
-    <div class="answer"><td th:text="'No answer'"></td></div>
+    <h3 class="question"></h3>
+    <button type="button" class="btn btn-show" th:data-answer="${answer?:'What was the question?'}"
+            onclick="showAnswer(this.getAttribute('data-answer'))">Show answer</button><br>
+    <div class="answer"></div>
 
     <footer>Copyright by Marcin Rybicki 2019</footer>
 </body>
