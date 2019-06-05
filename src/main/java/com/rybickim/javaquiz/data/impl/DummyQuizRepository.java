@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class DummyQuizRepository implements QuizRepository {
                 "id est laborum."));
         quizExercises.add(new QuizExercise("What is your quest?","To find the Holy Grail."));
         quizExercises.add(new QuizExercise("What's your favorite color?","Green! No, red! NOOOOOO!"));
+        Collections.shuffle(quizExercises);
 
         logger.debug("DummyQuizRepository(), quizExercises: {}", quizExercises);
 

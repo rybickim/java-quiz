@@ -47,10 +47,10 @@ public class HomeControllerImpl implements HomeController {
 
         int value = Integer.parseInt(jsonObject.get("index").toString());
 
-        questionsDrawn.add(value);
+//        questionsDrawn.add(value);
         logger.debug("jsonObject: " + jsonObject);
 
-        quizExercisesToShow.remove(value);
+        quizExercisesToShow.remove(0);
         logger.debug("list element removed");
 
         return "home";
@@ -64,10 +64,13 @@ public class HomeControllerImpl implements HomeController {
         int quizExerciseCount = quizExercisesToShow.size();
 //        int index = generateIndex(quizExerciseCount);
 
-        dataModel.addAttribute("quizzes", quizExercisesToShow);
+        dataModel.addAttribute("question", quizExercisesToShow.get(0).getQuestion());
+        dataModel.addAttribute("answer", quizExercisesToShow.get(0).getAnswer());
+
+//        dataModel.addAttribute("quizzes", quizExercisesToShow);
         dataModel.addAttribute("count", quizExerciseCount);
-        dataModel.addAttribute("index", 0);
-        dataModel.addAttribute("questionsDrawn", questionsDrawn);
+//        dataModel.addAttribute("index", 0);
+//        dataModel.addAttribute("questionsDrawn", questionsDrawn);
 //        dataModel.addAttribute("randomIndex", generateIndex(quizExerciseCount.intValue()));
 
         return "home";
