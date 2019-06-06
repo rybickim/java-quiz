@@ -47,6 +47,8 @@ public class HomeControllerImpl implements HomeController {
         logger.debug("homePage()");
 
         int quizExerciseCount = quizExercisesToShow.size();
+        logger.debug("quizExerciseCount: {}", quizExerciseCount);
+
 
         String question = "";
         String answer = "";
@@ -55,6 +57,9 @@ public class HomeControllerImpl implements HomeController {
             question = quizExercisesToShow.get(0).getQuestion();
             answer = quizExercisesToShow.get(0).getAnswer();
         }
+        logger.debug("question: {}", question);
+        logger.debug("answer: {}", answer);
+
 
         dataModel.addAttribute("question", question);
         dataModel.addAttribute("answer", answer);
