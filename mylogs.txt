@@ -868,3 +868,700 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2019-06-06 18:02:53.254  INFO 5948 --- [Thread-8] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
 2019-06-06 18:02:53.255  INFO 5948 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2019-06-06 18:02:53.259  INFO 5948 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 08:45:58.284  INFO 14628 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 14628 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 08:45:58.284 DEBUG 14628 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 08:45:58.294  INFO 14628 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 08:45:58.434  INFO 14628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 08:45:58.434  INFO 14628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 08:46:00.264  INFO 14628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 08:46:00.384  INFO 14628 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 0 repository interfaces.
+2019-06-07 08:46:01.024  INFO 14628 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$60b083cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 08:46:01.814  INFO 14628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 08:46:01.874  INFO 14628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 08:46:01.884  INFO 14628 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 08:46:02.294  INFO 14628 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 08:46:02.294  INFO 14628 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3860 ms
+2019-06-07 08:46:02.584  INFO 14628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 08:46:02.754  INFO 14628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 08:46:02.884  INFO 14628 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 08:46:02.984  INFO 14628 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 08:46:02.994  INFO 14628 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 08:46:03.314  INFO 14628 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 08:46:03.624  INFO 14628 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 08:46:03.924  INFO 14628 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@42e6361c'
+2019-06-07 08:46:03.934  INFO 14628 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 08:46:04.044  INFO 14628 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 08:46:04.054 DEBUG 14628 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-07 08:46:04.114 DEBUG 14628 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@224afd97
+2019-06-07 08:46:04.114 DEBUG 14628 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-07 08:46:04.134 DEBUG 14628 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}, QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}]
+2019-06-07 08:46:04.134 DEBUG 14628 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@234aeb79
+2019-06-07 08:46:04.514  INFO 14628 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 08:46:04.544  WARN 14628 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 08:46:04.914  INFO 14628 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-07 08:46:04.924  INFO 14628 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 7.589 seconds (JVM running for 13.567)
+2019-06-07 08:48:57.143  INFO 14628 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-06-07 08:48:57.145  INFO 14628 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-07 08:48:57.246  INFO 14628 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 100 ms
+2019-06-07 08:48:58.689 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:48:58.690 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:48:58.692 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:48:58.693 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:19.026 DEBUG 14628 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:19.027 DEBUG 14628 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:50:19.028 DEBUG 14628 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:50:19.028 DEBUG 14628 --- [http-nio-8080-exec-5] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:28.055 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:28.056 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:50:28.057 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:50:28.057 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:30.697 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:30.698 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:50:30.698 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:50:30.699 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:31.611 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:31.612 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:50:31.612 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:50:31.612 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:36.119 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:36.120 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 3
+2019-06-07 08:50:36.120 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : question: What is your quest?
+2019-06-07 08:50:36.121 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : answer: To find the Holy Grail.
+2019-06-07 08:50:38.640 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : removeElement()
+2019-06-07 08:50:38.640 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-07 08:50:44.067 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:44.068 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 2
+2019-06-07 08:50:44.068 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : question: What is your name?
+2019-06-07 08:50:44.069 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+2019-06-07 08:50:47.495 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:47.496 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 2
+2019-06-07 08:50:47.496 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : question: What is your name?
+2019-06-07 08:50:47.497 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+2019-06-07 08:50:48.149 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:48.149 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 2
+2019-06-07 08:50:48.149 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : question: What is your name?
+2019-06-07 08:50:48.150 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+2019-06-07 08:50:55.545 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:55.546 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 2
+2019-06-07 08:50:55.547 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : question: What is your name?
+2019-06-07 08:50:55.547 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+2019-06-07 08:50:56.655 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : removeElement()
+2019-06-07 08:50:56.656 DEBUG 14628 --- [http-nio-8080-exec-3] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-07 08:50:58.493 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:58.494 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 1
+2019-06-07 08:50:58.496 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : question: What's your favorite color?
+2019-06-07 08:50:58.497 DEBUG 14628 --- [http-nio-8080-exec-4] c.r.j.c.impl.HomeControllerImpl          : answer: Green! No, red! NOOOOOO!
+2019-06-07 08:50:59.645 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:50:59.646 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 1
+2019-06-07 08:50:59.646 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : question: What's your favorite color?
+2019-06-07 08:50:59.647 DEBUG 14628 --- [http-nio-8080-exec-7] c.r.j.c.impl.HomeControllerImpl          : answer: Green! No, red! NOOOOOO!
+2019-06-07 08:51:01.014 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : removeElement()
+2019-06-07 08:51:01.015 DEBUG 14628 --- [http-nio-8080-exec-8] c.r.j.c.impl.HomeControllerImpl          : list element removed
+2019-06-07 08:51:02.044 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:51:02.045 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 0
+2019-06-07 08:51:02.046 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : question: 
+2019-06-07 08:51:02.047 DEBUG 14628 --- [http-nio-8080-exec-9] c.r.j.c.impl.HomeControllerImpl          : answer: 
+2019-06-07 08:51:05.287 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:51:05.288 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 0
+2019-06-07 08:51:05.289 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : question: 
+2019-06-07 08:51:05.289 DEBUG 14628 --- [http-nio-8080-exec-1] c.r.j.c.impl.HomeControllerImpl          : answer: 
+2019-06-07 08:51:06.503 DEBUG 14628 --- [http-nio-8080-exec-10] c.r.j.c.impl.HomeControllerImpl          : removeElement()
+2019-06-07 08:51:08.882 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : homePage()
+2019-06-07 08:51:08.882 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : quizExerciseCount: 0
+2019-06-07 08:51:08.883 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : question: 
+2019-06-07 08:51:08.883 DEBUG 14628 --- [http-nio-8080-exec-2] c.r.j.c.impl.HomeControllerImpl          : answer: 
+2019-06-07 09:30:17.630  WARN 12840 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/laboratorium/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/laboratorium/.m2/repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2019-06-07 09:30:17.688  INFO 12840 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 12840 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 09:30:17.688 DEBUG 12840 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 09:30:17.689  INFO 12840 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-06-07 09:30:21.582  INFO 12840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 09:30:21.676  INFO 12840 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 0 repository interfaces.
+2019-06-07 09:30:23.256  INFO 12840 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8bb2d841] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 09:30:23.955  INFO 12840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 09:30:24.747  INFO 12840 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 09:30:25.062  INFO 12840 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 09:30:25.462  INFO 12840 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 09:30:25.466  INFO 12840 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 09:30:25.988  INFO 12840 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 09:30:26.756  INFO 12840 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 09:30:27.367  INFO 12840 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@b7d2d51'
+2019-06-07 09:30:27.372  INFO 12840 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 09:30:27.393 DEBUG 12840 --- [main] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}]
+2019-06-07 09:30:27.467 DEBUG 12840 --- [main] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@28cb86b2
+2019-06-07 09:30:27.510 DEBUG 12840 --- [main] c.r.javaquiz.service.impl.DummyService   : getQuestions() from DummyService
+2019-06-07 09:30:27.526 DEBUG 12840 --- [main] c.r.j.data.impl.DummyQuizRepository      : readAllQuizExercises(), quizExercises: [QuizExercise{question='What is your name?', answer='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}, QuizExercise{question='What's your favorite color?', answer='Green! No, red! NOOOOOO!'}, QuizExercise{question='What is your quest?', answer='To find the Holy Grail.'}]
+2019-06-07 09:30:27.539 DEBUG 12840 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@586843bc
+2019-06-07 09:30:29.475  INFO 12840 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 09:30:29.625  WARN 12840 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 09:30:31.202  INFO 12840 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 14.927 seconds (JVM running for 21.606)
+2019-06-07 09:30:32.023  INFO 12840 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-07 09:30:32.033  INFO 12840 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 09:30:32.033  INFO 12840 --- [Thread-2] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-07 09:30:32.043  INFO 12840 --- [Thread-2] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLException: Baza danych jest ju� zamkni�ta (aby zablokowa� samoczynne zamykanie podczas zamkni�cia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-197]
+2019-06-07 09:30:32.053  INFO 12840 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 09:30:32.066  INFO 12840 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 11:36:43.433  INFO 14752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 14752 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 11:36:43.443 DEBUG 14752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 11:36:43.443  INFO 14752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 11:36:43.593  INFO 14752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 11:36:43.593  INFO 14752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 11:36:45.633  INFO 14752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 11:36:45.773  INFO 14752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130ms. Found 1 repository interfaces.
+2019-06-07 11:36:46.423  INFO 14752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c6f27ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 11:36:47.122  INFO 14752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 11:36:47.152  INFO 14752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 11:36:47.152  INFO 14752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 11:36:47.462  INFO 14752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 11:36:47.462  INFO 14752 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3869 ms
+2019-06-07 11:36:47.732  INFO 14752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 11:36:47.912  INFO 14752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 11:36:48.042  INFO 14752 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 11:36:48.152  INFO 14752 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 11:36:48.152  INFO 14752 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 11:36:48.402  INFO 14752 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 11:36:48.672  INFO 14752 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 11:36:49.692  INFO 14752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:36:49.792  INFO 14752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 11:36:49.802 DEBUG 14752 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : getQuestions() from StartServiceImpl
+2019-06-07 11:36:49.802  WARN 14752 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeControllerImpl' defined in file [C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes\com\rybickim\javaquiz\controller\impl\HomeControllerImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rybickim.javaquiz.controller.impl.HomeControllerImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-06-07 11:36:49.802  INFO 14752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:36:49.812  INFO 14752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 11:36:49.822  INFO 14752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 11:36:49.822  INFO 14752 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-06-07 11:36:49.842  INFO 14752 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-07 11:36:49.882 ERROR 14752 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeControllerImpl' defined in file [C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes\com\rybickim\javaquiz\controller\impl\HomeControllerImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rybickim.javaquiz.controller.impl.HomeControllerImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at com.rybickim.javaquiz.JavaQuizApplication.main(JavaQuizApplication.java:18) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rybickim.javaquiz.controller.impl.HomeControllerImpl]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:300) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.rybickim.javaquiz.service.impl.StartServiceImpl.getQuizExercises(StartServiceImpl.java:31) ~[classes/:na]
+	at com.rybickim.javaquiz.controller.impl.HomeControllerImpl.<init>(HomeControllerImpl.java:29) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) ~[spring-beans-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 26 common frames omitted
+
+2019-06-07 11:40:10.952  INFO 5556 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 5556 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 11:40:10.952 DEBUG 5556 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 11:40:10.952  INFO 5556 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 11:40:11.062  INFO 5556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 11:40:11.062  INFO 5556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 11:40:12.232  INFO 5556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 11:40:12.312  INFO 5556 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 1 repository interfaces.
+2019-06-07 11:40:12.731  INFO 5556 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79180bb2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 11:40:13.181  INFO 5556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 11:40:13.211  INFO 5556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 11:40:13.211  INFO 5556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 11:40:13.521  INFO 5556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 11:40:13.521  INFO 5556 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2459 ms
+2019-06-07 11:40:13.691  INFO 5556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 11:40:13.771  INFO 5556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 11:40:13.831  INFO 5556 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 11:40:13.881  INFO 5556 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 11:40:13.891  INFO 5556 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 11:40:14.001  INFO 5556 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 11:40:14.161  INFO 5556 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 11:40:14.801  INFO 5556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:40:14.871  INFO 5556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 11:40:15.211 DEBUG 5556 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@6057d41d
+2019-06-07 11:40:15.211 DEBUG 5556 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : getQuestions() from StartServiceImpl
+2019-06-07 11:40:15.311  INFO 5556 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-07 11:40:15.411 DEBUG 5556 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizEntity(id=null, question=What is your name?, answer=Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.), QuizEntity(id=null, question=What's your favorite color?, answer=Green! No, red! NOOOOOO!), QuizEntity(id=null, question=What is your quest?, answer=To find the Holy Grail.)]
+2019-06-07 11:40:15.441 DEBUG 5556 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@672f8f5a
+2019-06-07 11:40:15.441 DEBUG 5556 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@14dfb443
+2019-06-07 11:40:15.711  INFO 5556 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:40:15.761  WARN 5556 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 11:40:16.081  INFO 5556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-07 11:40:16.091  INFO 5556 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 5.939 seconds (JVM running for 8.073)
+2019-06-07 11:40:16.191  WARN 5556 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 22001, SQLState: 22001
+2019-06-07 11:40:16.191 ERROR 5556 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+2019-06-07 11:40:16.211 ERROR 5556 --- [restartedMain] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+2019-06-07 11:40:16.221  INFO 5556 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-07 11:40:16.231 ERROR 5556 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at com.rybickim.javaquiz.JavaQuizApplication.main(JavaQuizApplication.java:18) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138) ~[spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at com.sun.proxy.$Proxy88.save(Unknown Source) ~[na:na]
+	at com.rybickim.javaquiz.JavaQuizApplication.lambda$quizEntities$1(JavaQuizApplication.java:24) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:118) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3174) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3688) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1453) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:510) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3282) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 28 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:623) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:237) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	... 45 common frames omitted
+
+2019-06-07 11:40:16.231  INFO 5556 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:40:16.241  INFO 5556 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:40:16.241  INFO 5556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 11:40:16.251  INFO 5556 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 11:43:02.471  INFO 8752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 8752 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 11:43:02.471 DEBUG 8752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 11:43:02.471  INFO 8752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 11:43:02.581  INFO 8752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 11:43:02.581  INFO 8752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 11:43:03.981  INFO 8752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 11:43:04.081  INFO 8752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90ms. Found 1 repository interfaces.
+2019-06-07 11:43:04.641  INFO 8752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$da748ec4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 11:43:05.070  INFO 8752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 11:43:05.120  INFO 8752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 11:43:05.120  INFO 8752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 11:43:05.360  INFO 8752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 11:43:05.360  INFO 8752 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2779 ms
+2019-06-07 11:43:05.540  INFO 8752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 11:43:05.590  INFO 8752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 11:43:05.650  INFO 8752 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 11:43:05.720  INFO 8752 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 11:43:05.720  INFO 8752 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 11:43:05.830  INFO 8752 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 11:43:05.970  INFO 8752 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 11:43:06.570  INFO 8752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:43:06.640  INFO 8752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 11:43:06.850 DEBUG 8752 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@4735c7bd
+2019-06-07 11:43:06.860 DEBUG 8752 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : getQuestions() from StartServiceImpl
+2019-06-07 11:43:06.890  INFO 8752 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-07 11:43:06.970 DEBUG 8752 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizEntity(id=null, question=What's your favorite color?, answer=Green! No, red! NOOOOOO!), QuizEntity(id=null, question=What is your quest?, answer=To find the Holy Grail.), QuizEntity(id=null, question=What is your name?, answer=Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.)]
+2019-06-07 11:43:06.990 DEBUG 8752 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@4ab5a16d
+2019-06-07 11:43:06.990 DEBUG 8752 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@54d4d59c
+2019-06-07 11:43:07.240  INFO 8752 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:43:07.270  WARN 8752 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 11:43:07.520  INFO 8752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-07 11:43:07.530  INFO 8752 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 5.799 seconds (JVM running for 7.738)
+2019-06-07 11:43:07.560  WARN 8752 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 22001, SQLState: 22001
+2019-06-07 11:43:07.560 ERROR 8752 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+2019-06-07 11:43:07.560 ERROR 8752 --- [restartedMain] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+2019-06-07 11:43:07.570  INFO 8752 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-07 11:43:07.580 ERROR 8752 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at com.rybickim.javaquiz.JavaQuizApplication.main(JavaQuizApplication.java:18) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138) ~[spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at com.sun.proxy.$Proxy88.save(Unknown Source) ~[na:na]
+	at com.rybickim.javaquiz.JavaQuizApplication.lambda$quizEntities$1(JavaQuizApplication.java:24) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:118) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3174) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3688) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1453) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:510) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3282) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 28 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:623) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:237) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	... 45 common frames omitted
+
+2019-06-07 11:43:07.590  INFO 8752 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:43:07.590  INFO 8752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:43:07.600  INFO 8752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 11:43:07.610  INFO 8752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 11:47:44.218  INFO 12260 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 12260 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 11:47:44.218 DEBUG 12260 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 11:47:44.218  INFO 12260 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 11:47:44.378  INFO 12260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 11:47:44.378  INFO 12260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 11:47:46.518  INFO 12260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 11:47:46.608  INFO 12260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 1 repository interfaces.
+2019-06-07 11:47:46.988  INFO 12260 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$76242503] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 11:47:47.468  INFO 12260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 11:47:47.518  INFO 12260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 11:47:47.518  INFO 12260 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 11:47:47.828  INFO 12260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 11:47:47.828  INFO 12260 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3450 ms
+2019-06-07 11:47:48.098  INFO 12260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 11:47:48.158  INFO 12260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 11:47:48.218  INFO 12260 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 11:47:48.288  INFO 12260 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 11:47:48.288  INFO 12260 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 11:47:48.398  INFO 12260 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 11:47:48.538  INFO 12260 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 11:47:49.088  INFO 12260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:47:49.128  INFO 12260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 11:47:49.358 DEBUG 12260 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@68e4c36c
+2019-06-07 11:47:49.358 DEBUG 12260 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : getQuestions() from StartServiceImpl
+2019-06-07 11:47:49.408  INFO 12260 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-07 11:47:49.498 DEBUG 12260 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizEntity(id=null, question=What is your name?, answer=Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.), QuizEntity(id=null, question=What's your favorite color?, answer=Green! No, red! NOOOOOO!), QuizEntity(id=null, question=What is your quest?, answer=To find the Holy Grail.)]
+2019-06-07 11:47:49.518 DEBUG 12260 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@b922f85
+2019-06-07 11:47:49.518 DEBUG 12260 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@54d13bff
+2019-06-07 11:47:49.898  INFO 12260 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:47:49.978  WARN 12260 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 11:47:50.358  INFO 12260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-07 11:47:50.358  INFO 12260 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 6.8 seconds (JVM running for 8.767)
+2019-06-07 11:47:50.468  WARN 12260 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 22001, SQLState: 22001
+2019-06-07 11:47:50.468 ERROR 12260 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+2019-06-07 11:47:50.498 ERROR 12260 --- [restartedMain] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+2019-06-07 11:47:50.518  INFO 12260 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-07 11:47:50.568 ERROR 12260 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at com.rybickim.javaquiz.JavaQuizApplication.main(JavaQuizApplication.java:18) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138) ~[spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at com.sun.proxy.$Proxy89.save(Unknown Source) ~[na:na]
+	at com.rybickim.javaquiz.JavaQuizApplication.lambda$quizEntities$1(JavaQuizApplication.java:24) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:118) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3174) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3688) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1453) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:510) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3282) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 28 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:623) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:237) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	... 45 common frames omitted
+
+2019-06-07 11:47:50.588  INFO 12260 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:47:50.588  INFO 12260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:47:50.588  INFO 12260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 11:47:50.607  INFO 12260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-07 11:50:45.471  INFO 12376 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Starting JavaQuizApplication on 4-91-01-049983kozicki with PID 12376 (C:\Users\laboratorium\IdeaProjects\java-quiz\target\classes started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
+2019-06-07 11:50:45.471 DEBUG 12376 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-07 11:50:45.471  INFO 12376 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : No active profile set, falling back to default profiles: default
+2019-06-07 11:50:45.641  INFO 12376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-06-07 11:50:45.651  INFO 12376 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-06-07 11:50:46.961  INFO 12376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-06-07 11:50:47.051  INFO 12376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80ms. Found 1 repository interfaces.
+2019-06-07 11:50:47.431  INFO 12376 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fe13b18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-06-07 11:50:47.831  INFO 12376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-06-07 11:50:47.861  INFO 12376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-06-07 11:50:47.861  INFO 12376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-06-07 11:50:48.091  INFO 12376 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-06-07 11:50:48.091  INFO 12376 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2440 ms
+2019-06-07 11:50:48.261  INFO 12376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-07 11:50:48.311  INFO 12376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-07 11:50:48.371  INFO 12376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-06-07 11:50:48.431  INFO 12376 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2019-06-07 11:50:48.431  INFO 12376 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-06-07 11:50:48.571  INFO 12376 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-06-07 11:50:48.741  INFO 12376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-06-07 11:50:49.481  INFO 12376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:50:49.521  INFO 12376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-06-07 11:50:49.741 DEBUG 12376 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@4f718c28
+2019-06-07 11:50:49.741 DEBUG 12376 --- [restartedMain] c.r.j.service.impl.StartServiceImpl      : getQuestions() from StartServiceImpl
+2019-06-07 11:50:49.771  INFO 12376 --- [restartedMain] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-06-07 11:50:49.861 DEBUG 12376 --- [restartedMain] c.r.j.data.impl.DummyQuizRepository      : DummyQuizRepository(), quizExercises: [QuizEntity(id=null, question=What is your quest?, answer=To find the Holy Grail.), QuizEntity(id=null, question=What is your name?, answer=Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.), QuizEntity(id=null, question=What's your favorite color?, answer=Green! No, red! NOOOOOO!)]
+2019-06-07 11:50:49.871 DEBUG 12376 --- [restartedMain] c.r.javaquiz.service.impl.DummyService   : DummyService(): com.rybickim.javaquiz.data.impl.DummyQuizRepository@30245170
+2019-06-07 11:50:49.871 DEBUG 12376 --- [restartedMain] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.DummyService@111c595a
+2019-06-07 11:50:50.081  INFO 12376 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:50:50.111  WARN 12376 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-06-07 11:50:50.371  INFO 12376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-06-07 11:50:50.371  INFO 12376 --- [restartedMain] c.rybickim.javaquiz.JavaQuizApplication  : Started JavaQuizApplication in 5.79 seconds (JVM running for 7.672)
+2019-06-07 11:50:50.431  WARN 12376 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 22001, SQLState: 22001
+2019-06-07 11:50:50.431 ERROR 12376 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+2019-06-07 11:50:50.441 ERROR 12376 --- [restartedMain] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.DataException: could not execute statement]
+2019-06-07 11:50:50.451  INFO 12376 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-06-07 11:50:50.461 ERROR 12376 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at com.rybickim.javaquiz.JavaQuizApplication.main(JavaQuizApplication.java:18) [classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:300) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:138) ~[spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at com.sun.proxy.$Proxy89.save(Unknown Source) ~[na:na]
+	at com.rybickim.javaquiz.JavaQuizApplication.lambda$quizEntities$1(JavaQuizApplication.java:24) [classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) [spring-boot-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	... 10 common frames omitted
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:118) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3174) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3688) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1453) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:510) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3282) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2478) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	... 28 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Wartość za długa dla kolumny "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"
+Value too long for column "ANSWER VARCHAR(255)": "STRINGDECODE('Encapsulation provides objects with the ability to hide their internal characteristics and behavior. Each object p... (767)"; SQL statement:
+insert into quiz_entity (answer, question, id) values (?, ?, ?) [22001-197]
+	at org.h2.engine.SessionRemote.done(SessionRemote.java:623) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandRemote.executeUpdate(CommandRemote.java:237) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.9.Final.jar:5.3.9.Final]
+	... 45 common frames omitted
+
+2019-06-07 11:50:50.481  INFO 12376 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-07 11:50:50.481  INFO 12376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-07 11:50:50.491  INFO 12376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-07 11:50:50.521  INFO 12376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

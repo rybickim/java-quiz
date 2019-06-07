@@ -1,5 +1,6 @@
 package com.rybickim.javaquiz.service;
 
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 
 import java.util.List;
@@ -10,6 +11,6 @@ public interface StartService {
 //    Map<Integer, String> getQuestions();
 //    Map<String, String> getAnswers();
 
-    List<QuizExercise> getQuizExercises();
+    List<QuizEntity> getQuizExercises();
 
 }

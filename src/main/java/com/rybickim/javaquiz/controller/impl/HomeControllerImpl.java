@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.StartService;
 import org.json.JSONObject;
@@ -21,9 +22,9 @@ public class HomeControllerImpl implements HomeController {
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
     private StartService startService;
-    private List<QuizExercise> quizExercisesToShow;
+    private List<QuizEntity> quizExercisesToShow;
 
-    public HomeControllerImpl(@Qualifier("dummyService") StartService startService) {
+    public HomeControllerImpl(@Qualifier("service") StartService startService) {
         this.startService = startService;
         this.quizExercisesToShow = startService.getQuizExercises();
     }

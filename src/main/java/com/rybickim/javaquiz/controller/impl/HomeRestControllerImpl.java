@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeRestController;
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.StartService;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class HomeRestControllerImpl implements HomeRestController {
 
     @GetMapping("/rest/quiz")
     @Override
-    public List<QuizExercise> allQuizExercises() {
+    public List<QuizEntity> allQuizExercises() {
         logger.debug("allQuizExercises() from HomeRestControllerImpl");
 
         return startService.getQuizExercises();

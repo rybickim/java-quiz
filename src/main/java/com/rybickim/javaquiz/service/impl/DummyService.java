@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.service.impl;
 
 import com.rybickim.javaquiz.data.impl.DummyQuizRepository;
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.StartService;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class DummyService implements StartService {
     }
 
     @Override
-    public List<QuizExercise> getQuizExercises() {
+    public List<QuizEntity> getQuizExercises() {
         logger.debug("getQuestions() from DummyService");
 
         return dummyRepository.readAllQuizExercises();

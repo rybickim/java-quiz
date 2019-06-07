@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.data.impl;
 
 import com.rybickim.javaquiz.data.QuizRepository;
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.impl.DummyService;
 import org.slf4j.Logger;
@@ -19,18 +20,18 @@ public class DummyQuizRepository implements QuizRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(DummyQuizRepository.class);
 
-    private List<QuizExercise> quizExercises;
+    private List<QuizEntity> quizExercises;
 
     public DummyQuizRepository() {
         this.quizExercises = new LinkedList<>();
-        quizExercises.add(new QuizExercise("What is your name?","Lorem ipsum dolor sit amet," +
+        quizExercises.add(new QuizEntity("What is your name?","Lorem ipsum dolor sit amet," +
                 " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
                 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." +
                 " Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." +
                 " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim " +
                 "id est laborum."));
-        quizExercises.add(new QuizExercise("What is your quest?","To find the Holy Grail."));
-        quizExercises.add(new QuizExercise("What's your favorite color?","Green! No, red! NOOOOOO!"));
+        quizExercises.add(new QuizEntity("What is your quest?","To find the Holy Grail."));
+        quizExercises.add(new QuizEntity("What's your favorite color?","Green! No, red! NOOOOOO!"));
         Collections.shuffle(quizExercises);
 
         logger.debug("DummyQuizRepository(), quizExercises: {}", quizExercises);
@@ -40,7 +41,7 @@ public class DummyQuizRepository implements QuizRepository {
     }
 
     @Override
-    public List<QuizExercise> readAllQuizExercises() {
+    public List<QuizEntity> readAllQuizExercises() {
 
         logger.debug("readAllQuizExercises(), quizExercises: {}", quizExercises);
 

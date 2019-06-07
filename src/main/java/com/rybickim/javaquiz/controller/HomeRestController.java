@@ -1,5 +1,6 @@
 package com.rybickim.javaquiz.controller;
 
+import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 
 import java.util.List;
@@ -10,6 +11,6 @@ public interface HomeRestController {
 //    Map<Integer, String> quizQuestions();
 //    Map<String, String> quizAnswers();
 
-    List<QuizExercise> allQuizExercises();
+    List<QuizEntity> allQuizExercises();
 
 }
