@@ -1,13 +1,13 @@
 body {
-    margin-top: 100px;
-    /*display: block;*/
+    margin-top: 10rem;
     text-align: center;
 }
 
 .answer {
     display: inline-block;
-    /*text-align: center;*/
-    height: 50rem;
+    text-align: justify;
+    padding: 2rem;
     width: 50rem;
-    /*align-items: center;*/
+    background-color: #f8f8f8;
+    white-space: pre-wrap;
 }
