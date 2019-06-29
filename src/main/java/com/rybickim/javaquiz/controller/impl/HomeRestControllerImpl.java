@@ -22,7 +22,7 @@ public class HomeRestControllerImpl implements HomeRestController {
     private StartService startService;
 
     @Autowired
-    public HomeRestControllerImpl(@Qualifier("dummyService") StartService startService) {
+    public HomeRestControllerImpl(@Qualifier("service") StartService startService) {
         logger.debug("HomeRestControllerImpl(): " + startService);
         this.startService = startService;
     }
@@ -32,6 +32,6 @@ public class HomeRestControllerImpl implements HomeRestController {
     public List<QuizEntity> allQuizExercises() {
         logger.debug("allQuizExercises() from HomeRestControllerImpl");
 
-        return startService.getQuizExercises();
+        return startService.list();
     }
 }

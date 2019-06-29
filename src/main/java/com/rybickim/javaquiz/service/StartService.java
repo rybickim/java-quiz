@@ -8,9 +8,14 @@ import java.util.Map;
 
 public interface StartService {
 
-//    Map<Integer, String> getQuestions();
-//    Map<String, String> getAnswers();
+    long save(QuizEntity quizEntity);
 
-    List<QuizEntity> getQuizExercises();
+    QuizEntity findById(long id);
+
+    List<QuizEntity> list();
+
+    void update(QuizEntity quizEntity);
+
+    void deleteById(long id);
 
 }

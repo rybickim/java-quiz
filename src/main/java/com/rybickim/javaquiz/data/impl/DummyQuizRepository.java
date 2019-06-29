@@ -14,8 +14,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-@Repository
-@Qualifier("dummyRepo")
+//@Repository
+//@Qualifier("dummyRepo")
 public class DummyQuizRepository implements QuizRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(DummyQuizRepository.class);

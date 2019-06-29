@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class QuizEntity {
 
     @Id
+    @Column(name = "quiz_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(unique = true)

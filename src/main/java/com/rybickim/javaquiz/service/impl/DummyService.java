@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@Qualifier("dummyService")
+//@Service
+//@Qualifier("dummyService")
 public class DummyService implements StartService {
 
     private static final Logger logger = LoggerFactory.getLogger(DummyService.class);
@@ -26,10 +26,36 @@ public class DummyService implements StartService {
         this.dummyRepository = dummyRepository;
     }
 
-    @Override
-    public List<QuizEntity> getQuizExercises() {
-        logger.debug("getQuestions() from DummyService");
+//    @Override
+//    public List<QuizEntity> getQuizExercises() {
+//        logger.debug("getQuestions() from DummyService");
+//
+//        return dummyRepository.readAllQuizExercises();
+//    }
 
-        return dummyRepository.readAllQuizExercises();
+
+    @Override
+    public long save(QuizEntity quizEntity) {
+        return 0;
+    }
+
+    @Override
+    public QuizEntity findById(long id) {
+        return null;
+    }
+
+    @Override
+    public List<QuizEntity> list() {
+        return null;
+    }
+
+    @Override
+    public void update(QuizEntity quizEntity) {
+
+    }
+
+    @Override
+    public void deleteById(long id) {
+
     }
 }

@@ -8,8 +8,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@Qualifier("quizRepo")
-public interface QuizEntityRepository extends CrudRepository<QuizEntity, Long> {
+public interface QuizEntityRepository {
 
+    Long save(QuizEntity quizEntity);
+
+    QuizEntity get(Long id);
+
+    List<QuizEntity> list();
+
+    void update(QuizEntity quizEntity);
+
+    void delete(Long id);
 }

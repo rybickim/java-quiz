@@ -4,7 +4,6 @@ import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.StartService;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -26,7 +25,7 @@ public class HomeControllerImpl implements HomeController {
 
     public HomeControllerImpl(@Qualifier("service") StartService startService) {
         this.startService = startService;
-        this.quizExercisesToShow = startService.getQuizExercises();
+        this.quizExercisesToShow = startService.list();
     }
 
     @PostMapping({"/","/home"})
