@@ -13,15 +13,14 @@ import javax.persistence.*;
 @Table(name = "questions")
 public class Questions {
 
-    @Id
-    @Column(name = "question_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id // no need for naming Column and GeneratedValue
     private Long id;
+
     @Column(unique = true)
     private String question;
-    @OneToOne //read vlad mihalcea
-    @Column(name = "category_id")
-    private Long categoryId;
+    @OneToOne(fetch = FetchType.LAZY) //read vlad mihalcea for an explanation (less indexing)
+    @MapsId
+    private Categories categories;
 
     public Questions(String question){
         this.question = question;
