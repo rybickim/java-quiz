@@ -18,11 +18,27 @@ public class Questions {
 
     @Column(unique = true)
     private String question;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Categories categories;
+
     @OneToOne(fetch = FetchType.LAZY) //read vlad mihalcea for an explanation (less indexing)
     @MapsId
-    private Categories categories;
+    private ChosenQuestions chosenQuestions;
 
     public Questions(String question){
         this.question = question;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Questions )) return false;
+        return id != null && id.equals(((Questions) o).getId());
+    }
+    @Override
+    public int hashCode() {
+        return 31;
     }
 }

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Indexed;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Indexed
 @Entity
@@ -20,7 +21,20 @@ public class Categories {
     @Column(unique = true)
     private String category;
 
+    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Questions> questions;
+
     public Categories(String category){
         this.category = category;
+    }
+
+    public void addQuestion(Questions question){
+        questions.add(question);
+        question.setCategories(this);
+    }
+
+    public void removeQuestion(Questions question){
+        questions.remove(question);
+        question.setCategories(null);
     }
 }
