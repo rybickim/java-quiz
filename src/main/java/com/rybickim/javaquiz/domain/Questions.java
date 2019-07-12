@@ -13,7 +13,9 @@ import javax.persistence.*;
 @Table(name = "questions")
 public class Questions {
 
-    @Id // no need for naming Column and GeneratedValue
+    @Id
+    @Column(name = "question_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(unique = true)
@@ -26,6 +28,10 @@ public class Questions {
     @OneToOne(fetch = FetchType.LAZY) //read vlad mihalcea for an explanation (less indexing)
     @MapsId
     private ChosenQuestions chosenQuestions;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    private Answers answers;
 
     public Questions(String question){
         this.question = question;
