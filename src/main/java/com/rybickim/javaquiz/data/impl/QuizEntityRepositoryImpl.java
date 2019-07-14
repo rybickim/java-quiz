@@ -17,7 +17,7 @@ public class QuizEntityRepositoryImpl implements QuizEntityRepository {
 
     private SessionFactory sessionFactory;
 
-    @Autowired
+//    @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }

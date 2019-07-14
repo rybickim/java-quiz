@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Indexed;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.List;
@@ -15,5 +16,6 @@ import java.util.List;
 @Table(name = "multiple_choice_answers")
 public class MultipleChoiceAnswers extends Answers {
 
+    @ElementCollection
     private List<String> sentencesToChoose;
 }

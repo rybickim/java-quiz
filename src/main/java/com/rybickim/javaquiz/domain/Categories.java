@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Indexed;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Indexed
@@ -22,7 +23,7 @@ public class Categories {
     private String category;
 
     @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Questions> questions;
+    private List<Questions> questions = new ArrayList<>();
 
     public Categories(String category){
         this.category = category;

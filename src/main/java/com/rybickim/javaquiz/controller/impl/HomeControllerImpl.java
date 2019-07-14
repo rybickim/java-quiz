@@ -1,8 +1,11 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
+import com.rybickim.javaquiz.data.QuestionsCrudRepository;
+import com.rybickim.javaquiz.domain.Questions;
 import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.domain.QuizExercise;
+import com.rybickim.javaquiz.service.QuestionCrudService;
 import com.rybickim.javaquiz.service.StartService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +23,10 @@ public class HomeControllerImpl implements HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
-    private StartService startService;
-    private List<QuizEntity> quizExercisesToShow;
+    private QuestionCrudService startService;
+    private List<Questions> quizExercisesToShow;
 
-    public HomeControllerImpl(@Qualifier("service") StartService startService) {
+    public HomeControllerImpl(QuestionCrudService startService) {
         this.startService = startService;
         this.quizExercisesToShow = startService.list();
     }
@@ -55,7 +58,8 @@ public class HomeControllerImpl implements HomeController {
 
         if (!quizExercisesToShow.isEmpty()){
             question = quizExercisesToShow.get(0).getQuestion();
-            answer = quizExercisesToShow.get(0).getAnswer();
+            //TODO answers
+            answer = quizExercisesToShow.get(0).getCategories().getCategory();
         }
         logger.debug("question: {}", question);
         logger.debug("answer: {}", answer);

@@ -14,11 +14,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "true_false_answers")
-public class TrueFalseAnswers {
+public class TrueFalseAnswers extends Answers {
 
     private static final List<String> values = Arrays.asList("FALSE","TRUE");
 
     private Boolean correctValue;
+
+    public TrueFalseAnswers(Boolean correctValue){
+        this.correctValue = correctValue;
+    }
 
     public String getCorrectValueString(){
         if (correctValue) return values.get(1);

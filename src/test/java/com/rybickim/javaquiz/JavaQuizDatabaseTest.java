@@ -2,7 +2,9 @@ package com.rybickim.javaquiz;
 
 import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.data.QuizEntityRepository;
-import com.rybickim.javaquiz.domain.QuizEntity;
+import com.rybickim.javaquiz.domain.*;
+import com.rybickim.javaquiz.service.QuestionCrudService;
+import com.rybickim.javaquiz.service.QuestionService;
 import com.rybickim.javaquiz.service.StartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 
@@ -27,24 +32,24 @@ public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
 
-    private StartService startService;
+    private QuestionCrudService questionCrudService;
 
     @Autowired
-    public void setStartService(@Qualifier("service") StartService startService){
-        this.startService = startService;
+    public void setQuestionService(@Qualifier("questionCrudService") QuestionCrudService questionCrudService){
+        this.questionCrudService = questionCrudService;
     }
 
     @Test
-    public void testIfQuizIsSaved(){
+    public void testIfQuestionIsSaved(){
         // Given
-        int quizzesInDb = startService.list().size();
-        QuizEntity quizEntity = createQuiz(quizzesInDb + 1);
+        int questionsInDb = questionCrudService.list().size();
+        Questions question = createQuestionWithCategoryAndTrueFalseAnswer(questionsInDb + 1);
 
         // When
-        Long savedQuizId = startService.save(quizEntity);
+        Long savedQuizId = questionCrudService.save(question).getId();
 
         // Then
-        assertEquals(quizzesInDb + 1, startService.list().size());
+        assertEquals(questionsInDb + 1, questionCrudService.list().size());
     }
 
     @Test
@@ -53,24 +58,24 @@ public class JavaQuizDatabaseTest {
         long nonExistingId = 1223232343434L;
 
         // When
-        QuizEntity returnedQuiz = startService.findById(nonExistingId);
+        Questions maybeQuestion = questionCrudService.findById(nonExistingId);
 
         // Then
-        assertNull(returnedQuiz);
+        assertNull(maybeQuestion);
     }
 
     @Test
     public void testIfQuizIsFound(){
         // Given
-        int nextQuizNumber = startService.list().size() + 1;
-        QuizEntity quizEntity = createQuiz(nextQuizNumber);
-        Long savedQuizId = startService.save(quizEntity);
+        int nextQuestionNumber = questionCrudService.list().size() + 1;
+        Questions question = createQuestionWithCategoryAndTrueFalseAnswer(nextQuestionNumber);
+        Long savedQuizId = questionCrudService.save(question).getId();
 
         // When
-        QuizEntity quizFromDb = startService.findById(savedQuizId);
+        Questions maybeQuestion = questionCrudService.findById(savedQuizId);
 
         // Then
-        assertNotNull(quizFromDb);
+        assertNotNull(maybeQuestion);
     }
 
     @Test
@@ -78,9 +83,26 @@ public class JavaQuizDatabaseTest {
 
     }
 
-    //helper method
+    //helper methods
     private QuizEntity createQuiz(int quizNumber){
         QuizEntity quizEntity = new QuizEntity("question" + quizNumber,"answer" + quizNumber);
         return quizEntity;
     }
+
+    private Questions createQuestionWithCategoryAndTrueFalseAnswer(int no){
+        Questions question = new Questions("Question_" + no);
+
+        Categories category = new Categories("Category_" + no);
+        category.addQuestion(question);
+
+        Answers answer = new TrueFalseAnswers(Boolean.TRUE);
+        question.setAnswers(answer);
+
+        ChosenQuestions chosenQuestions = new ChosenQuestions();
+        question.setChosenQuestions(chosenQuestions);
+
+        return question;
+    }
+
+
 }

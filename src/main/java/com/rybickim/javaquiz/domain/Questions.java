@@ -22,14 +22,14 @@ public class Questions {
     private String question;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id")
     private Categories categories;
 
     @OneToOne(fetch = FetchType.LAZY) //read vlad mihalcea for an explanation (less indexing)
     @MapsId
     private ChosenQuestions chosenQuestions;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId
     private Answers answers;
 
