@@ -48,3 +48,303 @@
 2019-07-14 12:52:15.454  INFO 13787 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2019-07-14 12:52:15.457  INFO 13787 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-07-14 12:52:15.460  INFO 13787 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:08:04.116  INFO 14863 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 14863 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 13:08:04.142 DEBUG 14863 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 13:08:04.143  INFO 14863 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 13:08:04.689  INFO 14863 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 13:08:04.699  INFO 14863 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 13:08:05.239  INFO 14863 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 13:08:05.331  INFO 14863 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 13:08:05.345  INFO 14863 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 13:08:05.644  WARN 14863 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 13:08:05.646  WARN 14863 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 13:08:05.651  WARN 14863 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 13:08:06.115  INFO 14863 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:08:06.172 DEBUG 14863 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@7538cfe6
+2019-07-14 13:08:06.192  INFO 14863 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 13:08:06.469 DEBUG 14863 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@1f4dd016
+2019-07-14 13:08:06.475 DEBUG 14863 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@5cd701e4
+2019-07-14 13:08:06.479 DEBUG 14863 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@6c9151c1
+2019-07-14 13:08:07.532  INFO 14863 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 13:08:07.620  WARN 14863 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 13:08:08.185  INFO 14863 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 5.226 seconds (JVM running for 21.144)
+2019-07-14 13:08:08.328  INFO 14863 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 13:08:08.329  INFO 14863 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:08:08.326  INFO 14863 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:59:26.218  INFO 16999 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 16999 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 13:59:26.252 DEBUG 16999 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 13:59:26.253  INFO 16999 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 13:59:27.407  INFO 16999 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 13:59:27.419  INFO 16999 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 1 repository interfaces.
+2019-07-14 13:59:27.950  INFO 16999 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 13:59:28.027  INFO 16999 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 13:59:28.061  INFO 16999 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 13:59:28.362  WARN 16999 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 13:59:28.364  WARN 16999 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 13:59:28.368  WARN 16999 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 13:59:28.840  INFO 16999 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:59:28.892 DEBUG 16999 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@7538cfe6
+2019-07-14 13:59:28.907  INFO 16999 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 13:59:29.179 DEBUG 16999 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@1f4dd016
+2019-07-14 13:59:29.189 DEBUG 16999 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@5cd701e4
+2019-07-14 13:59:29.192 DEBUG 16999 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@6c9151c1
+2019-07-14 13:59:30.245  INFO 16999 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 13:59:30.372  WARN 16999 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 13:59:30.946  INFO 16999 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 6.35 seconds (JVM running for 105.912)
+2019-07-14 13:59:31.073  INFO 16999 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 13:59:31.084  INFO 16999 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 13:59:31.086  INFO 16999 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:13:11.251  INFO 17953 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 17953 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 14:13:11.267 DEBUG 17953 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 14:13:11.269  INFO 17953 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 14:13:11.752  INFO 17953 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 14:13:11.762  INFO 17953 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 14:13:12.226  INFO 17953 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 14:13:12.301  INFO 17953 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 14:13:12.316  INFO 17953 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 14:13:12.814  WARN 17953 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 14:13:12.816  WARN 17953 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 14:13:12.820  WARN 17953 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 14:13:13.235  INFO 17953 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:13:13.295 DEBUG 17953 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@2b41b8bb
+2019-07-14 14:13:13.314  INFO 17953 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 14:13:13.576 DEBUG 17953 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4cadd4d4
+2019-07-14 14:13:13.584 DEBUG 17953 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@6774f264
+2019-07-14 14:13:13.587 DEBUG 17953 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@2299f6d7
+2019-07-14 14:13:14.478  INFO 17953 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:13:14.598  WARN 17953 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 14:13:15.140  INFO 17953 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 4.277 seconds (JVM running for 17.763)
+2019-07-14 14:13:15.246  INFO 17953 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:13:15.248  INFO 17953 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:13:15.250  INFO 17953 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:48:31.752  INFO 19332 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 19332 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 14:48:31.772 DEBUG 19332 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 14:48:31.773  INFO 19332 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 14:48:32.184  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 14:48:32.194  INFO 19332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 14:48:32.499  INFO 19332 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$44728c68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 14:48:32.561  INFO 19332 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 14:48:32.576  INFO 19332 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 14:48:32.875  WARN 19332 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 14:48:32.878  WARN 19332 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 14:48:32.888  WARN 19332 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 14:48:33.307  INFO 19332 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:48:33.383 DEBUG 19332 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@5a1c7619
+2019-07-14 14:48:33.506  INFO 19332 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 14:48:34.759 DEBUG 19332 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@20a946d9
+2019-07-14 14:48:34.767 DEBUG 19332 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@34695b23
+2019-07-14 14:48:34.771 DEBUG 19332 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@2299f6d7
+2019-07-14 14:48:35.635  INFO 19332 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:48:35.722  WARN 19332 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 14:48:36.321  INFO 19332 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 4.982 seconds (JVM running for 16.476)
+2019-07-14 14:48:36.447  INFO 19332 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:48:36.453  INFO 19332 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:48:36.456  INFO 19332 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:53:35.255  INFO 19667 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 19667 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 14:53:35.257 DEBUG 19667 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 14:53:35.258  INFO 19667 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 14:53:35.684  INFO 19667 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 14:53:35.696  INFO 19667 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 1 repository interfaces.
+2019-07-14 14:53:36.028  INFO 19667 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$98471441] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 14:53:36.100  INFO 19667 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 14:53:36.115  INFO 19667 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 14:53:36.604  WARN 19667 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 14:53:36.608  WARN 19667 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 14:53:36.618  WARN 19667 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 14:53:37.072  INFO 19667 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:53:37.121 DEBUG 19667 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@4e647f39
+2019-07-14 14:53:37.134  INFO 19667 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 14:53:37.387 DEBUG 19667 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@778197c0
+2019-07-14 14:53:37.394 DEBUG 19667 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@fa11fda
+2019-07-14 14:53:37.397 DEBUG 19667 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@18b3db6e
+2019-07-14 14:53:38.121  INFO 19667 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:53:38.185  WARN 19667 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 14:53:38.733  INFO 19667 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 3.935 seconds (JVM running for 15.501)
+2019-07-14 14:53:38.782  INFO 19667 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 14:53:38.785  INFO 19667 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 14:53:38.788  INFO 19667 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:01:54.463  INFO 20088 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 20088 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 15:01:54.465 DEBUG 20088 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 15:01:54.466  INFO 20088 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 15:01:54.932  INFO 20088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 15:01:54.943  INFO 20088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
+2019-07-14 15:01:55.244  INFO 20088 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d57bcd9b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 15:01:55.295  INFO 20088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 15:01:55.308  INFO 20088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 15:01:55.567  WARN 20088 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 15:01:55.569  WARN 20088 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 15:01:55.575  WARN 20088 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 15:01:55.991  INFO 20088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:01:56.073 DEBUG 20088 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@4c28f97e
+2019-07-14 15:01:56.086  INFO 20088 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 15:01:56.323 DEBUG 20088 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@21d8da75
+2019-07-14 15:01:56.331 DEBUG 20088 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@18b3db6e
+2019-07-14 15:01:56.335 DEBUG 20088 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@1feb586d
+2019-07-14 15:01:57.085  INFO 20088 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:01:57.169  WARN 20088 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 15:01:57.797  INFO 20088 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 3.739 seconds (JVM running for 13.771)
+2019-07-14 15:01:57.854  INFO 20088 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:01:57.858  INFO 20088 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:01:57.861  INFO 20088 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:48:02.118  INFO 22046 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 22046 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 15:48:02.164 DEBUG 22046 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 15:48:02.168  INFO 22046 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 15:48:02.997  INFO 22046 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 15:48:03.008  INFO 22046 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
+2019-07-14 15:48:03.555  INFO 22046 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67daa4fd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 15:48:03.635  INFO 22046 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 15:48:03.648  INFO 22046 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 15:48:03.924  WARN 22046 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 15:48:03.925  WARN 22046 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 15:48:03.930  WARN 22046 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 15:48:04.373  INFO 22046 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:48:04.422 DEBUG 22046 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@4e647f39
+2019-07-14 15:48:04.437  INFO 22046 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 15:48:04.698 DEBUG 22046 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@778197c0
+2019-07-14 15:48:04.703 DEBUG 22046 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@fa11fda
+2019-07-14 15:48:04.707 DEBUG 22046 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@24e1e90a
+2019-07-14 15:48:05.739  INFO 22046 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:48:05.879  WARN 22046 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 15:48:06.619  INFO 22046 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 5.703 seconds (JVM running for 23.258)
+2019-07-14 15:48:06.797  INFO 22046 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:48:06.802  INFO 22046 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:48:06.804  INFO 22046 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:50:04.393  INFO 22290 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 22290 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 15:50:04.410 DEBUG 22290 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 15:50:04.411  INFO 22290 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 15:50:04.864  INFO 22290 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 15:50:04.874  INFO 22290 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 15:50:05.302  INFO 22290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$332dc329] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 15:50:05.370  INFO 22290 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 15:50:05.383  INFO 22290 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 15:50:05.670  WARN 22290 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 15:50:05.672  WARN 22290 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 15:50:05.679  WARN 22290 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 15:50:06.078  INFO 22290 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:50:06.132 DEBUG 22290 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@35f01759
+2019-07-14 15:50:06.150  INFO 22290 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 15:50:06.410 DEBUG 22290 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@2fea9a7b
+2019-07-14 15:50:06.419 DEBUG 22290 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@f2becb2
+2019-07-14 15:50:06.423 DEBUG 22290 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@7482309c
+2019-07-14 15:50:07.373  INFO 22290 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:50:07.547  WARN 22290 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 15:50:07.961  INFO 22290 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 4.02 seconds (JVM running for 17.194)
+2019-07-14 15:50:08.263  INFO 22290 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:50:08.268  INFO 22290 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:50:08.270  INFO 22290 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:51:15.863  INFO 22471 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 22471 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 15:51:15.865 DEBUG 22471 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 15:51:15.866  INFO 22471 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 15:51:16.272  INFO 22471 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 15:51:16.283  INFO 22471 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
+2019-07-14 15:51:16.650  INFO 22471 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d57bcd9b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 15:51:16.729  INFO 22471 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 15:51:16.747  INFO 22471 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 15:51:17.029  WARN 22471 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 15:51:17.031  WARN 22471 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 15:51:17.036  WARN 22471 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 15:51:17.503  INFO 22471 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:51:17.558 DEBUG 22471 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@2548fc01
+2019-07-14 15:51:17.571  INFO 22471 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 15:51:17.811 DEBUG 22471 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4331be30
+2019-07-14 15:51:17.819 DEBUG 22471 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@2aafa84f
+2019-07-14 15:51:17.822 DEBUG 22471 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@448892f1
+2019-07-14 15:51:18.568  INFO 22471 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:51:18.629  WARN 22471 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 15:51:19.209  INFO 22471 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 3.736 seconds (JVM running for 16.516)
+2019-07-14 15:51:19.278  INFO 22471 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 15:51:19.282  INFO 22471 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 15:51:19.283  INFO 22471 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:01:16.804  INFO 23792 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 23792 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 16:01:16.837 DEBUG 23792 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 16:01:16.839  INFO 23792 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 16:01:17.496  INFO 23792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 16:01:17.505  INFO 23792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 16:01:17.997  INFO 23792 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 16:01:18.078  INFO 23792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 16:01:18.091  INFO 23792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 16:01:18.376  WARN 23792 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 16:01:18.378  WARN 23792 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 16:01:18.382  WARN 23792 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 16:01:18.870  INFO 23792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:01:18.926 DEBUG 23792 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@b267745
+2019-07-14 16:01:18.951  INFO 23792 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 16:01:19.229 DEBUG 23792 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@31e22365
+2019-07-14 16:01:19.236 DEBUG 23792 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@7323dce7
+2019-07-14 16:01:19.239 DEBUG 23792 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@5f68eec6
+2019-07-14 16:01:20.337  INFO 23792 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:01:20.465  WARN 23792 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 16:01:21.055  INFO 23792 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 5.041 seconds (JVM running for 23.536)
+2019-07-14 16:01:21.174  INFO 23792 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:01:21.176  INFO 23792 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:01:21.177  INFO 23792 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:05.455  INFO 24119 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 24119 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 16:05:05.481 DEBUG 24119 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 16:05:05.482  INFO 24119 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 16:05:05.984  INFO 24119 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 16:05:05.994  INFO 24119 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
+2019-07-14 16:05:06.419  INFO 24119 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 16:05:06.482  INFO 24119 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 16:05:06.494  INFO 24119 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 16:05:06.807  WARN 24119 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 16:05:06.809  WARN 24119 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 16:05:06.814  WARN 24119 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 16:05:07.269  INFO 24119 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:07.331 DEBUG 24119 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@2b41b8bb
+2019-07-14 16:05:07.346  INFO 24119 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 16:05:07.605 DEBUG 24119 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4cadd4d4
+2019-07-14 16:05:07.612 DEBUG 24119 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@6774f264
+2019-07-14 16:05:07.615 DEBUG 24119 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@6c9151c1
+2019-07-14 16:05:08.664  INFO 24119 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:05:08.792  WARN 24119 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 16:05:09.325  INFO 24119 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 4.383 seconds (JVM running for 16.111)
+2019-07-14 16:05:09.413  INFO 24119 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:05:09.415  INFO 24119 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:09.419  INFO 24119 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:55.435  INFO 24275 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 24275 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-14 16:05:55.450 DEBUG 24275 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-14 16:05:55.451  INFO 24275 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-14 16:05:55.918  INFO 24275 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-14 16:05:55.928  INFO 24275 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
+2019-07-14 16:05:56.362  INFO 24275 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$332dc329] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-14 16:05:56.486  INFO 24275 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-07-14 16:05:56.500  INFO 24275 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-14 16:05:56.795  WARN 24275 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-14 16:05:56.796  WARN 24275 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-14 16:05:56.802  WARN 24275 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-14 16:05:57.861  INFO 24275 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:57.955 DEBUG 24275 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@49b9ba6a
+2019-07-14 16:05:58.004  INFO 24275 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-07-14 16:05:58.277 DEBUG 24275 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@7be62956
+2019-07-14 16:05:58.285 DEBUG 24275 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@39c5a105
+2019-07-14 16:05:58.288 DEBUG 24275 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@492fa72a
+2019-07-14 16:05:59.166  INFO 24275 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:05:59.260  WARN 24275 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-07-14 16:05:59.880  INFO 24275 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 4.957 seconds (JVM running for 18.307)
+2019-07-14 16:05:59.956  INFO 24275 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-14 16:05:59.959  INFO 24275 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-14 16:05:59.962  INFO 24275 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

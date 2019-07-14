@@ -1,11 +1,8 @@
 package com.rybickim.javaquiz.service.impl;
 
 import com.rybickim.javaquiz.data.QuestionsRepository;
-import com.rybickim.javaquiz.data.QuizEntityRepository;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.domain.QuizEntity;
 import com.rybickim.javaquiz.service.QuestionService;
-import com.rybickim.javaquiz.service.StartService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

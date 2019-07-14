@@ -15,17 +15,17 @@ public class Questions {
 
     @Id
     @Column(name = "question_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(unique = true)
     private String question;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Categories categories;
 
-    @OneToOne(fetch = FetchType.LAZY) //read vlad mihalcea for an explanation (less indexing)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId
     private ChosenQuestions chosenQuestions;
 

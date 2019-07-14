@@ -16,6 +16,6 @@ public class Answers {
 
     @Id
     @Column(name = "answer_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 }

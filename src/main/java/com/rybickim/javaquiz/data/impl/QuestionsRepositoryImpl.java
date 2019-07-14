@@ -1,12 +1,9 @@
 package com.rybickim.javaquiz.data.impl;
 
 import com.rybickim.javaquiz.data.QuestionsRepository;
-import com.rybickim.javaquiz.data.QuizEntityRepository;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.domain.QuizEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 

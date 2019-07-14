@@ -15,7 +15,7 @@ public class ChosenQuestions {
 
     @Id
     @Column(name = "choice_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
 }

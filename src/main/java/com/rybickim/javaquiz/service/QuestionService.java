@@ -1,7 +1,6 @@
 package com.rybickim.javaquiz.service;
 
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.domain.QuizEntity;
 
 import java.util.List;
 

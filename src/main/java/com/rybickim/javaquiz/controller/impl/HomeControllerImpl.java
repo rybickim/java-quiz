@@ -1,20 +1,14 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
-import com.rybickim.javaquiz.data.QuestionsCrudRepository;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.domain.QuizEntity;
-import com.rybickim.javaquiz.domain.QuizExercise;
 import com.rybickim.javaquiz.service.QuestionCrudService;
-import com.rybickim.javaquiz.service.StartService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.*;
 

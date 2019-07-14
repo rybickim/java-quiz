@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Qualifier("questionCrudService")
@@ -37,8 +38,8 @@ public class QuestionCrudServiceImpl implements QuestionCrudService {
 
     @Override
     @Transactional
-    public Questions findById(long id) {
-        return questionsCrudRepository.findById(id).orElse(new Questions());
+    public Optional<Questions> findById(long id) {
+        return questionsCrudRepository.findById(id);
     }
 
     @Override

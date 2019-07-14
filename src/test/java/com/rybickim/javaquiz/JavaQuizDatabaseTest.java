@@ -1,27 +1,18 @@
 package com.rybickim.javaquiz;
 
 import com.rybickim.javaquiz.config.DatabaseConfig;
-import com.rybickim.javaquiz.data.QuizEntityRepository;
 import com.rybickim.javaquiz.domain.*;
 import com.rybickim.javaquiz.service.QuestionCrudService;
-import com.rybickim.javaquiz.service.QuestionService;
-import com.rybickim.javaquiz.service.StartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.*;
 
@@ -41,6 +32,8 @@ public class JavaQuizDatabaseTest {
 
     @Test
     public void testIfQuestionIsSaved(){
+
+
         // Given
         int questionsInDb = questionCrudService.list().size();
         Questions question = createQuestionWithCategoryAndTrueFalseAnswer(questionsInDb + 1);
@@ -58,7 +51,7 @@ public class JavaQuizDatabaseTest {
         long nonExistingId = 1223232343434L;
 
         // When
-        Questions maybeQuestion = questionCrudService.findById(nonExistingId);
+        Optional<Questions> maybeQuestion = questionCrudService.findById(nonExistingId);
 
         // Then
         assertNull(maybeQuestion);
@@ -72,7 +65,7 @@ public class JavaQuizDatabaseTest {
         Long savedQuizId = questionCrudService.save(question).getId();
 
         // When
-        Questions maybeQuestion = questionCrudService.findById(savedQuizId);
+        Optional<Questions> maybeQuestion = questionCrudService.findById(savedQuizId);
 
         // Then
         assertNotNull(maybeQuestion);
@@ -84,22 +77,24 @@ public class JavaQuizDatabaseTest {
     }
 
     //helper methods
-    private QuizEntity createQuiz(int quizNumber){
-        QuizEntity quizEntity = new QuizEntity("question" + quizNumber,"answer" + quizNumber);
-        return quizEntity;
-    }
 
     private Questions createQuestionWithCategoryAndTrueFalseAnswer(int no){
         Questions question = new Questions("Question_" + no);
-
-        Categories category = new Categories("Category_" + no);
-        category.addQuestion(question);
 
         Answers answer = new TrueFalseAnswers(Boolean.TRUE);
         question.setAnswers(answer);
 
         ChosenQuestions chosenQuestions = new ChosenQuestions();
         question.setChosenQuestions(chosenQuestions);
+
+        Categories category = new Categories("Category_" + no);
+        category.addQuestion(question);
+
+        logger.debug("Question - question: [{}], answer: [{}], chosenQuestions: [{}], category_name: [{}]",
+                question.getQuestion(),
+                question.getAnswers(),
+                question.getChosenQuestions(),
+                question.getCategories().getCategory());
 
         return question;
     }

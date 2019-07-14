@@ -1,37 +1,34 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeRestController;
-import com.rybickim.javaquiz.domain.QuizEntity;
-import com.rybickim.javaquiz.domain.QuizExercise;
-import com.rybickim.javaquiz.service.StartService;
+import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.service.QuestionCrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class HomeRestControllerImpl implements HomeRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeRestControllerImpl.class);
 
-    private StartService startService;
+    private QuestionCrudService questionCrudService;
 
     @Autowired
-    public HomeRestControllerImpl(@Qualifier("service") StartService startService) {
-        logger.debug("HomeRestControllerImpl(): " + startService);
-        this.startService = startService;
+    public HomeRestControllerImpl(QuestionCrudService questionCrudService) {
+        logger.debug("HomeRestControllerImpl(): " + questionCrudService);
+        this.questionCrudService = questionCrudService;
     }
 
     @GetMapping("/rest/quiz")
     @Override
-    public List<QuizEntity> allQuizExercises() {
+    public List<Questions> allQuizExercises() {
         logger.debug("allQuizExercises() from HomeRestControllerImpl");
 
-        return startService.list();
+        return questionCrudService.list();
     }
 }
