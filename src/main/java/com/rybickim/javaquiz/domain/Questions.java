@@ -27,10 +27,12 @@ public class Questions {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId
+    @JoinColumn(name = "choice_id")
     private ChosenQuestions chosenQuestions;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId
+    @JoinColumn(name = "answer_id")
     private Answers answers;
 
     public Questions(String question){
