@@ -18,17 +18,17 @@ public class Questions {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(unique = true)
+    @Column //shouldn't be unique because some questions might be repeated (e.g. case of multiple choice question: which one of the statements below is correct?)
     private String question;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Categories categories;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @MapsId
-    @JoinColumn(name = "choice_id")
-    private ChosenQuestions chosenQuestions;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @MapsId
+//    @JoinColumn(name = "choice_id")
+//    private ChosenQuestions chosenQuestions;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId

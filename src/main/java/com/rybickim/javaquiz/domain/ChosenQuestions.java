@@ -13,9 +13,16 @@ import javax.persistence.*;
 @Table(name = "chosen_questions")
 public class ChosenQuestions {
 
+//    @Id
+//    @Column(name = "choice_id")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     @Id
-    @Column(name = "choice_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    @JoinColumn(name = "choice_id")
+    private Questions questions;
 
 }

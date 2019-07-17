@@ -84,16 +84,12 @@ public class JavaQuizDatabaseTest {
         Answers answer = new TrueFalseAnswers(Boolean.TRUE);
         question.setAnswers(answer);
 
-        ChosenQuestions chosenQuestions = new ChosenQuestions();
-        question.setChosenQuestions(chosenQuestions);
-
         Categories category = new Categories("Category_" + no);
         category.addQuestion(question);
 
-        logger.debug("Question - question: [{}], answer: [{}], chosenQuestions: [{}], category_name: [{}]",
+        logger.debug("Question - question: [{}], answer: [{}], category_name: [{}]",
                 question.getQuestion(),
                 question.getAnswers(),
-                question.getChosenQuestions(),
                 question.getCategories().getCategory());
 
         return question;
