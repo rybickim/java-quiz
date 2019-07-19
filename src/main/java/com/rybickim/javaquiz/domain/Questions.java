@@ -47,4 +47,24 @@ public class Questions {
     public int hashCode() {
         return 31;
     }
+
+    public void addChosenQuestion(ChosenQuestions chosenQuestion){
+        this.setChosenQuestions(chosenQuestion);
+        chosenQuestion.setQuestions(this);
+    }
+
+    public void removeChosenQuestion(ChosenQuestions chosenQuestion){
+        this.setChosenQuestions(null);
+        chosenQuestion.setQuestions(null);
+    }
+
+    public void addAnswer(Answers answer){
+        this.setAnswers(answer);
+        answer.setQuestions(this);
+    }
+
+    public void removeAnswer(Answers answer){
+        this.setAnswers(null);
+        answer.setQuestions(null);
+    }
 }

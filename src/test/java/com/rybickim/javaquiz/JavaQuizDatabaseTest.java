@@ -82,9 +82,8 @@ public class JavaQuizDatabaseTest {
     private Questions createQuestionWithCategoryAndTrueFalseAnswer(int no){
         Questions question = new Questions("Question_" + no);
 
-        Answers answer = new TrueFalseAnswers(Boolean.TRUE);
-        question.setAnswers(answer);
-        answer.setQuestions(question);
+        Answers answer = new TrueFalseAnswers(Boolean.FALSE);
+        question.addAnswer(answer);
 
         Categories category = new Categories("Category_" + no);
         category.addQuestion(question);
