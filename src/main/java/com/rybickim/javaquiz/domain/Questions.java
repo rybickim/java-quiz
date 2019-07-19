@@ -25,14 +25,12 @@ public class Questions {
     @JoinColumn(name = "category_id")
     private Categories categories;
 
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @MapsId
-//    @JoinColumn(name = "choice_id")
-//    private ChosenQuestions chosenQuestions;
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
+            cascade = CascadeType.ALL, optional = false)
+    private ChosenQuestions chosenQuestions;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @MapsId
-    @JoinColumn(name = "answer_id")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
+            cascade = CascadeType.ALL, optional = false)
     private Answers answers;
 
     public Questions(String question){

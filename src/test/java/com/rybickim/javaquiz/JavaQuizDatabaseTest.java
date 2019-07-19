@@ -54,7 +54,7 @@ public class JavaQuizDatabaseTest {
         Optional<Questions> maybeQuestion = questionCrudService.findById(nonExistingId);
 
         // Then
-        assertNull(maybeQuestion);
+        assertEquals(Optional.empty(), maybeQuestion);
     }
 
     @Test
@@ -65,10 +65,11 @@ public class JavaQuizDatabaseTest {
         Long savedQuizId = questionCrudService.save(question).getId();
 
         // When
-        Optional<Questions> maybeQuestion = questionCrudService.findById(savedQuizId);
+        Questions maybeQuestion = questionCrudService.findById(savedQuizId).orElse(new Questions());
 
         // Then
         assertNotNull(maybeQuestion);
+        assertEquals(question, maybeQuestion);
     }
 
     @Test
@@ -83,6 +84,7 @@ public class JavaQuizDatabaseTest {
 
         Answers answer = new TrueFalseAnswers(Boolean.TRUE);
         question.setAnswers(answer);
+        answer.setQuestions(question);
 
         Categories category = new Categories("Category_" + no);
         category.addQuestion(question);

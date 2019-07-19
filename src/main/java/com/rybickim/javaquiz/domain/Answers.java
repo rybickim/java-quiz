@@ -15,7 +15,10 @@ import javax.persistence.*;
 public class Answers {
 
     @Id
-    @Column(name = "answer_id", updatable = false, nullable = false)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    private Questions questions;
+
 }
