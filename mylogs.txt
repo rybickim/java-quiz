@@ -1,415 +1,300 @@
-2019-07-19 12:41:29.138  INFO 1116 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 1116 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 12:41:29.168 DEBUG 1116 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 12:41:29.168  INFO 1116 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 12:41:31.358  INFO 1116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 12:41:31.568  INFO 1116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 180ms. Found 1 repository interfaces.
-2019-07-19 12:41:33.267  INFO 1116 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$442baf76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 12:41:33.847  INFO 1116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2019-07-20 04:18:38.660  INFO 7924 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 7924 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-20 04:18:38.673 DEBUG 7924 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-20 04:18:38.674  INFO 7924 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-20 04:18:39.396  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-20 04:18:39.407  INFO 7924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 1 repository interfaces.
+2019-07-20 04:18:39.968  INFO 7924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-20 04:18:40.108  INFO 7924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-07-19 12:41:33.977  INFO 1116 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 12:41:33.977  INFO 1116 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 12:41:34.387  INFO 1116 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 12:41:35.187  INFO 1116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 12:41:35.707  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 12:41:35.707  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 12:41:35.707  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 12:41:37.337  INFO 1116 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:41:38.127 DEBUG 1116 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@5c9b5e62
-2019-07-19 12:41:38.407  INFO 1116 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 12:41:38.647 DEBUG 1116 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@7619fbe7
-2019-07-19 12:41:38.667 DEBUG 1116 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@6595ffce
-2019-07-19 12:41:40.677  INFO 1116 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 12:41:40.827  WARN 1116 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 12:41:41.907  INFO 1116 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 13.789 seconds (JVM running for 19.099)
-2019-07-19 12:41:42.406  INFO 1116 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 12:41:42.406  INFO 1116 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7a13ad55, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@303db609, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@20a116a0, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6dbdeb69, org.springframework.test.context.support.DirtiesContextTestExecutionListener@a238a8e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5773f83d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7fcfe065, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7d2baa56, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b4a2887, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@23b087c3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@237c8718, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@325e03b]
-2019-07-19 12:41:42.876  INFO 1116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 12:41:42.906  INFO 1116 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 1 repository interfaces.
-2019-07-19 12:41:43.216  INFO 1116 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2019-07-20 04:18:40.117  INFO 7924 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-20 04:18:40.139  WARN 7924 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-20 04:18:40.142  WARN 7924 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-20 04:18:40.148  WARN 7924 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-20 04:18:40.151  WARN 7924 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+2019-07-20 04:18:40.163  INFO 7924 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-20 04:18:40.170 ERROR 7924 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119) [spring-boot-test-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1274) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:811) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:736) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1696) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1664) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:287) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 42 common frames omitted
+
+2019-07-20 04:18:40.175 ERROR 7924 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1b0e9707] to prepare test instance [com.rybickim.javaquiz.JavaQuizApplicationTests@39133244]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119) ~[spring-boot-test-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 27 common frames omitted
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1274) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:811) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:736) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1696) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1664) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:287) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 42 common frames omitted
+
+2019-07-20 04:32:29.294  INFO 8977 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 8977 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
+2019-07-20 04:32:29.296 DEBUG 8977 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-20 04:32:29.301  INFO 8977 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
+2019-07-20 04:32:29.802  INFO 8977 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-20 04:32:29.815  INFO 8977 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 1 repository interfaces.
+2019-07-20 04:32:30.194  INFO 8977 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f09103ba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-20 04:32:30.261  INFO 8977 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-07-19 12:41:43.286  INFO 1116 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 12:41:43.316  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 12:41:43.316  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 12:41:43.316  WARN 1116 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 12:41:43.966  INFO 1116 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:41:44.156 DEBUG 1116 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@2a7b5925
-2019-07-19 12:41:44.226  INFO 1116 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 12:41:44.246 DEBUG 1116 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@5a5b394
-2019-07-19 12:41:44.256 DEBUG 1116 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@4987142d
-2019-07-19 12:41:44.926 DEBUG 1116 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 12:41:45.076  WARN 1116 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 12:41:45.076 ERROR 1116 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 12:41:45.086 ERROR 1116 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 12:41:45.136 DEBUG 1116 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 12:41:45.206  WARN 1116 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 12:41:45.206 ERROR 1116 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 12:41:45.206 ERROR 1116 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 12:41:45.426  INFO 1116 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:41:45.416  INFO 1116 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 12:41:45.426  INFO 1116 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:55:46.950  INFO 9920 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 9920 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 12:55:46.960 DEBUG 9920 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 12:55:46.960  INFO 9920 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 12:55:49.180  INFO 9920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 12:55:49.470  INFO 9920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 250ms. Found 1 repository interfaces.
-2019-07-19 12:55:51.590  INFO 9920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7e077d02] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 12:55:52.330  INFO 9920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 12:55:52.520  INFO 9920 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 12:55:52.530  INFO 9920 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 12:55:53.220  INFO 9920 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 12:55:55.645  INFO 9920 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 12:55:56.485  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 12:55:56.505  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 12:55:56.515  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 12:55:59.295  INFO 9920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:56:00.805 DEBUG 9920 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@51df2a41
-2019-07-19 12:56:01.405  INFO 9920 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 12:56:02.075 DEBUG 9920 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@55e5415d
-2019-07-19 12:56:02.105 DEBUG 9920 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@3e2d65e1
-2019-07-19 12:56:04.835  INFO 9920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 12:56:05.025  WARN 9920 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 12:56:06.194  INFO 9920 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 20.743 seconds (JVM running for 24.751)
-2019-07-19 12:56:06.794  INFO 9920 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 12:56:06.794  INFO 9920 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@75b3ef1a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@43e2b8da, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1ac68548, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c3a64b6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@761b9314, org.springframework.test.context.transaction.TransactionalTestExecutionListener@20e9c165, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@eabecf5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@417b3642, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6bd28e4a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@55e88bc, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@544300a6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4c12f54a]
-2019-07-19 12:56:07.284  INFO 9920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 12:56:07.304  INFO 9920 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 1 repository interfaces.
-2019-07-19 12:56:07.634  INFO 9920 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 12:56:07.754  INFO 9920 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 12:56:07.824  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 12:56:07.834  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 12:56:07.834  WARN 9920 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 12:56:09.034  INFO 9920 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:56:09.154 DEBUG 9920 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@37816ea6
-2019-07-19 12:56:09.234  INFO 9920 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 12:56:09.254 DEBUG 9920 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@7a74672
-2019-07-19 12:56:09.264 DEBUG 9920 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@311453ab
-2019-07-19 12:56:10.264 DEBUG 9920 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 12:56:10.674  WARN 9920 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 12:56:10.674 ERROR 9920 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 12:56:10.684 ERROR 9920 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 12:56:10.874 DEBUG 9920 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 12:56:10.934  WARN 9920 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 12:56:10.934 ERROR 9920 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 12:56:10.934 ERROR 9920 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 12:56:11.124  INFO 9920 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 12:56:11.124  INFO 9920 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 12:56:11.124  INFO 9920 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:23:42.688  INFO 10168 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 10168 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:23:42.708 DEBUG 10168 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:23:42.708  INFO 10168 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:23:44.817  INFO 10168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:23:45.077  INFO 10168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 210ms. Found 1 repository interfaces.
-2019-07-19 13:23:46.397  INFO 10168 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d745182e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:23:46.917  INFO 10168 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:23:47.107  INFO 10168 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:23:47.117  INFO 10168 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:23:47.547  INFO 10168 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:23:48.337  INFO 10168 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:23:48.797  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:23:48.807  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:23:48.817  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:23:50.897  INFO 10168 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:23:51.917 DEBUG 10168 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@77d959f1
-2019-07-19 13:23:52.339  INFO 10168 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:23:52.880 DEBUG 10168 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@57a5b03
-2019-07-19 13:23:52.920 DEBUG 10168 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@2b3242a5
-2019-07-19 13:23:54.680  INFO 10168 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:23:54.790  WARN 10168 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:23:55.803  INFO 10168 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 14.234 seconds (JVM running for 16.687)
-2019-07-19 13:23:56.167  INFO 10168 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:23:56.168  INFO 10168 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4bcf08ae, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@626b9092, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1ac2829e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7a7f2247, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4946dfde, org.springframework.test.context.transaction.TransactionalTestExecutionListener@77972964, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@794f937a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7aa1fb0e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e663ab, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4b74a67a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4e25282d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3b29d36c]
-2019-07-19 13:23:56.641  INFO 10168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:23:56.657  INFO 10168 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 1 repository interfaces.
-2019-07-19 13:23:56.907  INFO 10168 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:23:56.947  INFO 10168 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:23:56.967  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:23:56.967  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:23:56.977  WARN 10168 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:23:57.377  INFO 10168 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:23:57.537 DEBUG 10168 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@3962b216
-2019-07-19 13:23:57.587  INFO 10168 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:23:57.607 DEBUG 10168 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@3183a37c
-2019-07-19 13:23:57.617 DEBUG 10168 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@380e3122
-2019-07-19 13:23:58.287 DEBUG 10168 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:23:58.467  WARN 10168 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 13:23:58.467 ERROR 10168 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 13:23:58.477 ERROR 10168 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 13:23:58.537 DEBUG 10168 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:23:58.617  WARN 10168 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23502, SQLState: 23502
-2019-07-19 13:23:58.617 ERROR 10168 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Pole nie mo¿e byæ NULL"CHOSENQUESTIONS_CHOICE_ID"
-NULL not allowed for column "CHOSENQUESTIONS_CHOICE_ID"; SQL statement:
-insert into questions (category_id, question, answer_id) values (?, ?, ?) [23502-199]
-2019-07-19 13:23:58.617 ERROR 10168 --- [main] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
-2019-07-19 13:23:58.747  INFO 10168 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:23:58.747  INFO 10168 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:23:58.747  INFO 10168 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:30:32.852  INFO 8528 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 8528 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:30:32.862 DEBUG 8528 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:30:32.862  INFO 8528 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:30:34.912  INFO 8528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:30:35.132  INFO 8528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 170ms. Found 1 repository interfaces.
-2019-07-19 13:30:36.852  INFO 8528 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d745182e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:30:37.552  INFO 8528 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:30:37.702  INFO 8528 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:30:37.702  INFO 8528 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:30:38.222  INFO 8528 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:30:39.192  INFO 8528 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:30:39.762  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:30:39.762  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:30:39.782  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:30:41.712  INFO 8528 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:30:42.491 DEBUG 8528 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@72ec16f8
-2019-07-19 13:30:42.721  INFO 8528 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:30:42.981 DEBUG 8528 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@44a44a04
-2019-07-19 13:30:43.031 DEBUG 8528 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@568ef502
-2019-07-19 13:30:44.531  INFO 8528 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:30:44.651  WARN 8528 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:30:45.641  INFO 8528 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 13.878 seconds (JVM running for 16.397)
-2019-07-19 13:30:45.961  INFO 8528 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:30:45.961  INFO 8528 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@268e30d4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c50709a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@af007d6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@a20898c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5dff108c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@22d47f09, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@28100232, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@26728255, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@32c8d67, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@281963c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2a2815cc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@18fa5af6]
-2019-07-19 13:30:46.571  INFO 8528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:30:46.601  INFO 8528 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 1 repository interfaces.
-2019-07-19 13:30:46.941  INFO 8528 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:30:46.991  INFO 8528 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:30:47.031  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:30:47.031  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:30:47.041  WARN 8528 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:30:47.711  INFO 8528 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:30:47.841 DEBUG 8528 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@63053b71
-2019-07-19 13:30:47.881  INFO 8528 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:30:47.911 DEBUG 8528 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4687c184
-2019-07-19 13:30:47.921 DEBUG 8528 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@37c45154
-2019-07-19 13:30:48.701 DEBUG 8528 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:30:48.931 DEBUG 8528 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:30:49.131  INFO 8528 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:30:49.131  INFO 8528 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:30:49.131  INFO 8528 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:34:44.039  INFO 14996 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 14996 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:34:44.039 DEBUG 14996 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:34:44.039  INFO 14996 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:34:45.842  INFO 14996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:34:46.132  INFO 14996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 240ms. Found 1 repository interfaces.
-2019-07-19 13:34:47.402  INFO 14996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8209f202] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:34:47.982  INFO 14996 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:34:48.232  INFO 14996 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:34:48.242  INFO 14996 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:34:49.112  INFO 14996 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:34:49.832  INFO 14996 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:34:50.242  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:34:50.252  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:34:50.252  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:34:51.302  INFO 14996 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:34:51.922 DEBUG 14996 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@2fa47368
-2019-07-19 13:34:52.242  INFO 14996 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:34:52.642 DEBUG 14996 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@7d4da729
-2019-07-19 13:34:52.662 DEBUG 14996 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@42403dc6
-2019-07-19 13:34:54.481  INFO 14996 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:34:54.681  WARN 14996 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:34:55.911  INFO 14996 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 13.112 seconds (JVM running for 15.804)
-2019-07-19 13:34:56.351  INFO 14996 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:34:56.351  INFO 14996 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4d9bccfe, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@412440c1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@36c45149, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@33f4844b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@201b52f7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@435a2c7d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@57806346, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@40416321, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3ab70d34, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@289cf7db, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7c523bdd, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3741071d]
-2019-07-19 13:34:56.741  INFO 14996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:34:56.761  INFO 14996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 1 repository interfaces.
-2019-07-19 13:34:56.981  INFO 14996 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:34:57.131  INFO 14996 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:34:57.151  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:34:57.151  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:34:57.161  WARN 14996 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:34:57.481  INFO 14996 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:34:57.601 DEBUG 14996 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@6167a456
-2019-07-19 13:34:57.681  INFO 14996 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:34:57.691 DEBUG 14996 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@54eb2bf6
-2019-07-19 13:34:57.701 DEBUG 14996 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@775a5a67
-2019-07-19 13:34:58.671 DEBUG 14996 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:34:58.874 DEBUG 14996 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:34:59.054  INFO 14996 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:34:59.058  INFO 14996 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:34:59.056  INFO 14996 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:41:44.119  INFO 12424 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 12424 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:41:44.121 DEBUG 12424 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:41:44.123  INFO 12424 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:41:45.842  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:41:45.958  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103ms. Found 1 repository interfaces.
-2019-07-19 13:41:47.166  INFO 12424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fc484bcd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:41:47.568  INFO 12424 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:41:47.725  INFO 12424 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:41:47.728  INFO 12424 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:41:47.986  INFO 12424 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:41:48.465  INFO 12424 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:41:48.922  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:41:48.929  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:41:48.945  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:41:49.977  INFO 12424 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:41:50.600 DEBUG 12424 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@312819ae
-2019-07-19 13:41:50.767  INFO 12424 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:41:51.058 DEBUG 12424 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@3a69014e
-2019-07-19 13:41:51.115 DEBUG 12424 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@552cb0d5
-2019-07-19 13:41:52.793  INFO 12424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:41:52.923  WARN 12424 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:41:53.923  INFO 12424 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 10.554 seconds (JVM running for 12.161)
-2019-07-19 13:41:54.285  INFO 12424 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:41:54.287  INFO 12424 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2de07c57, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@76cbee13, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@59d09ff3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17d0d3d7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@39fc17be, org.springframework.test.context.transaction.TransactionalTestExecutionListener@106edde4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4d9cf71d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5c43cb12, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5db66c3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@633c0a61, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@49322d04, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@b6b746b]
-2019-07-19 13:41:54.854  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:41:54.902  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 1 repository interfaces.
-2019-07-19 13:41:55.165  INFO 12424 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:41:55.192  INFO 12424 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:41:55.208  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:41:55.209  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:41:55.213  WARN 12424 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:41:55.397  INFO 12424 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:41:55.510 DEBUG 12424 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@123426a9
-2019-07-19 13:41:55.542  INFO 12424 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:41:55.570 DEBUG 12424 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4353db40
-2019-07-19 13:41:55.578 DEBUG 12424 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@2d94279f
-2019-07-19 13:41:56.172 DEBUG 12424 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_1], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_1]
-2019-07-19 13:41:56.488 DEBUG 12424 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_2], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_2]
-2019-07-19 13:41:56.658  INFO 12424 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:41:56.666  INFO 12424 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:41:56.662  INFO 12424 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:45:36.719  INFO 15124 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 15124 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:45:36.736 DEBUG 15124 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:45:36.738  INFO 15124 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:45:38.356  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:45:38.505  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120ms. Found 1 repository interfaces.
-2019-07-19 13:45:39.514  INFO 15124 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ed149126] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:45:39.982  INFO 15124 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:45:40.149  INFO 15124 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:45:40.151  INFO 15124 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:45:40.358  INFO 15124 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:45:40.816  INFO 15124 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:45:41.219  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:45:41.227  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:45:41.237  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:45:42.416  INFO 15124 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:45:43.047 DEBUG 15124 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@7157413e
-2019-07-19 13:45:43.189  INFO 15124 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:45:43.453 DEBUG 15124 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@7e9a836
-2019-07-19 13:45:43.484 DEBUG 15124 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@34eb5d01
-2019-07-19 13:45:45.029  INFO 15124 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:45:45.192  WARN 15124 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:45:46.185  INFO 15124 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 10.365 seconds (JVM running for 12.07)
-2019-07-19 13:45:46.528  INFO 15124 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:45:46.529  INFO 15124 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@57fec63f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7a2fd94c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@637c8632, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@156eeff1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@34001c5d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@30e15628, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@37ab1b10, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@55d87b73, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@618e7761, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5b643d6e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@34f8ce89, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@22ed2886]
-2019-07-19 13:45:47.108  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:45:47.133  INFO 15124 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 1 repository interfaces.
-2019-07-19 13:45:47.459  INFO 15124 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:45:47.487  INFO 15124 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:45:47.509  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:45:47.510  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:45:47.514  WARN 15124 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:45:47.814  INFO 15124 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:45:47.907 DEBUG 15124 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@b272860
-2019-07-19 13:45:47.929  INFO 15124 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:45:47.955 DEBUG 15124 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@4351d055
-2019-07-19 13:45:47.963 DEBUG 15124 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@4172c967
-2019-07-19 13:45:48.607 DEBUG 15124 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_3], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_3]
-2019-07-19 13:45:48.896 DEBUG 15124 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_4], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_4]
-2019-07-19 13:45:49.087  INFO 15124 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:45:49.093  INFO 15124 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:45:49.098  INFO 15124 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:47:48.587  INFO 1368 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on 4-91-01-049983kozicki with PID 1368 (started by laboratorium in C:\Users\laboratorium\IdeaProjects\java-quiz)
-2019-07-19 13:47:48.597 DEBUG 1368 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 13:47:48.597  INFO 1368 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 13:47:50.307  INFO 1368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:47:50.457  INFO 1368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130ms. Found 1 repository interfaces.
-2019-07-19 13:47:51.737  INFO 1368 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d745182e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 13:47:52.247  INFO 1368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:47:52.427  INFO 1368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
-2019-07-19 13:47:52.437  INFO 1368 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-07-19 13:47:52.697  INFO 1368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-07-19 13:47:53.276  INFO 1368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:47:53.826  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:47:53.836  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:47:53.846  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:47:54.836  INFO 1368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:47:55.406 DEBUG 1368 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@af3295f
-2019-07-19 13:47:55.566  INFO 1368 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:47:55.846 DEBUG 1368 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@a6fc1bc
-2019-07-19 13:47:55.896 DEBUG 1368 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@6f7c9755
-2019-07-19 13:47:57.786  INFO 1368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:47:57.956  WARN 1368 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 13:47:58.896  INFO 1368 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 11.169 seconds (JVM running for 14.699)
-2019-07-19 13:47:59.216  INFO 1368 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2019-07-19 13:47:59.216  INFO 1368 --- [main] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@34f8ce89, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@22ed2886, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@30ca66c5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4abfa2ff, org.springframework.test.context.support.DirtiesContextTestExecutionListener@38c1b1a7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@73230721, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10bcbbce, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27234b7c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@125a8ab6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@792b9dd3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@cbc3bf3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@31f9f9b3]
-2019-07-19 13:47:59.796  INFO 1368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 13:47:59.806  INFO 1368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
-2019-07-19 13:48:00.106  INFO 1368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 13:48:00.136  INFO 1368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 13:48:00.156  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 13:48:00.166  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 13:48:00.166  WARN 1368 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 13:48:00.326  INFO 1368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:48:00.446 DEBUG 1368 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@e5f05f8
-2019-07-19 13:48:00.496  INFO 1368 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 13:48:00.516 DEBUG 1368 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@5a88849
-2019-07-19 13:48:00.526 DEBUG 1368 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@7cb38a6a
-2019-07-19 13:48:01.156 DEBUG 1368 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_5], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_5]
-2019-07-19 13:48:01.656 DEBUG 1368 --- [main] c.r.javaquiz.JavaQuizDatabaseTest        : Question - question: [Question_6], answer: [TrueFalseAnswers(correctValue=true)], category_name: [Category_6]
-2019-07-19 13:48:02.456  INFO 1368 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 13:48:02.456  INFO 1368 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 13:48:02.456  INFO 1368 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 19:53:27.205  INFO 6882 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Starting JavaQuizApplicationTests on marcin-HP-ProBook-6470b with PID 6882 (started by marcin in /home/marcin/IdeaProjects/java-quiz)
-2019-07-19 19:53:27.207 DEBUG 6882 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-19 19:53:27.208  INFO 6882 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : No active profile set, falling back to default profiles: default
-2019-07-19 19:53:27.611  INFO 6882 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-07-19 19:53:27.621  INFO 6882 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 1 repository interfaces.
-2019-07-19 19:53:27.981  INFO 6882 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee4b29f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-07-19 19:53:28.038  INFO 6882 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-07-19 19:53:28.052  INFO 6882 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2019-07-19 19:53:28.070  WARN 6882 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
-2019-07-19 19:53:28.071  WARN 6882 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
-2019-07-19 19:53:28.076  WARN 6882 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
-2019-07-19 19:53:28.380  INFO 6882 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 19:53:28.499 DEBUG 6882 --- [main] c.r.j.s.impl.QuestionCrudServiceImpl     : StartServiceImpl(): org.springframework.data.jpa.repository.support.SimpleJpaRepository@1a02ebe0
-2019-07-19 19:53:28.511  INFO 6882 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-07-19 19:53:28.530 DEBUG 6882 --- [main] c.r.j.c.impl.HomeRestControllerImpl      : HomeRestControllerImpl(): com.rybickim.javaquiz.service.impl.QuestionCrudServiceImpl@58b3eb1
-2019-07-19 19:53:28.536 DEBUG 6882 --- [main] c.r.j.service.impl.QuestionServiceImpl   : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuestionsRepositoryImpl@6b289535
-2019-07-19 19:53:28.539 DEBUG 6882 --- [main] c.r.j.service.impl.StartServiceImpl      : StartServiceImpl(): com.rybickim.javaquiz.data.impl.QuizEntityRepositoryImpl@74619273
-2019-07-19 19:53:29.178  INFO 6882 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-07-19 19:53:29.241  WARN 6882 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-07-19 19:53:29.814  INFO 6882 --- [main] c.r.javaquiz.JavaQuizApplicationTests    : Started JavaQuizApplicationTests in 3.094 seconds (JVM running for 16.024)
-2019-07-19 19:53:29.898  INFO 6882 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-07-19 19:53:29.899  INFO 6882 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-07-19 19:53:29.893  INFO 6882 --- [Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-07-20 04:32:30.270  INFO 8977 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-07-20 04:32:30.287  WARN 8977 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MissingGapAnswers
+2019-07-20 04:32:30.290  WARN 8977 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.MultipleChoiceAnswers
+2019-07-20 04:32:30.296  WARN 8977 --- [main] org.hibernate.cfg.AnnotationBinder       : HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.rybickim.javaquiz.domain.TrueFalseAnswers
+2019-07-20 04:32:30.299  WARN 8977 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+2019-07-20 04:32:30.309  INFO 8977 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-07-20 04:32:30.315 ERROR 8977 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119) [spring-boot-test-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1274) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:811) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:736) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1696) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1664) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:287) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 42 common frames omitted
+
+2019-07-20 04:32:30.319 ERROR 8977 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@671ea6ff] to prepare test instance [com.rybickim.javaquiz.JavaQuizApplicationTests@6e95973c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [com/rybickim/javaquiz/config/DatabaseConfig.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119) ~[spring-boot-test-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 27 common frames omitted
+Caused by: org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rybickim.javaquiz.domain.MissingGapAnswers.missingWords[java.lang.String]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1274) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:811) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:736) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1696) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1664) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:287) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:904) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:57) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 42 common frames omitted
+

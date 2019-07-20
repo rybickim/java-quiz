@@ -4,9 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Indexed;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Indexed
@@ -16,6 +15,6 @@ import java.util.List;
 @Table(name = "missing_gap_answers")
 public class MissingGapAnswers extends Answers {
 
-    @ElementCollection
-    private List<String> missingWords;
+    @OneToMany(mappedBy = "missingGapAnswers", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<String> missingWords = new ArrayList<>();
 }
