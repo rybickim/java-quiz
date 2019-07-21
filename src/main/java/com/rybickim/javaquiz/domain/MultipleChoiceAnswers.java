@@ -24,4 +24,14 @@ public class MultipleChoiceAnswers extends Answers {
         this.correctOrdinal = correctOrdinal;
         this.sentencesToChoose = sentencesToChoose;
     }
+
+    public void addSentence(SentencesToChoose sentence){
+        sentencesToChoose.add(sentence);
+        sentence.setMultipleChoiceAnswers(this);
+    }
+
+    public void removeSentence(SentencesToChoose sentence){
+        sentencesToChoose.remove(sentence);
+        sentence.setMultipleChoiceAnswers(null);
+    }
 }

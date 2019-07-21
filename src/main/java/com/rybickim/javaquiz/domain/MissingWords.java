@@ -26,4 +26,5 @@ public class MissingWords {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
     private Answers missingGapAnswers;
+
 }
