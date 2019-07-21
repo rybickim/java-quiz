@@ -27,4 +27,9 @@ public class SentencesToChoose {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
     private Answers multipleChoiceAnswers;
+
+    public SentencesToChoose(Integer ordinal, String sentence) {
+        this.ordinal = ordinal;
+        this.sentence = sentence;
+    }
 }

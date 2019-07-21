@@ -16,5 +16,5 @@ import java.util.List;
 public class MissingGapAnswers extends Answers {
 
     @OneToMany(mappedBy = "missingGapAnswers", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<String> missingWords = new ArrayList<>();
+    private List<MissingWords> missingWords = new ArrayList<>();
 }

@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.Assert.*;
@@ -36,7 +38,7 @@ public class JavaQuizDatabaseTest {
 
         // Given
         int questionsInDb = questionCrudService.list().size();
-        Questions question = createQuestionWithCategoryAndTrueFalseAnswer(questionsInDb + 1);
+        Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsInDb + 1);
 
         // When
         Long savedQuizId = questionCrudService.save(question).getId();
@@ -83,6 +85,37 @@ public class JavaQuizDatabaseTest {
         Questions question = new Questions("Question_" + no);
 
         Answers answer = new TrueFalseAnswers(Boolean.FALSE);
+        question.addAnswer(answer);
+
+        Categories category = new Categories("Category_" + no);
+        category.addQuestion(question);
+
+        logger.debug("Question - question: [{}], answer: [{}], category_name: [{}]",
+                question.getQuestion(),
+                question.getAnswers(),
+                question.getCategories().getCategory());
+
+        return question;
+    }
+
+    private Questions createQuestionWithCategoryAndMultipleChoiceAnswer(int no){
+        Questions question = new Questions("Question_" + no);
+
+        SentencesToChoose sentence1 = new SentencesToChoose(1,"Sentence_" + no);
+        SentencesToChoose sentence2 = new SentencesToChoose(2,"Sentence_" + no);
+        SentencesToChoose sentence3 = new SentencesToChoose(3,"Sentence_" + no);
+
+        List<SentencesToChoose> sentencesToChoose = new ArrayList<>();
+        sentencesToChoose.add(sentence1);
+        sentencesToChoose.add(sentence2);
+        sentencesToChoose.add(sentence3);
+
+        Answers answer = new MultipleChoiceAnswers(2,sentencesToChoose);
+
+        for(SentencesToChoose s : sentencesToChoose){
+            s.setMultipleChoiceAnswers(answer);
+        }
+
         question.addAnswer(answer);
 
         Categories category = new Categories("Category_" + no);
