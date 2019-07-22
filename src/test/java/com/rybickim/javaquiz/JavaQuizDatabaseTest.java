@@ -105,16 +105,11 @@ public class JavaQuizDatabaseTest {
         SentencesToChoose sentence2 = new SentencesToChoose(2,"Sentence_" + no);
         SentencesToChoose sentence3 = new SentencesToChoose(3,"Sentence_" + no);
 
-        List<SentencesToChoose> sentencesToChoose = new ArrayList<>();
-        sentencesToChoose.add(sentence1);
-        sentencesToChoose.add(sentence2);
-        sentencesToChoose.add(sentence3);
+        MultipleChoiceAnswers answer = new MultipleChoiceAnswers(2);
 
-        Answers answer = new MultipleChoiceAnswers(2,sentencesToChoose);
-
-        for(SentencesToChoose s : sentencesToChoose){
-            s.setMultipleChoiceAnswers(answer);
-        }
+        answer.addSentence(sentence1);
+        answer.addSentence(sentence2);
+        answer.addSentence(sentence3);
 
         question.addAnswer(answer);
 

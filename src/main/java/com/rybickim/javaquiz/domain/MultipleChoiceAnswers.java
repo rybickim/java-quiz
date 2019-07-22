@@ -20,9 +20,8 @@ public class MultipleChoiceAnswers extends Answers {
     @OneToMany(mappedBy = "multipleChoiceAnswers", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SentencesToChoose> sentencesToChoose = new ArrayList<>();
 
-    public MultipleChoiceAnswers(Integer correctOrdinal, List<SentencesToChoose> sentencesToChoose) {
+    public MultipleChoiceAnswers(Integer correctOrdinal) {
         this.correctOrdinal = correctOrdinal;
-        this.sentencesToChoose = sentencesToChoose;
     }
 
     public void addSentence(SentencesToChoose sentence){
