@@ -2,7 +2,7 @@ package com.rybickim.javaquiz;
 
 import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.domain.*;
-import com.rybickim.javaquiz.service.QuestionCrudService;
+import com.rybickim.javaquiz.service.CrudService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,11 +26,17 @@ public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
 
-    private QuestionCrudService questionCrudService;
+    private CrudService<Questions> questionCrudService;
+    private CrudService<Categories> categoryCrudService;
 
     @Autowired
-    public void setQuestionService(@Qualifier("questionCrudService") QuestionCrudService questionCrudService){
+    public void setQuestionService(CrudService<Questions> questionCrudService){
         this.questionCrudService = questionCrudService;
+    }
+
+    @Autowired
+    public void setCategoryService(CrudService<Categories> categoryCrudService){
+        this.categoryCrudService = categoryCrudService;
     }
 
     @Test
@@ -48,7 +55,7 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
-    public void testIfQuizIsNotFound(){
+    public void testIfQuestionIsNotFound(){
         // Given
         long nonExistingId = 1223232343434L;
 
@@ -60,7 +67,7 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
-    public void testIfQuizIsFound(){
+    public void testIfQuestionIsFound(){
         // Given
         int nextQuestionNumber = questionCrudService.list().size() + 1;
         Questions question = createQuestionWithCategoryAndTrueFalseAnswer(nextQuestionNumber);
@@ -72,6 +79,46 @@ public class JavaQuizDatabaseTest {
         // Then
         assertNotNull(maybeQuestion);
         assertEquals(question, maybeQuestion);
+    }
+
+    @Test
+    public void testIfFoundQuestionIsDeleted(){
+        // Given
+        long exampleId = 75L;
+        Optional<Questions> maybeQuestion = questionCrudService.findById(exampleId);
+
+        assertNotNull(maybeQuestion);
+        assertNotEquals(Optional.empty(), maybeQuestion);
+
+        // When
+        questionCrudService.deleteById(exampleId);
+        Optional<Questions> maybeQuestionAfterDeletion = questionCrudService.findById(exampleId);
+
+        // Then
+        assertEquals(Optional.empty(), maybeQuestionAfterDeletion);
+    }
+
+    // and now to make a test if the category isn't deleted with cascade...
+
+    @Test
+    public void testIfCategoryIsNotDeletedWhenQuestionIs(){
+        // Given
+        int questionsInDb = questionCrudService.list().size();
+        Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsInDb + 1);
+        Long savedQuizId = questionCrudService.save(question).getId();
+        Long savedCategoryId = savedQuizId + 1L;
+
+        Optional<Categories> maybeCategory = categoryCrudService.findById(savedCategoryId);
+
+        assertNotEquals(Optional.empty(), maybeCategory);
+
+        // When
+        questionCrudService.deleteById(savedQuizId);
+        maybeCategory = categoryCrudService.findById(savedCategoryId);
+
+        // Then
+
+        assertNotEquals(Optional.empty(), maybeCategory);
     }
 
     @Test
@@ -101,15 +148,14 @@ public class JavaQuizDatabaseTest {
     private Questions createQuestionWithCategoryAndMultipleChoiceAnswer(int no){
         Questions question = new Questions("Question_" + no);
 
-        SentencesToChoose sentence1 = new SentencesToChoose(1,"Sentence_" + no);
-        SentencesToChoose sentence2 = new SentencesToChoose(2,"Sentence_" + no);
-        SentencesToChoose sentence3 = new SentencesToChoose(3,"Sentence_" + no);
+        List<SentencesToChoose> sentences = Arrays.asList(
+                new SentencesToChoose(1,"Sentence_" + no),
+                new SentencesToChoose(2,"Sentence_" + no),
+                new SentencesToChoose(3,"Sentence_" + no));
 
         MultipleChoiceAnswers answer = new MultipleChoiceAnswers(2);
 
-        answer.addSentence(sentence1);
-        answer.addSentence(sentence2);
-        answer.addSentence(sentence3);
+        answer.addSentences(sentences);
 
         question.addAnswer(answer);
 

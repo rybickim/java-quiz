@@ -2,7 +2,7 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeRestController;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.service.QuestionCrudService;
+import com.rybickim.javaquiz.service.CrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +16,10 @@ public class HomeRestControllerImpl implements HomeRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeRestControllerImpl.class);
 
-    private QuestionCrudService questionCrudService;
+    private CrudService<Questions> questionCrudService;
 
     @Autowired
-    public HomeRestControllerImpl(QuestionCrudService questionCrudService) {
+    public HomeRestControllerImpl(CrudService<Questions> questionCrudService) {
         logger.debug("HomeRestControllerImpl(): " + questionCrudService);
         this.questionCrudService = questionCrudService;
     }

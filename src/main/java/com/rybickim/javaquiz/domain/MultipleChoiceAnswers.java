@@ -24,13 +24,23 @@ public class MultipleChoiceAnswers extends Answers {
         this.correctOrdinal = correctOrdinal;
     }
 
-    public void addSentence(SentencesToChoose sentence){
+    public void addSentence(SentencesToChoose sentence) {
         sentencesToChoose.add(sentence);
         sentence.setMultipleChoiceAnswers(this);
     }
 
-    public void removeSentence(SentencesToChoose sentence){
+    public void removeSentence(SentencesToChoose sentence) {
         sentencesToChoose.remove(sentence);
         sentence.setMultipleChoiceAnswers(null);
+    }
+
+    public void addSentences(List<SentencesToChoose> sentences) {
+        sentencesToChoose.addAll(sentences);
+        sentences.forEach(sentence -> sentence.setMultipleChoiceAnswers(this));
+    }
+
+    public void removeSentences(List<SentencesToChoose> sentences) {
+        sentencesToChoose.removeAll(sentences);
+        sentences.forEach(sentence -> sentence.setMultipleChoiceAnswers(null));
     }
 }

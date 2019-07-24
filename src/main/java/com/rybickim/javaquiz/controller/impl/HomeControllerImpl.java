@@ -2,7 +2,7 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.service.QuestionCrudService;
+import com.rybickim.javaquiz.service.CrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,10 +17,10 @@ public class HomeControllerImpl implements HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
-    private QuestionCrudService startService;
+    private CrudService<Questions> startService;
     private List<Questions> quizExercisesToShow;
 
-    public HomeControllerImpl(QuestionCrudService startService) {
+    public HomeControllerImpl(CrudService<Questions> startService) {
         this.startService = startService;
         this.quizExercisesToShow = startService.list();
     }

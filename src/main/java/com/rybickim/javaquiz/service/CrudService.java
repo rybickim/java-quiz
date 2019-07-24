@@ -5,13 +5,13 @@ import com.rybickim.javaquiz.domain.Questions;
 import java.util.List;
 import java.util.Optional;
 
-public interface QuestionCrudService {
+public interface CrudService<T> {
 
-    Questions save(Questions question);
+    T save(T entity);
 
-    Optional<Questions> findById(long id);
+    Optional<T> findById(long id);
 
-    List<Questions> list();
+    List<T> list();
 
     void deleteById(long id);
 }
