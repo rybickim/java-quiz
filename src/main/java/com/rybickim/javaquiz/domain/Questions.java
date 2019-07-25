@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "questions")
-public class Questions {
+public class Questions extends BaseClass<Long> {
 
     @Id
     @Column(name = "question_id")

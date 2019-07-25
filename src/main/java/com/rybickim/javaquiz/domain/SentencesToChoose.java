@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "sentences_to_choose")
-public class SentencesToChoose {
+public class SentencesToChoose extends BaseClass<Long>{
 
     @Id
     @Column(name = "sentence_id")

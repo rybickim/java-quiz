@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "missing_words")
-public class MissingWords {
+public class MissingWords extends BaseClass<Long> {
 
     @Id
     @Column(name = "word_id")

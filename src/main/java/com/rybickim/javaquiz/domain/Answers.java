@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "answers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public class Answers {
+public class Answers extends BaseClass<Long>{
 
     @Id
     private Long id;

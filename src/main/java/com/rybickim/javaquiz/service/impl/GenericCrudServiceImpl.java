@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.service.impl;
 
 import com.rybickim.javaquiz.data.GenericCrudRepository;
+import com.rybickim.javaquiz.domain.BaseClass;
 import com.rybickim.javaquiz.service.CrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,14 +14,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GenericCrudServiceImpl<T> implements CrudService<T> {
+public class GenericCrudServiceImpl<T extends BaseClass> implements CrudService<T> {
 
     private static final Logger logger = LoggerFactory.getLogger(GenericCrudServiceImpl.class);
 
-    private GenericCrudRepository<T> crudRepository;
+    private GenericCrudRepository<T, Long> crudRepository;
 
     @Autowired
-    public GenericCrudServiceImpl(GenericCrudRepository<T> crudRepository) {
+    public GenericCrudServiceImpl(GenericCrudRepository<T, Long> crudRepository) {
         logger.debug("StartServiceImpl(): " + crudRepository);
         this.crudRepository = crudRepository;
     }
