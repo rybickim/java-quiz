@@ -17,12 +17,12 @@ public class HomeControllerImpl implements HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
-    private CrudService<Questions> startService;
+    private CrudService startService;
     private List<Questions> quizExercisesToShow;
 
-    public HomeControllerImpl(CrudService<Questions> startService) {
+    public HomeControllerImpl(CrudService startService) {
         this.startService = startService;
-        this.quizExercisesToShow = startService.list();
+        this.quizExercisesToShow = startService.listQuestions();
     }
 
     @PostMapping({"/","/home"})

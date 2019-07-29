@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "questions")
-public class Questions extends BaseClass<Long> {
+public class Questions {
 
     @Id
     @Column(name = "question_id")
@@ -22,7 +22,7 @@ public class Questions extends BaseClass<Long> {
 //    besides, just the @Column annotation does absolutely nothing, right?
     private String question;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Categories categories;
 

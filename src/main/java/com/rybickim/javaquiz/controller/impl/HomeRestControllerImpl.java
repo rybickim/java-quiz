@@ -16,10 +16,10 @@ public class HomeRestControllerImpl implements HomeRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeRestControllerImpl.class);
 
-    private CrudService<Questions> questionCrudService;
+    private CrudService questionCrudService;
 
     @Autowired
-    public HomeRestControllerImpl(CrudService<Questions> questionCrudService) {
+    public HomeRestControllerImpl(CrudService questionCrudService) {
         logger.debug("HomeRestControllerImpl(): " + questionCrudService);
         this.questionCrudService = questionCrudService;
     }
@@ -29,6 +29,6 @@ public class HomeRestControllerImpl implements HomeRestController {
     public List<Questions> allQuizExercises() {
         logger.debug("allQuizExercises() from HomeRestControllerImpl");
 
-        return questionCrudService.list();
+        return questionCrudService.listQuestions();
     }
 }

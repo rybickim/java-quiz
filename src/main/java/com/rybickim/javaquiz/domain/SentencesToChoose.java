@@ -2,7 +2,6 @@ package com.rybickim.javaquiz.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NaturalId;
 import org.springframework.stereotype.Indexed;
 
 import javax.persistence.*;
@@ -12,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "sentences_to_choose")
-public class SentencesToChoose extends BaseClass<Long>{
+public class SentencesToChoose {
 
     @Id
     @Column(name = "sentence_id")

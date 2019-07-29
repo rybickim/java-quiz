@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Table(name = "chosen_questions")
-public class ChosenQuestions extends BaseClass<Long>{
+public class ChosenQuestions {
 
     @Id
     private Long id;

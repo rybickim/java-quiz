@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "categories")
-public class Categories extends BaseClass<Long>{
+public class Categories {
 
     @Id
     @Column(name = "category_id")

@@ -26,17 +26,11 @@ public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
 
-    private CrudService<Questions> questionCrudService;
-    private CrudService<Categories> categoryCrudService;
+    private CrudService crudService;
 
     @Autowired
-    public void setQuestionService(CrudService<Questions> questionCrudService){
-        this.questionCrudService = questionCrudService;
-    }
-
-    @Autowired
-    public void setCategoryService(CrudService<Categories> categoryCrudService){
-        this.categoryCrudService = categoryCrudService;
+    public void setCrudService(CrudService crudService){
+        this.crudService = crudService;
     }
 
     @Test
@@ -44,14 +38,14 @@ public class JavaQuizDatabaseTest {
 
 
         // Given
-        int questionsInDb = questionCrudService.list().size();
+        int questionsInDb = crudService.listQuestions().size();
         Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsInDb + 1);
 
         // When
-        Long savedQuizId = questionCrudService.save(question).getId();
+        Long savedQuizId = crudService.saveQuestion(question).getId();
 
         // Then
-        assertEquals(questionsInDb + 1, questionCrudService.list().size());
+        assertEquals(questionsInDb + 1, crudService.listQuestions().size());
     }
 
     @Test
@@ -60,7 +54,7 @@ public class JavaQuizDatabaseTest {
         long nonExistingId = 1223232343434L;
 
         // When
-        Optional<Questions> maybeQuestion = questionCrudService.findById(nonExistingId);
+        Optional<Questions> maybeQuestion = crudService.findQuestionById(nonExistingId);
 
         // Then
         assertEquals(Optional.empty(), maybeQuestion);
@@ -69,12 +63,12 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfQuestionIsFound(){
         // Given
-        int nextQuestionNumber = questionCrudService.list().size() + 1;
+        int nextQuestionNumber = crudService.listQuestions().size() + 1;
         Questions question = createQuestionWithCategoryAndTrueFalseAnswer(nextQuestionNumber);
-        Long savedQuizId = questionCrudService.save(question).getId();
+        Long savedQuizId = crudService.saveQuestion(question).getId();
 
         // When
-        Questions maybeQuestion = questionCrudService.findById(savedQuizId).orElse(new Questions());
+        Questions maybeQuestion = crudService.findQuestionById(savedQuizId).orElse(new Questions());
 
         // Then
         assertNotNull(maybeQuestion);
@@ -85,14 +79,14 @@ public class JavaQuizDatabaseTest {
     public void testIfFoundQuestionIsDeleted(){
         // Given
         long exampleId = 75L;
-        Optional<Questions> maybeQuestion = questionCrudService.findById(exampleId);
+        Optional<Questions> maybeQuestion = crudService.findQuestionById(exampleId);
 
         assertNotNull(maybeQuestion);
         assertNotEquals(Optional.empty(), maybeQuestion);
 
         // When
-        questionCrudService.deleteById(exampleId);
-        Optional<Questions> maybeQuestionAfterDeletion = questionCrudService.findById(exampleId);
+        crudService.deleteQuestionById(exampleId);
+        Optional<Questions> maybeQuestionAfterDeletion = crudService.findQuestionById(exampleId);
 
         // Then
         assertEquals(Optional.empty(), maybeQuestionAfterDeletion);
@@ -103,18 +97,18 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfCategoryIsNotDeletedWhenQuestionIs(){
         // Given
-        int questionsInDb = questionCrudService.list().size();
+        int questionsInDb = crudService.listQuestions().size();
         Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsInDb + 1);
-        Long savedQuizId = questionCrudService.save(question).getId();
+        Long savedQuizId = crudService.saveQuestion(question).getId();
         Long savedCategoryId = savedQuizId + 1L;
 
-        Optional<Categories> maybeCategory = categoryCrudService.findById(savedCategoryId);
+        Optional<Categories> maybeCategory = crudService.findCategoryById(savedCategoryId);
 
         assertNotEquals(Optional.empty(), maybeCategory);
 
         // When
-        questionCrudService.deleteById(savedQuizId);
-        maybeCategory = categoryCrudService.findById(savedCategoryId);
+        crudService.deleteQuestionById(savedQuizId);
+        maybeCategory = crudService.findCategoryById(savedCategoryId);
 
         // Then
 
