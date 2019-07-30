@@ -39,6 +39,35 @@ public class JavaQuizDatabaseTest {
 
         // Given
         int questionsInDb = crudService.listQuestions().size();
+        Questions question = createQuestion(questionsInDb + 1);
+
+        // When
+        Long savedQuizId = crudService.saveQuestion(question).getId();
+
+        // Then
+        assertEquals(questionsInDb + 1, crudService.listQuestions().size());
+    }
+
+    @Test
+    public void testIfQuestionWithCategoryIsSaved(){
+
+        // Given
+        int questionsInDb = crudService.listQuestions().size();
+        Questions question = createQuestionWithCategory(questionsInDb + 1);
+
+        // When
+        Long savedQuizId = crudService.saveQuestion(question).getId();
+
+        // Then
+        assertEquals(questionsInDb + 1, crudService.listQuestions().size());
+    }
+
+    @Test
+    public void testIfQuestionWithCategoryAndMultipleChoiceAnswerIsSaved(){
+
+
+        // Given
+        int questionsInDb = crudService.listQuestions().size();
         Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsInDb + 1);
 
         // When
@@ -76,20 +105,28 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
-    public void testIfFoundQuestionIsDeleted(){
+    public void testIfQuestionIsDeleted(){
+
         // Given
-        long exampleId = 75L;
-        Optional<Questions> maybeQuestion = crudService.findQuestionById(exampleId);
+        int questionsInDb = crudService.listQuestions().size();
+        Questions question = createQuestion(questionsInDb + 1);
+
+        Long savedQuizId = crudService.saveQuestion(question).getId();
+
+
+        assertEquals(questionsInDb + 1, crudService.listQuestions().size());
+
+        Optional<Questions> maybeQuestion = crudService.findQuestionById(savedQuizId);
 
         assertNotNull(maybeQuestion);
         assertNotEquals(Optional.empty(), maybeQuestion);
 
         // When
-        crudService.deleteQuestionById(exampleId);
-        Optional<Questions> maybeQuestionAfterDeletion = crudService.findQuestionById(exampleId);
+        crudService.deleteQuestionById(savedQuizId);
+        maybeQuestion = crudService.findQuestionById(savedQuizId);
 
         // Then
-        assertEquals(Optional.empty(), maybeQuestionAfterDeletion);
+        assertEquals(Optional.empty(), maybeQuestion);
     }
 
     // and now to make a test if the category isn't deleted with cascade...
@@ -116,11 +153,64 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
+    public void testIfCategoryIsSaved(){
+
+        // Given
+        int categoriesInDb = crudService.listCategories().size();
+        Categories category = createCategory(categoriesInDb + 1);
+
+        // When
+        Long savedCategoryId = crudService.saveCategory(category).getId();
+
+        // Then
+        assertEquals(categoriesInDb + 1, crudService.listQuestions().size());
+    }
+
+    @Test
+    public void testIfCategoryWithQuestionIsSaved(){
+
+        // Given
+        int categoriesInDb = crudService.listCategories().size();
+        Categories category = createCategoryWithQuestion(categoriesInDb + 1);
+
+        // When
+        Long savedCategoryId = crudService.saveCategory(category).getId();
+
+        // Then
+        assertEquals(categoriesInDb + 1, crudService.listQuestions().size());
+    }
+
+    @Test
     public void testIfDatabaseHoldsNoDuplicates(){
 
     }
 
+    /////////////////////////////////////////////
     //helper methods
+    ///////////////////////////////////////////////////////////////
+
+    private Questions createQuestion(int no){
+        Questions question = new Questions("Question_" + no);
+
+        logger.debug("Question - question: [{}]",
+                question.getQuestion());
+
+        return question;
+    }
+
+    private Questions createQuestionWithCategory(int no){
+        Categories category = new Categories("Category_" + no);
+
+        Questions question = new Questions("Question_" + no);
+
+        category.addQuestion(question);
+
+        logger.debug("Question - question: [{}], category_name: [{}]",
+                question.getQuestion(),
+                question.getCategories().getCategory());
+
+        return question;
+    }
 
     private Questions createQuestionWithCategoryAndTrueFalseAnswer(int no){
         Questions question = new Questions("Question_" + no);
@@ -164,5 +254,26 @@ public class JavaQuizDatabaseTest {
         return question;
     }
 
+    private Categories createCategory(int no){
+        Categories category = new Categories("Category_" + no);
+
+        logger.debug("Category - category: [{}]",
+                category.getCategory());
+
+        return category;
+    }
+
+    private Categories createCategoryWithQuestion(int no){
+        Categories category = new Categories("Category_" + no);
+
+        Questions question = new Questions("Question_" + no);
+        category.addQuestion(question);
+
+        logger.debug("Category - category: [{}], question: [{}]",
+                category.getCategory(),
+                question.getQuestion());
+
+        return category;
+    }
 
 }

@@ -22,7 +22,7 @@ public class Questions {
 //    besides, just the @Column annotation does absolutely nothing, right?
     private String question;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "category_id")
     private Categories categories;
 
