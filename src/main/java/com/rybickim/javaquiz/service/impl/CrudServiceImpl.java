@@ -8,6 +8,7 @@ import com.rybickim.javaquiz.service.CrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -55,6 +56,12 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
+    public long countQuestions() {
+        return questionCrudRepository.count();
+    }
+
+    @Override
+    @Transactional
     public void deleteQuestionById(long id) {
         questionCrudRepository.deleteById(id);
     }
@@ -81,8 +88,26 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
+    public long countCategories() {
+        return categoryCrudRepository.count();
+    }
+
+    @Override
+    @Transactional
     public void deleteCategoryById(long id) {
         categoryCrudRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Questions> findQuestionsWithEmptyCategory(Categories categoryId) {
+        return questionCrudRepository.findQuestionsWithEmptyCategory(categoryId);
+    }
+
+    @Override
+    @Transactional
+    public List<Categories> findFirstByCategory(Pageable pageable) {
+        return categoryCrudRepository.findFirstByCategory(pageable);
     }
 
     // TODO shuffle implementation?
