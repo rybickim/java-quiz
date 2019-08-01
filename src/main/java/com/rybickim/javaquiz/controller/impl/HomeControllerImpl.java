@@ -53,7 +53,7 @@ public class HomeControllerImpl implements HomeController {
         if (!quizExercisesToShow.isEmpty()){
             question = quizExercisesToShow.get(0).getQuestion();
             //TODO answers
-            answer = quizExercisesToShow.get(0).getCategories().getCategory();
+            answer = quizExercisesToShow.get(0).getCategories().getCategoryName();
         }
         logger.debug("question: {}", question);
         logger.debug("answer: {}", answer);

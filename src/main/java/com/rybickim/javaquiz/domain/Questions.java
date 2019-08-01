@@ -18,8 +18,8 @@ public class Questions {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-//    @Column //shouldn't be unique because some questions might be repeated (e.g. case of multiple choice question: which one of the statements below is correct?)
-//    besides, just the @Column annotation does absolutely nothing, right?
+    //shouldn't be unique because some questions might be repeated (e.g. case of multiple choice question: which one of the statements below is correct?)
+    //besides, just the @Column annotation does absolutely nothing, right?
     private String question;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
@@ -67,5 +67,15 @@ public class Questions {
     public void removeAnswer(Answers answer){
         this.setAnswers(null);
         answer.setQuestions(null);
+    }
+
+    @Override
+    public String toString() {
+        return "Questions{" +
+                "id=" + id +
+                ", question='" + question + '\'' +
+                ", chosenQuestions=" + chosenQuestions +
+                ", answers=" + answers +
+                '}';
     }
 }

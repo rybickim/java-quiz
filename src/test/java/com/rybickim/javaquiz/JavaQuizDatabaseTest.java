@@ -198,7 +198,7 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
-    public void testIfUnassignedQuestionsAreAllInLastCategory(){
+    public void testIfUnassignedQuestionsAreAllInFirstCategory(){
         // Given
         long questionsCount = crudService.countQuestions();
         long categoriesCount = crudService.countCategories();
@@ -208,6 +208,9 @@ public class JavaQuizDatabaseTest {
 
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
+        assertNotNull(searchResult.get(0).getId());
+        assertEquals(Long.valueOf(413L),searchResult.get(0).getId());
+
         List<Categories> categoriesSearch = crudService.findFirstByCategory(PageRequest.of(0,1));
 
         assertNotEquals(Collections.EMPTY_LIST, categoriesSearch);
@@ -215,7 +218,10 @@ public class JavaQuizDatabaseTest {
 
         for (Questions question : searchResult){
             categoriesSearch.get(0).addQuestion(question);
-            crudService.saveQuestion(question);
+        }
+
+        for (Questions question : categoriesSearch.get(0).getQuestions()){
+            logger.debug("Question from categories: " + question);
         }
 
         // Then
@@ -256,7 +262,7 @@ public class JavaQuizDatabaseTest {
 
         logger.debug("Question - question: [{}], category_name: [{}]",
                 question.getQuestion(),
-                question.getCategories().getCategory());
+                question.getCategories().getCategoryName());
 
         return question;
     }
@@ -273,7 +279,7 @@ public class JavaQuizDatabaseTest {
         logger.debug("Question - question: [{}], answer: [{}], category_name: [{}]",
                 question.getQuestion(),
                 question.getAnswers(),
-                question.getCategories().getCategory());
+                question.getCategories().getCategoryName());
 
         return question;
     }
@@ -298,7 +304,7 @@ public class JavaQuizDatabaseTest {
         logger.debug("Question - question: [{}], answer: [{}], category_name: [{}]",
                 question.getQuestion(),
                 question.getAnswers(),
-                question.getCategories().getCategory());
+                question.getCategories().getCategoryName());
 
         return question;
     }
@@ -306,8 +312,8 @@ public class JavaQuizDatabaseTest {
     private Categories createCategory(long no){
         Categories category = new Categories("Category_" + no);
 
-        logger.debug("Category - category: [{}]",
-                category.getCategory());
+        logger.debug("Category - category_name: [{}]",
+                category.getCategoryName());
 
         return category;
     }
@@ -318,8 +324,8 @@ public class JavaQuizDatabaseTest {
         Questions question = new Questions("Question_" + questionNo);
         category.addQuestion(question);
 
-        logger.debug("Category - category: [{}], question: [{}]",
-                category.getCategory(),
+        logger.debug("Category - category_name: [{}], question: [{}]",
+                category.getCategoryName(),
                 question.getQuestion());
 
         return category;

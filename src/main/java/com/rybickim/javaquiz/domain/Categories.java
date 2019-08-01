@@ -20,14 +20,14 @@ public class Categories {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(unique = true)
-    private String category;
+    @Column(name = "category_name", unique = true)
+    private String categoryName;
 
     @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Questions> questions = new ArrayList<>();
 
-    public Categories(String category){
-        this.category = category;
+    public Categories(String categoryName){
+        this.categoryName = categoryName;
     }
 
     public void addQuestion(Questions question){
@@ -38,5 +38,14 @@ public class Categories {
     public void removeQuestion(Questions question){
         questions.remove(question);
         question.setCategories(null);
+    }
+
+    @Override
+    public String toString() {
+        return "Categories{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                ", questions=" + questions +
+                '}';
     }
 }
