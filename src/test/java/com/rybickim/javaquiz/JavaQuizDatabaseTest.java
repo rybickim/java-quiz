@@ -8,10 +8,16 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +28,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JavaQuizApplication.class, DatabaseConfig.class })
+@Transactional
 public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
@@ -29,9 +36,13 @@ public class JavaQuizDatabaseTest {
     private CrudService crudService;
 
     @Autowired
+    private EntityManager entityManager;
+
+    @Autowired
     public void setCrudService(CrudService crudService){
         this.crudService = crudService;
     }
+
 
     @Test
     public void testIfQuestionIsSaved(){
@@ -123,8 +134,8 @@ public class JavaQuizDatabaseTest {
 
         assertNotNull(maybeQuestion);
         assertNotEquals(Optional.empty(), maybeQuestion);
-
         // When
+
         crudService.deleteQuestionById(savedQuizId);
         maybeQuestion = crudService.findQuestionById(savedQuizId);
 
@@ -209,19 +220,28 @@ public class JavaQuizDatabaseTest {
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
         assertNotNull(searchResult.get(0).getId());
-        assertEquals(Long.valueOf(413L),searchResult.get(0).getId());
+        assertEquals(Long.valueOf(456L),searchResult.get(0).getId());
 
         List<Categories> categoriesSearch = crudService.findFirstByCategory(PageRequest.of(0,1));
 
         assertNotEquals(Collections.EMPTY_LIST, categoriesSearch);
         assertEquals(1, categoriesSearch.size());
 
+        for (Questions question : categoriesSearch.get(0).getQuestions()){
+            logger.debug("Question from Category_1 BEFORE ADD: " + question);
+        }
+
         for (Questions question : searchResult){
             categoriesSearch.get(0).addQuestion(question);
+//            entityManager.persist(question);
+            entityManager.merge(question);
+            entityManager.flush();
+            logger.debug("Category from added question: " + question.getCategories());
+
         }
 
         for (Questions question : categoriesSearch.get(0).getQuestions()){
-            logger.debug("Question from categories: " + question);
+            logger.debug("Question from Category_1 AFTER ADD: " + question);
         }
 
         // Then

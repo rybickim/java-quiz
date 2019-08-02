@@ -21,7 +21,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-//@ComponentScan(basePackages = {"com.rybickim.javaquiz.data", "com.rybickim.javaquiz.service"})
+@ComponentScan(basePackages = {"com.rybickim.javaquiz.data", "com.rybickim.javaquiz.service"})
 @EnableJpaRepositories(basePackages = {"com.rybickim.javaquiz.data"})
 public class DatabaseConfig {
 

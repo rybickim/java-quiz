@@ -23,7 +23,7 @@ public class Questions {
     private String question;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH})
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", updatable = true)
     private Categories categories;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
