@@ -28,7 +28,7 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JavaQuizApplication.class, DatabaseConfig.class })
-@Transactional
+//@Transactional
 public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
@@ -53,6 +53,25 @@ public class JavaQuizDatabaseTest {
         Questions question = createQuestion(questionsCount + 1);
 
         // When
+        crudService.saveQuestion(question);
+
+        // Then
+        assertEquals(questionsCount + 1, crudService.countQuestions());
+    }
+
+    @Test
+    public void testIfQuestionIsUpdatedWithFirstCategory(){
+
+        // Given
+        long questionsCount = crudService.countQuestions();
+        Questions question = createQuestion(questionsCount + 1);
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        question = crudService.saveQuestion(question);
+
+        // When
+        question.setCategories(firstCategory);
+        crudService.saveCategory(firstCategory);
         crudService.saveQuestion(question);
 
         // Then
@@ -220,7 +239,7 @@ public class JavaQuizDatabaseTest {
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
         assertNotNull(searchResult.get(0).getId());
-        assertEquals(Long.valueOf(456L),searchResult.get(0).getId());
+        assertEquals(Long.valueOf(143L),searchResult.get(0).getId());
 
         List<Categories> categoriesSearch = crudService.findFirstByCategory(PageRequest.of(0,1));
 
@@ -233,9 +252,10 @@ public class JavaQuizDatabaseTest {
 
         for (Questions question : searchResult){
             categoriesSearch.get(0).addQuestion(question);
+            crudService.saveQuestion(question);
 //            entityManager.persist(question);
-            entityManager.merge(question);
-            entityManager.flush();
+//            entityManager.merge(question);
+//            entityManager.flush();
             logger.debug("Category from added question: " + question.getCategories());
 
         }
