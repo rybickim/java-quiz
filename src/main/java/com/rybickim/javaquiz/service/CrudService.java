@@ -29,7 +29,7 @@ public interface CrudService {
 
     void deleteCategoryById(long id);
 
-    List<Questions> findQuestionsWithEmptyCategory(Categories categories);
+    List<Questions> findQuestionsWithNullCategory();
 
     List<Categories> findFirstByCategory(Pageable pageable);
 

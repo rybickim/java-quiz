@@ -67,7 +67,7 @@ public class JavaQuizDatabaseTest {
         Questions question = createQuestion(questionsCount + 1);
         Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
-        question = crudService.saveQuestion(question);
+//        question = crudService.saveQuestion(question);
 
         // When
         question.setCategories(firstCategory);
@@ -201,6 +201,39 @@ public class JavaQuizDatabaseTest {
     }
 
     @Test
+    public void testIfFoundCategoryNameCanBeUpdated(){
+
+        // Given
+        long categoriesCount = crudService.countCategories();
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        firstCategory.setCategoryName("Zerg_" + (categoriesCount + 1));
+
+        // When
+        crudService.saveCategory(firstCategory);
+
+        // Then
+        assertEquals(categoriesCount, crudService.countCategories());
+
+    }
+
+    @Test
+    public void testIfFoundCategoryQuestionsCanBeUpdated(){
+
+        // Given
+        long categoriesCount = crudService.countCategories();
+        Categories secondCategory = crudService.findFirstByCategory(PageRequest.of(1,1)).get(0);
+        Questions firstQuestion = crudService.findQuestionsWithNullCategory().get(0);
+        secondCategory.addQuestion(firstQuestion);
+
+        // When
+        crudService.saveCategory(secondCategory);
+
+        // Then
+        assertEquals(categoriesCount, crudService.countCategories());
+
+    }
+
+    @Test
     public void testIfCategoryWithQuestionIsSaved(){
 
         // Given
@@ -234,7 +267,7 @@ public class JavaQuizDatabaseTest {
         long categoriesCount = crudService.countCategories();
 
         // When
-        List<Questions> searchResult = crudService.findQuestionsWithEmptyCategory(null);
+        List<Questions> searchResult = crudService.findQuestionsWithNullCategory();
 
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
@@ -265,7 +298,7 @@ public class JavaQuizDatabaseTest {
         }
 
         // Then
-        searchResult = crudService.findQuestionsWithEmptyCategory(null);
+        searchResult = crudService.findQuestionsWithNullCategory();
 
         assertEquals(Collections.EMPTY_LIST, searchResult);
 

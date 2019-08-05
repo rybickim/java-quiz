@@ -12,5 +12,5 @@ public interface QuestionCrudRepository
         extends CrudRepository<Questions, Long> {
 
     @Query("SELECT q FROM Questions q WHERE LOWER(q.categories) IS NULL")
-    List<Questions> findQuestionsWithEmptyCategory(@Param("categories") Categories categories);
+    List<Questions> findQuestionsWithNullCategory();
 }

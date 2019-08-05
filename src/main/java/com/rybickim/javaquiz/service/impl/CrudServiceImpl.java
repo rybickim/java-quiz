@@ -100,8 +100,8 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
-    public List<Questions> findQuestionsWithEmptyCategory(Categories categoryId) {
-        return questionCrudRepository.findQuestionsWithEmptyCategory(categoryId);
+    public List<Questions> findQuestionsWithNullCategory() {
+        return questionCrudRepository.findQuestionsWithNullCategory();
     }
 
     @Override
