@@ -20,6 +20,9 @@ public class Categories {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Version
+    private Long version;
+
     @Column(name = "category_name", unique = true)
     private String categoryName;
 

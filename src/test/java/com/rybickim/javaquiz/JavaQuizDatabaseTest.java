@@ -207,9 +207,11 @@ public class JavaQuizDatabaseTest {
         long categoriesCount = crudService.countCategories();
         Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         firstCategory.setCategoryName("Zerg_" + (categoriesCount + 1));
+        logger.debug("Name is in the first category: " + firstCategory.getCategoryName());
 
+        // without save() there's no update; category must be not persisted then...
         // When
-        crudService.saveCategory(firstCategory);
+//        crudService.saveCategory(firstCategory);
 
         // Then
         assertEquals(categoriesCount, crudService.countCategories());
@@ -221,12 +223,14 @@ public class JavaQuizDatabaseTest {
 
         // Given
         long categoriesCount = crudService.countCategories();
-        Categories secondCategory = crudService.findFirstByCategory(PageRequest.of(1,1)).get(0);
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         Questions firstQuestion = crudService.findQuestionsWithNullCategory().get(0);
-        secondCategory.addQuestion(firstQuestion);
+
+        firstCategory.addQuestion(firstQuestion);
+        logger.debug("Questions in the first category: " + firstCategory.getQuestions());
 
         // When
-        crudService.saveCategory(secondCategory);
+        crudService.saveCategory(firstCategory);
 
         // Then
         assertEquals(categoriesCount, crudService.countCategories());

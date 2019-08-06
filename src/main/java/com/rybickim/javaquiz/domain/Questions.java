@@ -18,6 +18,9 @@ public class Questions {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Version
+    private Long version;
+
     //shouldn't be unique because some questions might be repeated (e.g. case of multiple choice question: which one of the statements below is correct?)
     //besides, just the @Column annotation does absolutely nothing, right?
     private String question;
