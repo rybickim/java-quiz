@@ -8,16 +8,14 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +25,8 @@ import static org.junit.Assert.*;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@Rollback(false)
 @ContextConfiguration(classes = {JavaQuizApplication.class, DatabaseConfig.class })
-//@Transactional
 public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
@@ -127,10 +125,12 @@ public class JavaQuizDatabaseTest {
         long questionsCount = crudService.countQuestions();
         long categoriesCount = crudService.countCategories();
         Questions question = createQuestionWithCategoryAndTrueFalseAnswer(questionsCount + 1, categoriesCount + 1);
+        isQuestionNew(question);
         Long savedQuizId = crudService.saveQuestion(question).getId();
 
         // When
         Questions maybeQuestion = crudService.findQuestionById(savedQuizId).orElse(new Questions());
+        isQuestionNew(maybeQuestion);
 
         // Then
         assertNotNull(maybeQuestion);
@@ -192,6 +192,7 @@ public class JavaQuizDatabaseTest {
         // Given
         long categoriesCount = crudService.countCategories();
         Categories category = createCategory(categoriesCount + 1);
+        isCategoryNew(category);
 
         // When
         crudService.saveCategory(category);
@@ -200,14 +201,18 @@ public class JavaQuizDatabaseTest {
         assertEquals(categoriesCount + 1, crudService.countCategories());
     }
 
+//    @Transactional
     @Test
     public void testIfFoundCategoryNameCanBeUpdated(){
 
         // Given
         long categoriesCount = crudService.countCategories();
         Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        isCategoryNew(firstCategory);
         firstCategory.setCategoryName("Zerg_" + (categoriesCount + 1));
-        logger.debug("Name is in the first category: " + firstCategory.getCategoryName());
+        logger.debug("Name changed");
+        isCategoryNew(firstCategory);
+        logger.debug("Name in the first category is: " + firstCategory.getCategoryName());
 
         // without save() there's no update; category must be not persisted then...
         // When
@@ -408,4 +413,37 @@ public class JavaQuizDatabaseTest {
         return category;
     }
 
+    private boolean isQuestionNew(Questions question){
+        Long id = question.getId();
+        Class<Long> idType = Long.class;
+
+        if (!idType.isPrimitive()) {
+            logger.debug("isQuestionNew: first if clause: [{}]", id == null);
+            return id == null;
+        }
+
+        if (id instanceof Number) {
+            logger.debug("isQuestionNew: second if clause: [{}]", ((Number) id).longValue() == 0L);
+            return ((Number) id).longValue() == 0L;
+        }
+
+        throw new IllegalArgumentException(String.format("Unsupported primitive id type %s!", idType));
+    }
+
+    private boolean isCategoryNew(Categories category){
+        Long id = category.getId();
+        Class<Long> idType = Long.class;
+
+        if (!idType.isPrimitive()) {
+            logger.debug("isCategoryNew: first if clause: [{}]", id == null);
+            return id == null;
+        }
+
+        if (id instanceof Number) {
+            logger.debug("isCategoryNew: second if clause: [{}]", ((Number) id).longValue() == 0L);
+            return ((Number) id).longValue() == 0L;
+        }
+
+        throw new IllegalArgumentException(String.format("Unsupported primitive id type %s!", idType));
+    }
 }
