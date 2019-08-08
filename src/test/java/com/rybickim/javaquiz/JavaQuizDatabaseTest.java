@@ -341,8 +341,10 @@ public class JavaQuizDatabaseTest {
 
     }
 
+    // TODO shuffle test
+    @Transactional
     @Test
-    public void testIfDatabaseHoldsNoDuplicateQuestions(){
+    public void testIfListIsShuffled(){
         // Given
 
         // When

@@ -8,11 +8,14 @@ import com.rybickim.javaquiz.service.CrudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -100,8 +103,20 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
+    public long countQuestionsByCategory(Categories categories){
+        return questionCrudRepository.countQuestionsByCategory(categories);
+    }
+
+    @Override
+    @Transactional
     public List<Questions> findQuestionsWithNullCategory() {
         return questionCrudRepository.findQuestionsWithNullCategory();
+    }
+
+    @Override
+    @Transactional
+    public Page<Questions> findQuestionsWithCategory(Categories categories, Pageable pageable) {
+        return questionCrudRepository.findQuestionsWithCategory(categories, pageable);
     }
 
     @Override
@@ -116,19 +131,29 @@ public class CrudServiceImpl implements CrudService {
         return categoryCrudRepository.findFirstByCategory(pageable);
     }
 
-    // TODO shuffle implementation?
-    //    @Override
-//    public List<QuizEntity> getQuizExercises() {
-//        logger.debug("getQuestions() from StartServiceImpl");
-//
-//        List<QuizEntity> result = new LinkedList<>();
-//
-//        quizEntityRepository.findAll().forEach( quizEntity -> result.add(quizEntity));
-//
-//        Collections.shuffle(result);
-//
-//        return result;
-//    }
+    @Override
+    @Transactional
+    public List<Questions> getShuffledList(int rowsLimit, Categories category) {
+        Long totalRows = countQuestionsByCategory(category);
+        Long totalPages =
+                (totalRows % rowsLimit == 0)
+                        ? (totalRows / rowsLimit)
+                        : ((totalRows / rowsLimit) + 1);
+        int pageIndex = (int) (Math.random() * totalPages);
+
+        PageRequest pageRequest = PageRequest.of(pageIndex, rowsLimit);
+        Page<Questions> somePage = findQuestionsWithCategory(category, pageRequest);
+        List<Questions> someList;
+        if (somePage.getTotalElements() > 0) {
+            someList = new ArrayList<>(somePage.getContent());
+        } else {
+            someList = new ArrayList<>();
+        }
+
+        Collections.shuffle(someList);
+
+        return someList;
+    }
 
 
 }

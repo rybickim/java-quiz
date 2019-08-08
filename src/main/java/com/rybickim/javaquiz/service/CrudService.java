@@ -2,6 +2,7 @@ package com.rybickim.javaquiz.service;
 
 import com.rybickim.javaquiz.domain.Categories;
 import com.rybickim.javaquiz.domain.Questions;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -29,10 +30,16 @@ public interface CrudService {
 
     void deleteCategoryById(long id);
 
+    long countQuestionsByCategory(Categories categories);
+
     List<Questions> findQuestionsWithNullCategory();
+
+    Page<Questions> findQuestionsWithCategory(Categories categories, Pageable pageable);
 
     Questions findFirstByQuestion(String question);
 
     List<Categories> findFirstByCategory(Pageable pageable);
 
-}
+    List<Questions> getShuffledList(int someLimit, Categories category);
+
+    }

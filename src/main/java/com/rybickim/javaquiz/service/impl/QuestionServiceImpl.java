@@ -56,19 +56,4 @@ public class QuestionServiceImpl implements QuestionService {
         questionsRepository.delete(id);
     }
 
-    // TODO shuffle implementation?
-    //    @Override
-//    public List<QuizEntity> getQuizExercises() {
-//        logger.debug("getQuestions() from StartServiceImpl");
-//
-//        List<QuizEntity> result = new LinkedList<>();
-//
-//        quizEntityRepository.findAll().forEach( quizEntity -> result.add(quizEntity));
-//
-//        Collections.shuffle(result);
-//
-//        return result;
-//    }
-
-
 }
