@@ -13,4 +13,6 @@ public interface QuestionCrudRepository
 
     @Query("SELECT q FROM Questions q WHERE LOWER(q.categories) IS NULL")
     List<Questions> findQuestionsWithNullCategory();
+
+    Questions findFirstByQuestion(String question);
 }

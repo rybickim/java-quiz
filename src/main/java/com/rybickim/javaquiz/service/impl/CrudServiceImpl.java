@@ -106,6 +106,12 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
+    public Questions findFirstByQuestion(String question) {
+        return questionCrudRepository.findFirstByQuestion(question);
+    }
+
+    @Override
+    @Transactional
     public List<Categories> findFirstByCategory(Pageable pageable) {
         return categoryCrudRepository.findFirstByCategory(pageable);
     }

@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -33,7 +34,7 @@ public class JavaQuizDatabaseTest {
 
     private CrudService crudService;
 
-    @Autowired
+    @PersistenceContext
     private EntityManager entityManager;
 
     @Autowired
@@ -57,6 +58,23 @@ public class JavaQuizDatabaseTest {
         assertEquals(questionsCount + 1, crudService.countQuestions());
     }
 
+    @Transactional
+    @Test
+    public void testIfQuestionIsSavedViaEntityManager(){
+
+
+        // Given
+        long questionsCount = crudService.countQuestions();
+        Questions question = createQuestion(questionsCount + 1);
+
+        // When
+        entityManager.persist(question);
+
+        // Then
+        assertEquals(questionsCount + 1, crudService.countQuestions());
+    }
+
+    @Transactional
     @Test
     public void testIfQuestionIsUpdatedWithFirstCategory(){
 
@@ -65,12 +83,11 @@ public class JavaQuizDatabaseTest {
         Questions question = createQuestion(questionsCount + 1);
         Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
-//        question = crudService.saveQuestion(question);
+        // persist transient bare question before update
+        question = crudService.saveQuestion(question);
 
         // When
         question.setCategories(firstCategory);
-        crudService.saveCategory(firstCategory);
-        crudService.saveQuestion(question);
 
         // Then
         assertEquals(questionsCount + 1, crudService.countQuestions());
@@ -201,44 +218,55 @@ public class JavaQuizDatabaseTest {
         assertEquals(categoriesCount + 1, crudService.countCategories());
     }
 
-//    @Transactional
+    @Transactional
     @Test
     public void testIfFoundCategoryNameCanBeUpdated(){
 
         // Given
+        long questionsCount = crudService.countQuestions();
         long categoriesCount = crudService.countCategories();
+        Categories category = createCategoryWithQuestion(categoriesCount + 1, questionsCount + 1);
+        entityManager.persist(category);
+        entityManager.flush();
+
+        assertNotEquals(0, crudService.countCategories());
+
         Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         isCategoryNew(firstCategory);
+
+        // When
         firstCategory.setCategoryName("Zerg_" + (categoriesCount + 1));
         logger.debug("Name changed");
         isCategoryNew(firstCategory);
         logger.debug("Name in the first category is: " + firstCategory.getCategoryName());
 
-        // without save() there's no update; category must be not persisted then...
-        // When
-//        crudService.saveCategory(firstCategory);
-
         // Then
-        assertEquals(categoriesCount, crudService.countCategories());
+        assertEquals(categoriesCount + 1, crudService.countCategories());
 
     }
 
+    @Transactional
     @Test
     public void testIfFoundCategoryQuestionsCanBeUpdated(){
 
         // Given
+        long questionsCount = crudService.countQuestions();
         long categoriesCount = crudService.countCategories();
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
-        Questions firstQuestion = crudService.findQuestionsWithNullCategory().get(0);
+        Categories category = createCategoryWithQuestion(categoriesCount + 1, questionsCount + 1);
+        entityManager.persist(category);
+        entityManager.flush();
 
+        assertNotEquals(0, crudService.countCategories());
+
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Questions firstQuestion = crudService.findFirstByQuestion("Question_1");
+
+        // When
         firstCategory.addQuestion(firstQuestion);
         logger.debug("Questions in the first category: " + firstCategory.getQuestions());
 
-        // When
-        crudService.saveCategory(firstCategory);
-
         // Then
-        assertEquals(categoriesCount, crudService.countCategories());
+        assertEquals(categoriesCount + 1, crudService.countCategories());
 
     }
 
@@ -269,11 +297,16 @@ public class JavaQuizDatabaseTest {
         assertEquals(questionsCount, questionsInDb);
     }
 
+    @Transactional
     @Test
     public void testIfUnassignedQuestionsAreAllInFirstCategory(){
         // Given
         long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        Questions unassignedQuestion = createQuestion(questionsCount + 1);
+
+        entityManager.persist(unassignedQuestion);
+
+        assertEquals(questionsCount + 1, crudService.countQuestions());
 
         // When
         List<Questions> searchResult = crudService.findQuestionsWithNullCategory();
@@ -281,7 +314,6 @@ public class JavaQuizDatabaseTest {
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
         assertNotNull(searchResult.get(0).getId());
-        assertEquals(Long.valueOf(143L),searchResult.get(0).getId());
 
         List<Categories> categoriesSearch = crudService.findFirstByCategory(PageRequest.of(0,1));
 
@@ -294,10 +326,6 @@ public class JavaQuizDatabaseTest {
 
         for (Questions question : searchResult){
             categoriesSearch.get(0).addQuestion(question);
-            crudService.saveQuestion(question);
-//            entityManager.persist(question);
-//            entityManager.merge(question);
-//            entityManager.flush();
             logger.debug("Category from added question: " + question.getCategories());
 
         }

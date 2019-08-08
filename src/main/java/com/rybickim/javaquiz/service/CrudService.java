@@ -31,6 +31,8 @@ public interface CrudService {
 
     List<Questions> findQuestionsWithNullCategory();
 
+    Questions findFirstByQuestion(String question);
+
     List<Categories> findFirstByCategory(Pageable pageable);
 
 }
