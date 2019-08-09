@@ -133,9 +133,19 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
+    public List<Questions> getShuffledList(Categories category) {
+        long totalRows = countQuestionsByCategory(category);
+
+        return getShuffledList((int) totalRows, category);
+    }
+
+
+    // TODO another algorithm: pageRequests of size = 1 but looped; need to avoid duplicates as well
+    @Override
+    @Transactional
     public List<Questions> getShuffledList(int rowsLimit, Categories category) {
-        Long totalRows = countQuestionsByCategory(category);
-        Long totalPages =
+        long totalRows = countQuestionsByCategory(category);
+        long totalPages =
                 (totalRows % rowsLimit == 0)
                         ? (totalRows / rowsLimit)
                         : ((totalRows / rowsLimit) + 1);

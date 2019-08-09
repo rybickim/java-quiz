@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,6 +22,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -299,7 +301,7 @@ public class JavaQuizDatabaseTest {
 
     @Transactional
     @Test
-    public void testIfUnassignedQuestionsAreAllInFirstCategory(){
+    public void testIfUnassignedQuestionsAreSetToFirstCategory(){
         // Given
         long questionsCount = crudService.countQuestions();
         Questions unassignedQuestion = createQuestion(questionsCount + 1);
@@ -341,15 +343,52 @@ public class JavaQuizDatabaseTest {
 
     }
 
+    // TODO test the new queries first!
+
+    @Test
+    public void testIfCountQuestionsByCategoryWorks(){
+        // Given
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        assertNotNull(firstCategory);
+
+        // When
+        long result = crudService.countQuestionsByCategory(firstCategory);
+
+        // Then
+        assertEquals(3L, result);
+    }
+
+    @Test
+    public void testIfFindQuestionsWithCategoryWorks(){
+        // Given
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        assertNotNull(firstCategory);
+
+        // When
+        List<Questions> resultList = crudService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,3))
+                .get()
+                .collect(Collectors.toList());
+
+        // Then
+        assertEquals(3, resultList.size());
+    }
+
     // TODO shuffle test
     @Transactional
     @Test
     public void testIfListIsShuffled(){
         // Given
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        assertNotNull(firstCategory);
 
         // When
+        List<Questions> resultList = crudService.getShuffledList(firstCategory);
 
         // Then
+        assertEquals(42, resultList);
     }
 
     /////////////////////////////////////////////

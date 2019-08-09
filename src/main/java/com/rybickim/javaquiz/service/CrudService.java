@@ -40,6 +40,8 @@ public interface CrudService {
 
     List<Categories> findFirstByCategory(Pageable pageable);
 
+    List<Questions> getShuffledList(Categories category);
+
     List<Questions> getShuffledList(int someLimit, Categories category);
 
     }

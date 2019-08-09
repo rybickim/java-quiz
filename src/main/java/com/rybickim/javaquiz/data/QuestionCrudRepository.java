@@ -13,7 +13,7 @@ import java.util.List;
 public interface QuestionCrudRepository
         extends CrudRepository<Questions, Long> {
 
-    @Query("SELECT COUNT(q) FROM Questions q HAVING LOWER(q.categories) = :categories")
+    @Query("SELECT COUNT(q) FROM Questions q WHERE LOWER(q.categories) = :categories")
     long countQuestionsByCategory(@Param("categories") Categories categories);
 
     @Query("SELECT q FROM Questions q WHERE LOWER(q.categories) IS NULL")
