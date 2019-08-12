@@ -5,6 +5,8 @@ import com.rybickim.javaquiz.data.QuestionCrudRepository;
 import com.rybickim.javaquiz.domain.Categories;
 import com.rybickim.javaquiz.domain.Questions;
 import com.rybickim.javaquiz.service.CrudService;
+import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
+import com.rybickim.javaquiz.utils.QuizDifficulty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CrudServiceImpl implements CrudService {
@@ -133,26 +133,10 @@ public class CrudServiceImpl implements CrudService {
 
     @Override
     @Transactional
-    public List<Questions> getShuffledList(Categories category) {
+    public List<Questions> getShuffledAllQuestions(Categories category) {
         long totalRows = countQuestionsByCategory(category);
 
-        return getShuffledList((int) totalRows, category);
-    }
-
-
-    // TODO another algorithm: pageRequests of size = 1 but looped; need to avoid duplicates as well
-    @Override
-    @Transactional
-    public List<Questions> getShuffledList(int rowsLimit, Categories category) {
-        long totalRows = countQuestionsByCategory(category);
-        long totalPages =
-                (totalRows % rowsLimit == 0)
-                        ? (totalRows / rowsLimit)
-                        : ((totalRows / rowsLimit) + 1);
-        int pageIndex = (int) (Math.random() * totalPages);
-
-        PageRequest pageRequest = PageRequest.of(pageIndex, rowsLimit);
-        Page<Questions> somePage = findQuestionsWithCategory(category, pageRequest);
+        Page<Questions> somePage = findQuestionsWithCategory(category, PageRequest.of(0,(int) totalRows));
         List<Questions> someList;
         if (somePage.getTotalElements() > 0) {
             someList = new ArrayList<>(somePage.getContent());
@@ -165,5 +149,40 @@ public class CrudServiceImpl implements CrudService {
         return someList;
     }
 
+    @Override
+    @Transactional
+    public List<Questions> getShuffledSelectedQuestions(QuizDifficulty qd, Categories category) throws IncorrectDifficultyException {
+        long totalRows = countQuestionsByCategory(category);
 
+        if (!getAvailableDifficulties((int) totalRows).contains(qd)){
+            throw new IncorrectDifficultyException("Difficulty (" + qd.noOfQuestions +
+                    ") exceeds the total number of questions (" + totalRows + ")");
+        }
+
+        Set<Questions> questions = new HashSet<>();
+
+         while (questions.size() < qd.noOfQuestions) {
+             int pageIndex = (int) (Math.random() * totalRows);
+
+             questions.addAll(findQuestionsWithCategory(category, PageRequest.of(pageIndex, 1)).getContent());
+         }
+
+        List<Questions> resultList = new ArrayList<>(questions);
+
+        Collections.shuffle(resultList);
+
+        return resultList;
+    }
+
+    public Set<QuizDifficulty> getAvailableDifficulties(int questionsInTotal){
+        Set<QuizDifficulty> difficulties = new HashSet<>();
+
+        for(QuizDifficulty qd : QuizDifficulty.values()){
+            if (qd.noOfQuestions <= questionsInTotal){
+                difficulties.add(qd);
+            } else break;
+        }
+
+        return difficulties;
+    }
 }

@@ -3,12 +3,13 @@ package com.rybickim.javaquiz;
 import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.domain.*;
 import com.rybickim.javaquiz.service.CrudService;
+import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
+import com.rybickim.javaquiz.utils.QuizDifficulty;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,10 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
@@ -343,8 +341,6 @@ public class JavaQuizDatabaseTest {
 
     }
 
-    // TODO test the new queries first!
-
     @Test
     public void testIfCountQuestionsByCategoryWorks(){
         // Given
@@ -356,7 +352,7 @@ public class JavaQuizDatabaseTest {
         long result = crudService.countQuestionsByCategory(firstCategory);
 
         // Then
-        assertEquals(3L, result);
+        assertEquals(result, crudService.countQuestionsByCategory(firstCategory));
     }
 
     @Test
@@ -375,7 +371,7 @@ public class JavaQuizDatabaseTest {
         assertEquals(3, resultList.size());
     }
 
-    // TODO shuffle test
+    // TODO thorough shuffle test
     @Transactional
     @Test
     public void testIfListIsShuffled(){
@@ -384,11 +380,63 @@ public class JavaQuizDatabaseTest {
 
         assertNotNull(firstCategory);
 
+        int questionsCount = (int) crudService.countQuestionsByCategory(firstCategory);
+
         // When
-        List<Questions> resultList = crudService.getShuffledList(firstCategory);
+        List<Questions> resultList = crudService.getShuffledAllQuestions(firstCategory);
 
         // Then
-        assertEquals(42, resultList);
+        assertEquals(questionsCount, resultList.size());
+    }
+
+    @Test
+    public void testIfGetAvailableDifficultiesWorks(){
+        // Given
+        int size = 20;
+
+        // When
+        Set<QuizDifficulty> difficulties = crudService.getAvailableDifficulties(size);
+
+        // Then
+        assertNotNull(difficulties);
+        assertEquals(2, difficulties.size());
+        assertTrue(difficulties.contains(QuizDifficulty.EASY));
+        assertTrue(difficulties.contains(QuizDifficulty.MEDIUM));
+//        assertTrue(difficulties.contains(QuizDifficulty.HARD));
+    }
+
+    @Transactional
+    @Test
+    public void testIfSelectedQuestionsAreShuffled(){
+        // Given
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        assertNotNull(firstCategory);
+
+        // When
+        List<Questions> resultList = null;
+        try {
+            resultList = crudService.getShuffledSelectedQuestions( QuizDifficulty.EASY, firstCategory);
+        } catch (IncorrectDifficultyException e) {
+            e.printStackTrace();
+        }
+
+        // Then
+        assertNotNull(resultList);
+        assertEquals(QuizDifficulty.EASY.noOfQuestions, resultList.size());
+    }
+
+    @Transactional
+    @Test(expected = IncorrectDifficultyException.class)
+    public void testIfIncorrectDifficultyExceptionIsThrown() throws IncorrectDifficultyException{
+        // Given
+        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+
+        assertNotNull(firstCategory);
+
+        // When
+        crudService.getShuffledSelectedQuestions( QuizDifficulty.HARD, firstCategory);
+
     }
 
     /////////////////////////////////////////////

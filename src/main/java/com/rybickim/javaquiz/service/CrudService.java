@@ -2,11 +2,14 @@ package com.rybickim.javaquiz.service;
 
 import com.rybickim.javaquiz.domain.Categories;
 import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
+import com.rybickim.javaquiz.utils.QuizDifficulty;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface CrudService {
 
@@ -40,8 +43,10 @@ public interface CrudService {
 
     List<Categories> findFirstByCategory(Pageable pageable);
 
-    List<Questions> getShuffledList(Categories category);
+    List<Questions> getShuffledAllQuestions(Categories category);
 
-    List<Questions> getShuffledList(int someLimit, Categories category);
+    List<Questions> getShuffledSelectedQuestions(QuizDifficulty qd, Categories category) throws IncorrectDifficultyException;
+
+    Set<QuizDifficulty> getAvailableDifficulties(int questionsInTotal);
 
     }
