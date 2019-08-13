@@ -439,6 +439,41 @@ public class JavaQuizDatabaseTest {
 
     }
 
+    // TODO test chosen questions entity
+
+    @Transactional
+    @Test
+    public void testIfChoosingQuestionsWork(){
+        // Given
+        long questionsChosenInDb = crudService.countChosenQuestions();
+        Questions firstQuestion = crudService.findFirstByQuestion("Question_1");
+
+        // When
+        ChosenQuestions chosenQuestion = createChosenQuestion(firstQuestion);
+
+        // Then
+        assertNotNull(chosenQuestion);
+        assertEquals(questionsChosenInDb + 1, crudService.countChosenQuestions());
+
+    }
+
+    @Transactional
+    @Test
+    public void testIfDiscardingQuestionsWork(){
+        // Given
+        long questionsChosenInDb = crudService.countChosenQuestions();
+        long chosenQuestionId = crudService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getId();
+
+        // When
+        crudService.deleteChosenQuestionById(chosenQuestionId);
+
+        // Then
+        assertEquals(questionsChosenInDb - 1, crudService.countChosenQuestions());
+
+    }
+
+    // TODO test explanation text and diagram
+
     /////////////////////////////////////////////
     //helper methods
     ///////////////////////////////////////////////////////////////
@@ -528,6 +563,19 @@ public class JavaQuizDatabaseTest {
                 question.getQuestion());
 
         return category;
+    }
+
+    private ChosenQuestions createChosenQuestion(Questions question){
+        ChosenQuestions chosenQuestion = new ChosenQuestions();
+
+        question.addChosenQuestion(chosenQuestion);
+
+        return chosenQuestion;
+    }
+
+    private void removeChosenQuestion(ChosenQuestions chosenQuestion){
+        Questions question = chosenQuestion.getQuestions();
+        question.removeChosenQuestion(chosenQuestion);
     }
 
     private boolean isQuestionNew(Questions question){

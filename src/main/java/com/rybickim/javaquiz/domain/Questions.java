@@ -30,12 +30,16 @@ public class Questions {
     private Categories categories;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
-            cascade = CascadeType.ALL, optional = false)
+            cascade = CascadeType.ALL)
     private ChosenQuestions chosenQuestions;
 
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
             cascade = CascadeType.ALL, optional = false)
     private Answers answers;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "questions",
+            cascade = CascadeType.ALL, optional = false)
+    private Explanations explanations;
 
     public Questions(String question){
         this.question = question;
@@ -70,6 +74,16 @@ public class Questions {
     public void removeAnswer(Answers answer){
         this.setAnswers(null);
         answer.setQuestions(null);
+    }
+
+    public void addExplanation(Explanations explanation){
+        this.setExplanations(explanation);
+        explanation.setQuestions(this);
+    }
+
+    public void removeExplanation(Explanations explanation){
+        this.setExplanations(null);
+        explanation.setQuestions(null);
     }
 
     @Override

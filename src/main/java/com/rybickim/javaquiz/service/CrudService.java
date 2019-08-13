@@ -1,6 +1,7 @@
 package com.rybickim.javaquiz.service;
 
 import com.rybickim.javaquiz.domain.Categories;
+import com.rybickim.javaquiz.domain.ChosenQuestions;
 import com.rybickim.javaquiz.domain.Questions;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
 import com.rybickim.javaquiz.utils.QuizDifficulty;
@@ -48,5 +49,17 @@ public interface CrudService {
     List<Questions> getShuffledSelectedQuestions(QuizDifficulty qd, Categories category) throws IncorrectDifficultyException;
 
     Set<QuizDifficulty> getAvailableDifficulties(int questionsInTotal);
+
+    long countChosenQuestions();
+
+    Optional<ChosenQuestions> findChosenQuestionById(long id);
+
+    void deleteChosenQuestionById(long id);
+
+    List<ChosenQuestions> findFirstChosenQuestions(Pageable pageable);
+
+    void chooseQuestions(List<Questions> questions);
+
+    void discardQuestions(List<Questions> questions);
 
     }

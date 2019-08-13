@@ -1,8 +1,10 @@
 package com.rybickim.javaquiz.service.impl;
 
 import com.rybickim.javaquiz.data.CategoryCrudRepository;
+import com.rybickim.javaquiz.data.ChosenQuestionCrudRepository;
 import com.rybickim.javaquiz.data.QuestionCrudRepository;
 import com.rybickim.javaquiz.domain.Categories;
+import com.rybickim.javaquiz.domain.ChosenQuestions;
 import com.rybickim.javaquiz.domain.Questions;
 import com.rybickim.javaquiz.service.CrudService;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
@@ -26,15 +28,21 @@ public class CrudServiceImpl implements CrudService {
 
     private QuestionCrudRepository questionCrudRepository;
     private CategoryCrudRepository categoryCrudRepository;
+    private ChosenQuestionCrudRepository chosenQuestionCrudRepository;
 
     @Autowired
     public CrudServiceImpl(QuestionCrudRepository questionCrudRepository,
-                           CategoryCrudRepository categoryCrudRepository) {
-        logger.debug("StartServiceImpl(): questionCrudRepository [{}], categoryCrudRepository [{}]",
+                           CategoryCrudRepository categoryCrudRepository,
+                           ChosenQuestionCrudRepository chosenQuestionCrudRepository) {
+        logger.debug("StartServiceImpl(): questionCrudRepository [{}], " +
+                        "categoryCrudRepository [{}], " +
+                        "chosenQuestionCrudRepository [{}]",
                 questionCrudRepository,
-                categoryCrudRepository);
+                categoryCrudRepository,
+                chosenQuestionCrudRepository);
         this.questionCrudRepository = questionCrudRepository;
         this.categoryCrudRepository = categoryCrudRepository;
+        this.chosenQuestionCrudRepository = chosenQuestionCrudRepository;
     }
 
     @Override
@@ -174,6 +182,7 @@ public class CrudServiceImpl implements CrudService {
         return resultList;
     }
 
+    @Override
     public Set<QuizDifficulty> getAvailableDifficulties(int questionsInTotal){
         Set<QuizDifficulty> difficulties = new HashSet<>();
 
@@ -184,5 +193,39 @@ public class CrudServiceImpl implements CrudService {
         }
 
         return difficulties;
+    }
+
+    @Override
+    public long countChosenQuestions() {
+        return chosenQuestionCrudRepository.count();
+    }
+
+    @Override
+    @Transactional
+    public Optional<ChosenQuestions> findChosenQuestionById(long id) {
+        return chosenQuestionCrudRepository.findById(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteChosenQuestionById(long id) {
+        chosenQuestionCrudRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ChosenQuestions> findFirstChosenQuestions(Pageable pageable) {
+        return chosenQuestionCrudRepository.findFirst(pageable);
+    }
+
+    @Override
+    public void chooseQuestions(List<Questions> questions) {
+        questions.forEach(x -> {
+
+        });
+    }
+
+    @Override
+    public void discardQuestions(List<Questions> questions) {
+
     }
 }
