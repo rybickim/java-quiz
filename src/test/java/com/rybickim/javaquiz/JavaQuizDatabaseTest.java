@@ -2,7 +2,9 @@ package com.rybickim.javaquiz;
 
 import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.domain.*;
-import com.rybickim.javaquiz.service.CrudService;
+import com.rybickim.javaquiz.service.CategoryService;
+import com.rybickim.javaquiz.service.ChosenQuestionService;
+import com.rybickim.javaquiz.service.QuestionService;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
 import com.rybickim.javaquiz.utils.QuizDifficulty;
 import org.junit.Test;
@@ -32,30 +34,41 @@ public class JavaQuizDatabaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
 
-    private CrudService crudService;
+    private QuestionService questionService;
+    private CategoryService categoryService;
+    private ChosenQuestionService chosenQuestionService;
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Autowired
-    public void setCrudService(CrudService crudService){
-        this.crudService = crudService;
+    public void setCategoryService(CategoryService categoryService){
+        this.categoryService = categoryService;
     }
 
+    @Autowired
+    public void setQuestionService(QuestionService questionService) {
+        this.questionService = questionService;
+    }
+
+    @Autowired
+    public void setChosenQuestionService(ChosenQuestionService chosenQuestionService) {
+        this.chosenQuestionService = chosenQuestionService;
+    }
 
     @Test
     public void testIfQuestionIsSaved(){
 
 
         // Given
-        long questionsCount = crudService.countQuestions();
+        long questionsCount = questionService.countQuestions();
         Questions question = createQuestion(questionsCount + 1);
 
         // When
-        crudService.saveQuestion(question);
+        questionService.saveQuestion(question);
 
         // Then
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
     }
 
     @Transactional
@@ -64,14 +77,14 @@ public class JavaQuizDatabaseTest {
 
 
         // Given
-        long questionsCount = crudService.countQuestions();
+        long questionsCount = questionService.countQuestions();
         Questions question = createQuestion(questionsCount + 1);
 
         // When
         entityManager.persist(question);
 
         // Then
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
     }
 
     @Transactional
@@ -79,33 +92,33 @@ public class JavaQuizDatabaseTest {
     public void testIfQuestionIsUpdatedWithFirstCategory(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
+        long questionsCount = questionService.countQuestions();
         Questions question = createQuestion(questionsCount + 1);
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         // persist transient bare question before update
-        question = crudService.saveQuestion(question);
+        question = questionService.saveQuestion(question);
 
         // When
         question.setCategories(firstCategory);
 
         // Then
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
     }
 
     @Test
     public void testIfQuestionWithCategoryIsSaved(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Questions question = createQuestionWithCategory(questionsCount + 1, categoriesCount + 1);
 
         // When
-        crudService.saveQuestion(question);
+        questionService.saveQuestion(question);
 
         // Then
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
     }
 
     @Test
@@ -113,15 +126,15 @@ public class JavaQuizDatabaseTest {
 
 
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsCount + 1, categoriesCount + 1);
 
         // When
-        crudService.saveQuestion(question);
+        questionService.saveQuestion(question);
 
         // Then
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
     }
 
     @Test
@@ -130,7 +143,7 @@ public class JavaQuizDatabaseTest {
         long nonExistingId = 1223232343434L;
 
         // When
-        Optional<Questions> maybeQuestion = crudService.findQuestionById(nonExistingId);
+        Optional<Questions> maybeQuestion = questionService.findQuestionById(nonExistingId);
 
         // Then
         assertEquals(Optional.empty(), maybeQuestion);
@@ -139,14 +152,14 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfQuestionIsFound(){
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Questions question = createQuestionWithCategoryAndTrueFalseAnswer(questionsCount + 1, categoriesCount + 1);
         isQuestionNew(question);
-        Long savedQuizId = crudService.saveQuestion(question).getId();
+        Long savedQuizId = questionService.saveQuestion(question).getId();
 
         // When
-        Questions maybeQuestion = crudService.findQuestionById(savedQuizId).orElse(new Questions());
+        Questions maybeQuestion = questionService.findQuestionById(savedQuizId).orElse(new Questions());
         isQuestionNew(maybeQuestion);
 
         // Then
@@ -158,22 +171,22 @@ public class JavaQuizDatabaseTest {
     public void testIfQuestionIsDeleted(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
+        long questionsCount = questionService.countQuestions();
         Questions question = createQuestion(questionsCount + 1);
 
-        Long savedQuizId = crudService.saveQuestion(question).getId();
+        Long savedQuizId = questionService.saveQuestion(question).getId();
 
 
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
 
-        Optional<Questions> maybeQuestion = crudService.findQuestionById(savedQuizId);
+        Optional<Questions> maybeQuestion = questionService.findQuestionById(savedQuizId);
 
         assertNotNull(maybeQuestion);
         assertNotEquals(Optional.empty(), maybeQuestion);
         // When
 
-        crudService.deleteQuestionById(savedQuizId);
-        maybeQuestion = crudService.findQuestionById(savedQuizId);
+        questionService.deleteQuestionById(savedQuizId);
+        maybeQuestion = questionService.findQuestionById(savedQuizId);
 
         // Then
         assertEquals(Optional.empty(), maybeQuestion);
@@ -184,19 +197,19 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfCategoryIsNotDeletedWhenQuestionIs(){
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Questions question = createQuestionWithCategoryAndMultipleChoiceAnswer(questionsCount + 1, categoriesCount + 1);
-        Long savedQuizId = crudService.saveQuestion(question).getId();
+        Long savedQuizId = questionService.saveQuestion(question).getId();
         long savedCategoryId = savedQuizId + 1L;
 
-        Optional<Categories> maybeCategory = crudService.findCategoryById(savedCategoryId);
+        Optional<Categories> maybeCategory = categoryService.findCategoryById(savedCategoryId);
 
         assertNotEquals(Optional.empty(), maybeCategory);
 
         // When
-        crudService.deleteQuestionById(savedQuizId);
-        maybeCategory = crudService.findCategoryById(savedCategoryId);
+        questionService.deleteQuestionById(savedQuizId);
+        maybeCategory = categoryService.findCategoryById(savedCategoryId);
 
         // Then
 
@@ -207,15 +220,15 @@ public class JavaQuizDatabaseTest {
     public void testIfCategoryIsSaved(){
 
         // Given
-        long categoriesCount = crudService.countCategories();
+        long categoriesCount = categoryService.countCategories();
         Categories category = createCategory(categoriesCount + 1);
         isCategoryNew(category);
 
         // When
-        crudService.saveCategory(category);
+        categoryService.saveCategory(category);
 
         // Then
-        assertEquals(categoriesCount + 1, crudService.countCategories());
+        assertEquals(categoriesCount + 1, categoryService.countCategories());
     }
 
     @Transactional
@@ -223,15 +236,15 @@ public class JavaQuizDatabaseTest {
     public void testIfFoundCategoryNameCanBeUpdated(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Categories category = createCategoryWithQuestion(categoriesCount + 1, questionsCount + 1);
         entityManager.persist(category);
         entityManager.flush();
 
-        assertNotEquals(0, crudService.countCategories());
+        assertNotEquals(0, categoryService.countCategories());
 
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         isCategoryNew(firstCategory);
 
         // When
@@ -241,7 +254,7 @@ public class JavaQuizDatabaseTest {
         logger.debug("Name in the first category is: " + firstCategory.getCategoryName());
 
         // Then
-        assertEquals(categoriesCount + 1, crudService.countCategories());
+        assertEquals(categoriesCount + 1, categoryService.countCategories());
 
     }
 
@@ -250,23 +263,22 @@ public class JavaQuizDatabaseTest {
     public void testIfFoundCategoryQuestionsCanBeUpdated(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Categories category = createCategoryWithQuestion(categoriesCount + 1, questionsCount + 1);
         entityManager.persist(category);
         entityManager.flush();
 
-        assertNotEquals(0, crudService.countCategories());
+        assertNotEquals(0, categoryService.countCategories());
 
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
-        Questions firstQuestion = crudService.findFirstByQuestion("Question_1");
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Questions firstQuestion = questionService.findFirstByQuestion("Question_1");
 
         // When
         firstCategory.addQuestion(firstQuestion);
-        logger.debug("Questions in the first category: " + firstCategory.getQuestions());
 
         // Then
-        assertEquals(categoriesCount + 1, crudService.countCategories());
+        assertEquals(categoriesCount + 1, categoryService.countCategories());
 
     }
 
@@ -274,24 +286,24 @@ public class JavaQuizDatabaseTest {
     public void testIfCategoryWithQuestionIsSaved(){
 
         // Given
-        long questionsCount = crudService.countQuestions();
-        long categoriesCount = crudService.countCategories();
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
         Categories category = createCategoryWithQuestion(categoriesCount + 1, questionsCount + 1);
 
         // When
-        crudService.saveCategory(category);
+        categoryService.saveCategory(category);
 
         // Then
-        assertEquals(categoriesCount + 1, crudService.countCategories());
+        assertEquals(categoriesCount + 1, categoryService.countCategories());
     }
 
     @Test
     public void testIfCountEqualsListSize(){
         // Given
-        int questionsInDb = crudService.listQuestions().size();
+        int questionsInDb = questionService.listQuestions().size();
 
         // When
-        int questionsCount = (int) crudService.countQuestions();
+        int questionsCount = (int) questionService.countQuestions();
 
         // Then
         assertEquals(questionsCount, questionsInDb);
@@ -301,41 +313,31 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfUnassignedQuestionsAreSetToFirstCategory(){
         // Given
-        long questionsCount = crudService.countQuestions();
+        long questionsCount = questionService.countQuestions();
         Questions unassignedQuestion = createQuestion(questionsCount + 1);
 
         entityManager.persist(unassignedQuestion);
 
-        assertEquals(questionsCount + 1, crudService.countQuestions());
+        assertEquals(questionsCount + 1, questionService.countQuestions());
 
         // When
-        List<Questions> searchResult = crudService.findQuestionsWithNullCategory();
+        List<Questions> searchResult = questionService.findQuestionsWithNullCategory();
 
         assertNotEquals(Collections.EMPTY_LIST, searchResult);
 
         assertNotNull(searchResult.get(0).getId());
 
-        List<Categories> categoriesSearch = crudService.findFirstByCategory(PageRequest.of(0,1));
+        List<Categories> categoriesSearch = categoryService.findFirstByCategory(PageRequest.of(0,1));
 
         assertNotEquals(Collections.EMPTY_LIST, categoriesSearch);
         assertEquals(1, categoriesSearch.size());
 
-        for (Questions question : categoriesSearch.get(0).getQuestions()){
-            logger.debug("Question from Category_1 BEFORE ADD: " + question);
-        }
-
         for (Questions question : searchResult){
             categoriesSearch.get(0).addQuestion(question);
-            logger.debug("Category from added question: " + question.getCategories());
-
-        }
-
-        for (Questions question : categoriesSearch.get(0).getQuestions()){
-            logger.debug("Question from Category_1 AFTER ADD: " + question);
         }
 
         // Then
-        searchResult = crudService.findQuestionsWithNullCategory();
+        searchResult = questionService.findQuestionsWithNullCategory();
 
         assertEquals(Collections.EMPTY_LIST, searchResult);
 
@@ -344,31 +346,31 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfCountQuestionsByCategoryWorks(){
         // Given
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         assertNotNull(firstCategory);
 
         // When
-        long result = crudService.countQuestionsByCategory(firstCategory);
+        long result = questionService.countQuestionsByCategory(firstCategory);
 
         // Then
-        assertEquals(result, crudService.countQuestionsByCategory(firstCategory));
+        assertEquals(result, questionService.countQuestionsByCategory(firstCategory));
     }
 
     @Test
     public void testIfFindQuestionsWithCategoryWorks(){
         // Given
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         assertNotNull(firstCategory);
 
         // When
-        List<Questions> resultList = crudService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,3))
+        List<Questions> resultList = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,3))
                 .get()
                 .collect(Collectors.toList());
 
         // Then
-        assertEquals(3, resultList.size());
+        assertEquals(questionService.countQuestionsByCategory(firstCategory), resultList.size());
     }
 
     // TODO thorough shuffle test
@@ -376,14 +378,14 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfListIsShuffled(){
         // Given
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         assertNotNull(firstCategory);
 
-        int questionsCount = (int) crudService.countQuestionsByCategory(firstCategory);
+        int questionsCount = (int) questionService.countQuestionsByCategory(firstCategory);
 
         // When
-        List<Questions> resultList = crudService.getShuffledAllQuestions(firstCategory);
+        List<Questions> resultList = questionService.getShuffledAllQuestions(firstCategory);
 
         // Then
         assertEquals(questionsCount, resultList.size());
@@ -395,7 +397,7 @@ public class JavaQuizDatabaseTest {
         int size = 20;
 
         // When
-        Set<QuizDifficulty> difficulties = crudService.getAvailableDifficulties(size);
+        Set<QuizDifficulty> difficulties = questionService.getAvailableDifficulties(size);
 
         // Then
         assertNotNull(difficulties);
@@ -409,14 +411,14 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfSelectedQuestionsAreShuffled(){
         // Given
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         assertNotNull(firstCategory);
 
         // When
         List<Questions> resultList = null;
         try {
-            resultList = crudService.getShuffledSelectedQuestions( QuizDifficulty.EASY, firstCategory);
+            resultList = questionService.getShuffledSelectedQuestions( QuizDifficulty.EASY, firstCategory);
         } catch (IncorrectDifficultyException e) {
             e.printStackTrace();
         }
@@ -430,12 +432,12 @@ public class JavaQuizDatabaseTest {
     @Test(expected = IncorrectDifficultyException.class)
     public void testIfIncorrectDifficultyExceptionIsThrown() throws IncorrectDifficultyException{
         // Given
-        Categories firstCategory = crudService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
 
         assertNotNull(firstCategory);
 
         // When
-        crudService.getShuffledSelectedQuestions( QuizDifficulty.HARD, firstCategory);
+        questionService.getShuffledSelectedQuestions( QuizDifficulty.HARD, firstCategory);
 
     }
 
@@ -445,15 +447,15 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfChoosingQuestionsWork(){
         // Given
-        long questionsChosenInDb = crudService.countChosenQuestions();
-        Questions firstQuestion = crudService.findFirstByQuestion("Question_1");
+        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
+        Questions firstQuestion = questionService.findFirstByQuestion("Question_1");
 
         // When
         ChosenQuestions chosenQuestion = createChosenQuestion(firstQuestion);
 
         // Then
         assertNotNull(chosenQuestion);
-        assertEquals(questionsChosenInDb + 1, crudService.countChosenQuestions());
+        assertEquals(questionsChosenInDb + 1, chosenQuestionService.countChosenQuestions());
 
     }
 
@@ -461,14 +463,67 @@ public class JavaQuizDatabaseTest {
     @Test
     public void testIfDiscardingQuestionsWork(){
         // Given
-        long questionsChosenInDb = crudService.countChosenQuestions();
-        long chosenQuestionId = crudService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getId();
+        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
+        long chosenQuestionId = chosenQuestionService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getId();
 
         // When
-        crudService.deleteChosenQuestionById(chosenQuestionId);
+        chosenQuestionService.deleteChosenQuestionById(chosenQuestionId);
 
         // Then
-        assertEquals(questionsChosenInDb - 1, crudService.countChosenQuestions());
+        assertEquals(questionsChosenInDb - 1, chosenQuestionService.countChosenQuestions());
+
+    }
+
+    @Transactional
+    @Test
+    public void testIfChoosingMultipleQuestionsWork(){
+        // Given
+        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
+        List<Questions> first5Questions = questionService.findFirst5ByOrderByIdAsc();
+
+        // When
+        for (Questions question : first5Questions){
+            createChosenQuestion(question);
+        }
+
+        // Then
+        assertNotNull(first5Questions);
+        assertEquals(questionsChosenInDb + first5Questions.size(), chosenQuestionService.countChosenQuestions());
+
+    }
+
+    // TODO "A different object with the same identifier value was already associated with the session"
+    //  error when same question is chosen again...
+
+    @Transactional
+    @Test
+    public void testIfChoosingMultipleQuestionsFromCategoryWork(){
+        // Given
+        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        List<Questions> questionsFromFirstCategory = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,10)).getContent();
+
+        // When
+        for (Questions question : questionsFromFirstCategory){
+            createChosenQuestion(question);
+        }
+
+        // Then
+        assertNotNull(questionsFromFirstCategory);
+        assertEquals(questionsChosenInDb + questionsFromFirstCategory.size(), chosenQuestionService.countChosenQuestions());
+
+    }
+
+    @Transactional
+    @Test
+    public void testIfDiscardingAllQuestionsWork(){
+        // Given
+
+        // When
+        chosenQuestionService.deleteAllChosenQuestions();
+
+        // Then
+        assertEquals(0, chosenQuestionService.countChosenQuestions());
 
     }
 

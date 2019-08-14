@@ -2,7 +2,8 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.service.CrudService;
+import com.rybickim.javaquiz.service.CategoryService;
+import com.rybickim.javaquiz.service.QuestionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -17,12 +18,12 @@ public class HomeControllerImpl implements HomeController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeControllerImpl.class);
 
-    private CrudService startService;
-    private List<Questions> quizExercisesToShow;
+    private QuestionService questionService;
+    private List<Questions> questionsToShow;
 
-    public HomeControllerImpl(CrudService startService) {
-        this.startService = startService;
-        this.quizExercisesToShow = startService.listQuestions();
+    public HomeControllerImpl(QuestionService questionService) {
+        this.questionService = questionService;
+        this.questionsToShow = questionService.listQuestions();
     }
 
     @PostMapping({"/","/home"})
@@ -30,8 +31,8 @@ public class HomeControllerImpl implements HomeController {
     public String removeElement(){
         logger.debug("removeElement()");
 
-        if(!quizExercisesToShow.isEmpty()){
-            quizExercisesToShow.remove(0);
+        if(!questionsToShow.isEmpty()){
+            questionsToShow.remove(0);
             logger.debug("list element removed");
         }
 
@@ -43,17 +44,17 @@ public class HomeControllerImpl implements HomeController {
     public String homePage(Model dataModel) {
         logger.debug("homePage()");
 
-        int quizExerciseCount = quizExercisesToShow.size();
+        int quizExerciseCount = questionsToShow.size();
         logger.debug("quizExerciseCount: {}", quizExerciseCount);
 
 
         String question = "";
         String answer = "";
 
-        if (!quizExercisesToShow.isEmpty()){
-            question = quizExercisesToShow.get(0).getQuestion();
+        if (!questionsToShow.isEmpty()){
+            question = questionsToShow.get(0).getQuestion();
             //TODO answers
-            answer = quizExercisesToShow.get(0).getCategories().getCategoryName();
+            answer = questionsToShow.get(0).getCategories().getCategoryName();
         }
         logger.debug("question: {}", question);
         logger.debug("answer: {}", answer);

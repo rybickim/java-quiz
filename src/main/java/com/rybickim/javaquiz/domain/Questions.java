@@ -92,7 +92,9 @@ public class Questions {
                 "id=" + id +
                 ", question='" + question + '\'' +
                 ", chosenQuestions=" + chosenQuestions +
+                ", categories=" + categories +
                 ", answers=" + answers +
+                ", explanations=" + explanations +
                 '}';
     }
 }

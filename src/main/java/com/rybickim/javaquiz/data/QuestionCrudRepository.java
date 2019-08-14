@@ -23,4 +23,6 @@ public interface QuestionCrudRepository
     Page<Questions> findQuestionsWithCategory(@Param("categories") Categories categories, Pageable pageable);
 
     Questions findFirstByQuestion(String question);
+
+    List<Questions> findFirst5ByOrderByIdAsc();
 }
