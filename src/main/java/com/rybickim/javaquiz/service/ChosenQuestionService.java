@@ -12,6 +12,10 @@ public interface ChosenQuestionService {
     // crud
     ///////////////////////////////////
 
+    ChosenQuestions saveChosenQuestion(ChosenQuestions entity);
+
+    List<ChosenQuestions> listChosenQuestions();
+
     long countChosenQuestions();
 
     Optional<ChosenQuestions> findChosenQuestionById(long id);

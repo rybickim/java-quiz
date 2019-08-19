@@ -503,9 +503,16 @@ public class JavaQuizDatabaseTest {
         Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         List<Questions> questionsFromFirstCategory = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,10)).getContent();
 
+        List<ChosenQuestions> chosenQuestions = chosenQuestionService.listChosenQuestions();
+        chosenQuestions.forEach(this::removeChosenQuestion);
+
+        entityManager.flush();
+
         // When
         for (Questions question : questionsFromFirstCategory){
-            createChosenQuestion(question);
+            ChosenQuestions chosenQuestion = createChosenQuestion(question);
+//            entityManager.persist(chosenQuestion);
+            chosenQuestionService.saveChosenQuestion(chosenQuestion);
         }
 
         // Then

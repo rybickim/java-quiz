@@ -37,6 +37,19 @@ public class ChosenQuestionServiceImpl implements ChosenQuestionService {
     // crud
     /////////////////////////////
 
+
+    @Override
+    public ChosenQuestions saveChosenQuestion(ChosenQuestions entity) {
+        return chosenQuestionCrudRepository.save(entity);
+    }
+
+    @Override
+    public List<ChosenQuestions> listChosenQuestions() {
+        List<ChosenQuestions> chosenQuestions = new ArrayList<>();
+        chosenQuestionCrudRepository.findAll().forEach(chosenQuestions::add);
+        return chosenQuestions;
+    }
+
     @Override
     public long countChosenQuestions() {
         return chosenQuestionCrudRepository.count();
