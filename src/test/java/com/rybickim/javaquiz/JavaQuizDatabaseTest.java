@@ -441,33 +441,35 @@ public class JavaQuizDatabaseTest {
 
     }
 
-    // TODO test chosen questions entity
-
     @Transactional
     @Test
-    public void testIfChoosingQuestionsWork(){
+    public void testIfCreatingSingleChosenQuestionWorks(){
         // Given
-        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
-        Questions firstQuestion = questionService.findFirstByQuestion("Question_1");
+        long questionsInDb = questionService.countQuestions();
+        Questions newQuestion = createQuestion(questionsInDb + 1);
+        questionService.saveQuestion(newQuestion);
+        long questionId = newQuestion.getId();
 
         // When
-        ChosenQuestions chosenQuestion = createChosenQuestion(firstQuestion);
+        ChosenQuestions chosenQuestion = createOrFindChosenQuestion(newQuestion.getId());
+        chosenQuestionService.saveChosenQuestion(chosenQuestion);
+        long chosenQuestionId = chosenQuestion.getId();
 
         // Then
         assertNotNull(chosenQuestion);
-        assertEquals(questionsChosenInDb + 1, chosenQuestionService.countChosenQuestions());
+        assertEquals(chosenQuestionId, questionId);
 
     }
 
     @Transactional
     @Test
-    public void testIfDiscardingQuestionsWork(){
+    public void testIfRemovingSingleChosenQuestionWorks(){
         // Given
         long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
         long chosenQuestionId = chosenQuestionService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getId();
 
         // When
-        chosenQuestionService.deleteChosenQuestionById(chosenQuestionId);
+        removeChosenQuestion(chosenQuestionId);
 
         // Then
         assertEquals(questionsChosenInDb - 1, chosenQuestionService.countChosenQuestions());
@@ -476,54 +478,80 @@ public class JavaQuizDatabaseTest {
 
     @Transactional
     @Test
-    public void testIfChoosingMultipleQuestionsWork(){
+    public void testIfCreating5ChosenQuestionsWorks(){
         // Given
         long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
         List<Questions> first5Questions = questionService.findFirst5ByOrderByIdAsc();
 
+        Iterable<Long> questionIds = first5Questions.stream()
+                .map(Questions::getId)
+                .collect(Collectors.toList());
+
         // When
         for (Questions question : first5Questions){
-            createChosenQuestion(question);
+            createOrFindChosenQuestion(question.getId());
         }
+
+        Iterable<Long> chosenQuestionIds = convertIterableToList(chosenQuestionService.findAllChosenQuestionsById(questionIds)).stream()
+                .map(ChosenQuestions::getId)
+                .collect(Collectors.toList());
 
         // Then
         assertNotNull(first5Questions);
-        assertEquals(questionsChosenInDb + first5Questions.size(), chosenQuestionService.countChosenQuestions());
+        assertEquals(chosenQuestionIds, questionIds);
 
     }
 
-    // TODO "A different object with the same identifier value was already associated with the session"
-    //  error when same question is chosen again...
+    // TODO fix assertion error
 
     @Transactional
     @Test
-    public void testIfChoosingMultipleQuestionsFromCategoryWork(){
+    public void testIfCreatingAllChosenQuestionsFromCategoryWorks(){
         // Given
-        long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
         Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         List<Questions> questionsFromFirstCategory = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,10)).getContent();
 
-        List<ChosenQuestions> chosenQuestions = chosenQuestionService.listChosenQuestions();
-        chosenQuestions.forEach(this::removeChosenQuestion);
-
-        entityManager.flush();
+        Iterable<Long> questionIds = questionsFromFirstCategory.stream()
+                .map(Questions::getId)
+                .collect(Collectors.toList());
 
         // When
-        for (Questions question : questionsFromFirstCategory){
-            ChosenQuestions chosenQuestion = createChosenQuestion(question);
-//            entityManager.persist(chosenQuestion);
-            chosenQuestionService.saveChosenQuestion(chosenQuestion);
-        }
+        Iterable<ChosenQuestions> chosenQuestions = createOrFindMultipleChosenQuestions(questionIds);
+
+        Iterable<Long> chosenQuestionIds = convertIterableToList(chosenQuestions).stream()
+                .map(ChosenQuestions::getId)
+                .collect(Collectors.toList());
 
         // Then
         assertNotNull(questionsFromFirstCategory);
-        assertEquals(questionsChosenInDb + questionsFromFirstCategory.size(), chosenQuestionService.countChosenQuestions());
+        assertEquals(chosenQuestionIds, questionIds);
+
+    }
+
+    // TODO hardcoded values won't assert expectedly
+
+    @Transactional
+    @Test
+    public void testIfRemovingAllChosenQuestionsFromCategoryWorks(){
+        // Given
+        Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
+        List<Questions> questionsFromFirstCategory = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,10)).getContent();
+
+        Iterable<Long> chosenQuestionIds = questionsFromFirstCategory.stream()
+                .map(Questions::getId)
+                .collect(Collectors.toList());
+
+        // When
+        removeMultipleChosenQuestions(chosenQuestionIds);
+
+        // Then
+        assertEquals(0, chosenQuestionService.countChosenQuestions());
 
     }
 
     @Transactional
     @Test
-    public void testIfDiscardingAllQuestionsWork(){
+    public void testIfDeletingAllChosenQuestionsWorks(){
         // Given
 
         // When
@@ -627,17 +655,31 @@ public class JavaQuizDatabaseTest {
         return category;
     }
 
-    private ChosenQuestions createChosenQuestion(Questions question){
-        ChosenQuestions chosenQuestion = new ChosenQuestions();
+    private ChosenQuestions createOrFindChosenQuestion(long questionId){
+        ChosenQuestions chosenQuestion = chosenQuestionService.findChosenQuestionById(questionId).orElse(new ChosenQuestions());
 
-        question.addChosenQuestion(chosenQuestion);
+        questionService.findQuestionById(questionId).ifPresent(question -> question.addChosenQuestion(chosenQuestion));
 
         return chosenQuestion;
     }
 
-    private void removeChosenQuestion(ChosenQuestions chosenQuestion){
-        Questions question = chosenQuestion.getQuestions();
-        question.removeChosenQuestion(chosenQuestion);
+    private void removeChosenQuestion(long chosenQuestionId){
+        chosenQuestionService.findChosenQuestionById(chosenQuestionId).ifPresent(cq -> {
+            questionService.findQuestionById(chosenQuestionId).ifPresent(question -> question.removeChosenQuestion(cq));
+            chosenQuestionService.deleteChosenQuestionById(chosenQuestionId);
+        });
+    }
+
+    private List<ChosenQuestions> createOrFindMultipleChosenQuestions(Iterable<Long> ids) {
+        List<ChosenQuestions> chosenQuestions = new ArrayList<>();
+
+        ids.forEach(id -> chosenQuestions.add(createOrFindChosenQuestion(id)));
+
+        return chosenQuestions;
+    }
+
+    private void removeMultipleChosenQuestions(Iterable<Long> ids) {
+        ids.forEach(this::removeChosenQuestion);
     }
 
     private boolean isQuestionNew(Questions question){
@@ -672,5 +714,13 @@ public class JavaQuizDatabaseTest {
         }
 
         throw new IllegalArgumentException(String.format("Unsupported primitive id type %s!", idType));
+    }
+
+    private <T> List<T> convertIterableToList(Iterable<T> iterable){
+        List<T> resultList = new ArrayList<>();
+
+        iterable.forEach(resultList::add);
+
+        return resultList;
     }
 }

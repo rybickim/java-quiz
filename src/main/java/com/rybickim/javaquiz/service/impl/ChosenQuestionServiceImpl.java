@@ -62,6 +62,11 @@ public class ChosenQuestionServiceImpl implements ChosenQuestionService {
     }
 
     @Override
+    public Iterable<ChosenQuestions> findAllChosenQuestionsById(Iterable<Long> ids) {
+        return chosenQuestionCrudRepository.findAllById(ids);
+    }
+
+    @Override
     @Transactional
     public void deleteChosenQuestionById(long id) {
         chosenQuestionCrudRepository.deleteById(id);

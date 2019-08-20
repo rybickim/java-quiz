@@ -20,6 +20,8 @@ public interface ChosenQuestionService {
 
     Optional<ChosenQuestions> findChosenQuestionById(long id);
 
+    Iterable<ChosenQuestions> findAllChosenQuestionsById(Iterable<Long> id);
+
     void deleteChosenQuestionById(long id);
 
     void deleteAllChosenQuestions();
