@@ -373,7 +373,9 @@ public class JavaQuizDatabaseTest {
         assertEquals(questionService.countQuestionsByCategory(firstCategory), resultList.size());
     }
 
-    // TODO thorough shuffle test
+    // TODO thorough shuffle test (test selected questions as well)
+    //  maybe with a diehard test for statistical integrity?
+    //  or sort the two lists (first one: all questions from category, second one: after shuffling) and compare their contents?
     @Transactional
     @Test
     public void testIfListIsShuffled(){
@@ -389,6 +391,8 @@ public class JavaQuizDatabaseTest {
 
         // Then
         assertEquals(questionsCount, resultList.size());
+
+
     }
 
     @Test
@@ -502,8 +506,6 @@ public class JavaQuizDatabaseTest {
 
     }
 
-    // TODO fix assertion error
-
     @Transactional
     @Test
     public void testIfCreatingAllChosenQuestionsFromCategoryWorks(){
@@ -519,7 +521,7 @@ public class JavaQuizDatabaseTest {
         Iterable<ChosenQuestions> chosenQuestions = createOrFindMultipleChosenQuestions(questionIds);
 
         Iterable<Long> chosenQuestionIds = convertIterableToList(chosenQuestions).stream()
-                .map(ChosenQuestions::getId)
+                .map(chosenQuestion -> chosenQuestion.getQuestions().getId())
                 .collect(Collectors.toList());
 
         // Then
@@ -528,12 +530,11 @@ public class JavaQuizDatabaseTest {
 
     }
 
-    // TODO hardcoded values won't assert expectedly
-
     @Transactional
     @Test
     public void testIfRemovingAllChosenQuestionsFromCategoryWorks(){
         // Given
+        long chosenQuestionsInDb = chosenQuestionService.countChosenQuestions();
         Categories firstCategory = categoryService.findFirstByCategory(PageRequest.of(0,1)).get(0);
         List<Questions> questionsFromFirstCategory = questionService.findQuestionsWithCategory(firstCategory, PageRequest.of(0,10)).getContent();
 
@@ -542,10 +543,10 @@ public class JavaQuizDatabaseTest {
                 .collect(Collectors.toList());
 
         // When
-        removeMultipleChosenQuestions(chosenQuestionIds);
+        long removedChosenQuestions = removeMultipleChosenQuestions(chosenQuestionIds);
 
         // Then
-        assertEquals(0, chosenQuestionService.countChosenQuestions());
+        assertEquals(chosenQuestionsInDb - removedChosenQuestions, chosenQuestionService.countChosenQuestions());
 
     }
 
@@ -663,11 +664,15 @@ public class JavaQuizDatabaseTest {
         return chosenQuestion;
     }
 
-    private void removeChosenQuestion(long chosenQuestionId){
-        chosenQuestionService.findChosenQuestionById(chosenQuestionId).ifPresent(cq -> {
+    private boolean removeChosenQuestion(long chosenQuestionId){
+        Optional<ChosenQuestions> maybeChosenQuestion = chosenQuestionService.findChosenQuestionById(chosenQuestionId);
+
+        maybeChosenQuestion.ifPresent(cq -> {
             questionService.findQuestionById(chosenQuestionId).ifPresent(question -> question.removeChosenQuestion(cq));
             chosenQuestionService.deleteChosenQuestionById(chosenQuestionId);
         });
+
+        return maybeChosenQuestion.isPresent();
     }
 
     private List<ChosenQuestions> createOrFindMultipleChosenQuestions(Iterable<Long> ids) {
@@ -678,8 +683,12 @@ public class JavaQuizDatabaseTest {
         return chosenQuestions;
     }
 
-    private void removeMultipleChosenQuestions(Iterable<Long> ids) {
-        ids.forEach(this::removeChosenQuestion);
+    private long removeMultipleChosenQuestions(Iterable<Long> ids) {
+        List<Boolean> resultList = new ArrayList<>();
+        ids.forEach(chosenQuestionId -> resultList.add(removeChosenQuestion(chosenQuestionId)));
+        return resultList.stream()
+                .filter(isRemoved -> isRemoved.equals(true))
+                .count();
     }
 
     private boolean isQuestionNew(Questions question){
