@@ -4,6 +4,7 @@ import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.domain.*;
 import com.rybickim.javaquiz.service.CategoryService;
 import com.rybickim.javaquiz.service.ChosenQuestionService;
+import com.rybickim.javaquiz.service.ExplanationService;
 import com.rybickim.javaquiz.service.QuestionService;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
 import com.rybickim.javaquiz.utils.QuizDifficulty;
@@ -18,9 +19,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.awt.image.WritableRaster;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -37,6 +44,7 @@ public class JavaQuizDatabaseTest {
     private QuestionService questionService;
     private CategoryService categoryService;
     private ChosenQuestionService chosenQuestionService;
+    private ExplanationService explanationService;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -54,6 +62,11 @@ public class JavaQuizDatabaseTest {
     @Autowired
     public void setChosenQuestionService(ChosenQuestionService chosenQuestionService) {
         this.chosenQuestionService = chosenQuestionService;
+    }
+
+    @Autowired
+    public void setExplanationService(ExplanationService explanationService) {
+        this.explanationService = explanationService;
     }
 
     @Test
@@ -565,6 +578,55 @@ public class JavaQuizDatabaseTest {
 
     // TODO test explanation text and diagram
 
+    @Transactional
+    @Test
+    public void testIfExplanationIsSaved(){
+        // Given
+        long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
+        // When
+        Explanations explanation = createOrFindExplanation(firstQuestionId);
+        long explanationId = explanation.getQuestions().getId();
+        // Then
+        assertEquals(explanationId, firstQuestionId);
+    }
+
+    @Transactional
+    @Test
+    public void testIfExplanationTextIsSet(){
+        // Given
+        String longString = "Well, nothing is wrong; it just depends upon how you use it. For example, if you initialize a HashMap by just one thread and all threads are only reading from it, then it’s perfectly fine.\n" +
+                "\n" +
+                "One example of this is a Map that contains configuration properties. The real problem starts when at least one thread is updating the HashMap, i.e. adding, changing, or removing any key-value pair.\n" +
+                "\n" +
+                "Since the put() operation can cause re-sizing and lead to an infinite loop, that’s why either you should use Hashtable or ConcurrentHashMap, later is even better.";
+        long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
+        // When
+        Explanations explanation = createOrFindExplanation(firstQuestionId);
+        explanation.setExplanationText(longString);
+        // Then
+        assertEquals(longString, explanation.getExplanationText());
+    }
+
+    @Transactional
+    @Test
+    public void testIfExplanationDiagramIsSet(){
+        // Given
+        byte[] explanationDiagram = new byte[0];
+        try {
+            explanationDiagram = extractBytes("concurrenthashmap.png");
+        } catch (IOException e) {
+            e.printStackTrace();
+            //TODO
+            // logger.debug(File.getPath?);
+        }
+        long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
+        // When
+        Explanations explanation = createOrFindExplanation(firstQuestionId);
+        explanation.setExplanationDiagram(explanationDiagram);
+        // Then
+        assertEquals(explanationDiagram, explanation.getExplanationDiagram());
+    }
+
     /////////////////////////////////////////////
     //helper methods
     ///////////////////////////////////////////////////////////////
@@ -691,6 +753,14 @@ public class JavaQuizDatabaseTest {
                 .count();
     }
 
+    private Explanations createOrFindExplanation(long questionId){
+        Explanations explanation = explanationService.findExplanationById(questionId).orElse(new Explanations());
+
+        questionService.findQuestionById(questionId).ifPresent(question -> question.addExplanation(explanation));
+
+        return explanation;
+    }
+
     private boolean isQuestionNew(Questions question){
         Long id = question.getId();
         Class<Long> idType = Long.class;
@@ -731,5 +801,17 @@ public class JavaQuizDatabaseTest {
         iterable.forEach(resultList::add);
 
         return resultList;
+    }
+
+    private byte[] extractBytes (String imageName) throws IOException {
+        // open image
+        File imgPath = new File(imageName);
+        BufferedImage bufferedImage = ImageIO.read(imgPath);
+
+        // get DataBufferBytes from Raster
+        WritableRaster raster = bufferedImage.getRaster();
+        DataBufferByte data = (DataBufferByte) raster.getDataBuffer();
+
+        return ( data.getData() );
     }
 }

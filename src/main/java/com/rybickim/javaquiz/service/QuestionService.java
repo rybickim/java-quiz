@@ -37,6 +37,8 @@ public interface QuestionService {
 
     Page<Questions> findQuestionsWithCategory(Categories categories, Pageable pageable);
 
+    List<Questions> findFirstQuestions(Pageable pageable);
+
     Questions findFirstByQuestion(String question);
 
     List<Questions> findFirst5ByOrderByIdAsc();

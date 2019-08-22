@@ -22,6 +22,9 @@ public interface QuestionCrudRepository
     @Query("SELECT q FROM Questions q WHERE LOWER(q.categories) = :categories")
     Page<Questions> findQuestionsWithCategory(@Param("categories") Categories categories, Pageable pageable);
 
+    @Query("SELECT q FROM Questions q")
+    List<Questions> findFirst(Pageable pageable);
+
     Questions findFirstByQuestion(String question);
 
     List<Questions> findFirst5ByOrderByIdAsc();

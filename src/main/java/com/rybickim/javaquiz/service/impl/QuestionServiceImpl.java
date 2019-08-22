@@ -90,6 +90,12 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     @Transactional
+    public List<Questions> findFirstQuestions(Pageable pageable) {
+        return questionCrudRepository.findFirst(pageable);
+    }
+
+    @Override
+    @Transactional
     public Questions findFirstByQuestion(String question) {
         return questionCrudRepository.findFirstByQuestion(question);
     }

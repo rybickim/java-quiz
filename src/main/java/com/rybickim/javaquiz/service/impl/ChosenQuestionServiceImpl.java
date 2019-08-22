@@ -28,7 +28,7 @@ public class ChosenQuestionServiceImpl implements ChosenQuestionService {
 
     @Autowired
     public ChosenQuestionServiceImpl(ChosenQuestionCrudRepository chosenQuestionCrudRepository) {
-        logger.debug("CategoryServiceImpl(): chosenQuestionCrudRepository [{}]",
+        logger.debug("ChosenQuestionServiceImpl(): chosenQuestionCrudRepository [{}]",
                 chosenQuestionCrudRepository);
         this.chosenQuestionCrudRepository = chosenQuestionCrudRepository;
     }
