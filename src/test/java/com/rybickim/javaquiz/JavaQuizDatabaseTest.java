@@ -28,6 +28,7 @@ import java.awt.image.DataBufferByte;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -612,12 +613,11 @@ public class JavaQuizDatabaseTest {
     public void testIfExplanationDiagramIsSet(){
         // Given
         byte[] explanationDiagram = new byte[0];
+        String path = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
         try {
-            explanationDiagram = extractBytes("concurrenthashmap.png");
+            explanationDiagram = extractBytes(path);
         } catch (IOException e) {
             e.printStackTrace();
-            //TODO
-            // logger.debug(File.getPath?);
         }
         long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
         // When
@@ -626,6 +626,9 @@ public class JavaQuizDatabaseTest {
         // Then
         assertEquals(explanationDiagram, explanation.getExplanationDiagram());
     }
+
+    //TODO
+    // display deserialized image?
 
     /////////////////////////////////////////////
     //helper methods
