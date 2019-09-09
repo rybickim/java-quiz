@@ -54,7 +54,7 @@ public class HomeControllerImpl implements HomeController {
         if (!questionsToShow.isEmpty()){
             question = questionsToShow.get(0).getQuestion();
             //TODO answers
-            answer = questionsToShow.get(0).getCategories().getCategoryName();
+//            answer = questionsToShow.get(0).getCategories().getCategoryName();
         }
         logger.debug("question: {}", question);
         logger.debug("answer: {}", answer);

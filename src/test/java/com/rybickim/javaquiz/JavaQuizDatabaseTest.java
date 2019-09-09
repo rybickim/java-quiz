@@ -613,7 +613,10 @@ public class JavaQuizDatabaseTest {
     public void testIfExplanationDiagramIsSet(){
         // Given
         byte[] explanationDiagram = new byte[0];
-        String path = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+        //linux
+//        String path = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+        //windows
+        String path = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
         try {
             explanationDiagram = extractBytes(path);
         } catch (IOException e) {
