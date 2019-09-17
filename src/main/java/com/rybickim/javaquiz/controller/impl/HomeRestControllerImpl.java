@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -28,27 +29,31 @@ public class HomeRestControllerImpl implements HomeRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(HomeRestControllerImpl.class);
 
-//    private QuestionService questionService;
+    private ServletContext servletContext;
 
     @Autowired
-    public HomeRestControllerImpl(QuestionService questionService) {
-        logger.debug("HomeRestControllerImpl(): " + questionService);
-//        this.questionService = questionService;
+    public HomeRestControllerImpl(ServletContext servletContext) {
+        logger.debug("HomeRestControllerImpl(): " + servletContext);
+        this.servletContext = servletContext;
     }
 
-    @GetMapping(value = "/getDiagram", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/getDiagram")
     @Override
-    public byte[] getDiagram(@PathVariable long diagramId) {
-        logger.debug("getDiagram() from HomeRestControllerImpl");
+    public void getDiagram(HttpServletResponse response) throws IOException {
+        logger.debug("getDiagram() from HomeRestControllerImpl, servletContext.getContextPath().isEmpty(): " + servletContext.getContextPath().isEmpty());
 
-        byte[] data = new byte[0];
-        URL url = getClass().getResource("static/img/concurrenthashmap.png");
+        InputStream in = servletContext.getResourceAsStream("/src/main/resources/static/img/concurrenthashmap.png");
+        response.setContentType(MediaType.IMAGE_PNG_VALUE);
+        IOUtils.copy(in, response.getOutputStream());
 
-        try {
-            data = IOUtils.toByteArray(url.openStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        byte[] data = new byte[0];
+//        URL url = getClass().getResource("static/img/concurrenthashmap.png");
+//
+//        try {
+//            data = IOUtils.toByteArray(url.openStream());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        String realPath = request.getSession().getServletContext().getRealPath("/");
@@ -61,6 +66,6 @@ public class HomeRestControllerImpl implements HomeRestController {
 //            e.printStackTrace();
 //        }
 
-        return data;
+//        return data;
     }
 }
