@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface HomeRestController {
 
-    void getDiagram(HttpServletResponse response) throws IOException;
+    void getDiagram(HttpServletRequest request, HttpServletResponse response) throws IOException;
 
 }

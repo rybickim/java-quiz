@@ -39,11 +39,24 @@ public class HomeRestControllerImpl implements HomeRestController {
 
     @GetMapping(value = "/getDiagram")
     @Override
-    public void getDiagram(HttpServletResponse response) throws IOException {
-        logger.debug("getDiagram() from HomeRestControllerImpl, servletContext.getContextPath().isEmpty(): " + servletContext.getContextPath().isEmpty());
+    public void getDiagram(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        logger.debug("getDiagram() from HomeRestControllerImpl, servletContext.getContextPath(): " + servletContext.getContextPath());
 
-        InputStream in = servletContext.getResourceAsStream("/src/main/resources/static/img/concurrenthashmap.png");
+        logger.debug("getDiagram() from HomeRestControllerImpl, request.getServletPath(): " + request.getServletPath());
+        logger.debug("getDiagram() from HomeRestControllerImpl, request.getRequestURL(): " + request.getRequestURL());
+        logger.debug("getDiagram() from HomeRestControllerImpl, request.getRequestURI(): " + request.getRequestURI());
+        logger.debug("getDiagram() from HomeRestControllerImpl, request.getContextPath(): " + request.getContextPath());
+        logger.debug("getDiagram() from HomeRestControllerImpl, request.getPathInfo(): " + request.getPathInfo());
+
+        ServletContext sc = request.getSession().getServletContext();
+
+        logger.debug("getDiagram() from HomeRestControllerImpl, are contexts equal?: " + sc.equals(servletContext));
+
         response.setContentType(MediaType.IMAGE_PNG_VALUE);
+        String path = "/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+        logger.debug("getDiagram() from HomeRestControllerImpl, path: " + path);
+
+        InputStream in = sc.getResourceAsStream(path);
         IOUtils.copy(in, response.getOutputStream());
 
 //        byte[] data = new byte[0];
