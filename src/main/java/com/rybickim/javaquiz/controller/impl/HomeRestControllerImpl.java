@@ -1,28 +1,22 @@
 package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeRestController;
-import com.rybickim.javaquiz.domain.Questions;
-import com.rybickim.javaquiz.service.CategoryService;
-import com.rybickim.javaquiz.service.QuestionService;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.support.ServletContextResource;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 
 @RestController
 public class HomeRestControllerImpl implements HomeRestController {
@@ -37,48 +31,27 @@ public class HomeRestControllerImpl implements HomeRestController {
         this.servletContext = servletContext;
     }
 
-    @GetMapping(value = "/getDiagram")
+    @GetMapping("/get-text")
+    public String getText(){
+        return "Hello world";
+    }
+
+    @GetMapping(value = "/get-image", produces = MediaType.IMAGE_PNG_VALUE)
+    public byte[] getImage() throws IOException {
+        InputStream in = getClass().getResourceAsStream("/static/img/concurrenthashmap.png");
+        return IOUtils.toByteArray(in);
+    }
+
+    @GetMapping(value = "/get-diagram")
     @Override
-    public void getDiagram(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        logger.debug("getDiagram() from HomeRestControllerImpl, servletContext.getContextPath(): " + servletContext.getContextPath());
+    public ResponseEntity<Resource> getDiagram(){
+        logger.debug("getDiagram() from HomeRestControllerImpl, servletContext: " + servletContext.toString());
 
-        logger.debug("getDiagram() from HomeRestControllerImpl, request.getServletPath(): " + request.getServletPath());
-        logger.debug("getDiagram() from HomeRestControllerImpl, request.getRequestURL(): " + request.getRequestURL());
-        logger.debug("getDiagram() from HomeRestControllerImpl, request.getRequestURI(): " + request.getRequestURI());
-        logger.debug("getDiagram() from HomeRestControllerImpl, request.getContextPath(): " + request.getContextPath());
-        logger.debug("getDiagram() from HomeRestControllerImpl, request.getPathInfo(): " + request.getPathInfo());
+        final HttpHeaders headers = new HttpHeaders();
+        String path = "/static/img/concurrenthashmap.png";
+        Resource resource = new ServletContextResource(servletContext, path);
 
-        ServletContext sc = request.getSession().getServletContext();
+        return new ResponseEntity<>(resource, headers, HttpStatus.OK);
 
-        logger.debug("getDiagram() from HomeRestControllerImpl, are contexts equal?: " + sc.equals(servletContext));
-
-        response.setContentType(MediaType.IMAGE_PNG_VALUE);
-        String path = "/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
-        logger.debug("getDiagram() from HomeRestControllerImpl, path: " + path);
-
-        InputStream in = sc.getResourceAsStream(path);
-        IOUtils.copy(in, response.getOutputStream());
-
-//        byte[] data = new byte[0];
-//        URL url = getClass().getResource("static/img/concurrenthashmap.png");
-//
-//        try {
-//            data = IOUtils.toByteArray(url.openStream());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-//        String realPath = request.getSession().getServletContext().getRealPath("/");
-//        realPath = realPath + "/" + diagramId;
-//        Path path = Paths.get(realPath);
-//        byte[] data = new byte[0];
-//        try {
-//            data = Files.readAllBytes(path);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        return data;
     }
 }
