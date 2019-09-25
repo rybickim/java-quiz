@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "explanations")
-public class Explanations {
+@Table(name = "diagrams")
+public class DiagramDTO {
 
     @Id
     private Long id;
@@ -20,10 +20,16 @@ public class Explanations {
     @MapsId
     private Questions questions;
 
-    @Lob
-    @Column(name = "explanation_text")
-    private String explanationText;
+    @Column(name = "path")
+    private String path;
 
-    @Column(name = "explanation_diagram_file_name")
-    private String explanationDiagramFileName;
+    @Column(name = "file_name")
+    private String fileName;
+
+    @Column(name = "file_type")
+    private String fileType;
+
+    @Lob
+    @Column(name = "data", columnDefinition = "BLOB")
+    private String data;
 }

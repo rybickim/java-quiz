@@ -31,18 +31,18 @@ public class HomeRestControllerImpl implements HomeRestController {
         this.servletContext = servletContext;
     }
 
-    @GetMapping("/get-text")
+    @GetMapping("/getText")
     public String getText(){
         return "Hello world";
     }
 
-    @GetMapping(value = "/get-image", produces = MediaType.IMAGE_PNG_VALUE)
+    @GetMapping(value = "/getImage", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getImage() throws IOException {
         InputStream in = getClass().getResourceAsStream("/static/img/concurrenthashmap.png");
         return IOUtils.toByteArray(in);
     }
 
-    @GetMapping(value = "/get-diagram")
+    @GetMapping(value = "/getDiagram")
     @Override
     public ResponseEntity<Resource> getDiagram(){
         logger.debug("getDiagram() from HomeRestControllerImpl, servletContext: " + servletContext.toString());
