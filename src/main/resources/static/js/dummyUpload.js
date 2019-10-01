@@ -1,34 +1,76 @@
-$('#singleUploadForm').submit(function(event) {
-    var formElement = this;
-    // You can directly create form data from the form element
-    // (Or you could get the files from input element and append them to FormData as we did in vanilla javascript)
-    var formData = new FormData(formElement);
-    var uploadError = $('#singleFileUploadError');
-    var uploadSuccess = $('#singleFileUploadSuccess');
+'use strict';
+$( document ).ready( function () {
+    console.log( 'working!' )
 
-    $.ajax({
-        type: "POST",
-        enctype: 'multipart/form-data',
-        url: "/uploadFile",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (response) {
-            console.log(response);
-            uploadError.style.display = "none";
-            uploadSuccess.innerHTML = "<p>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>";
-            uploadSuccess.style.display = "block";
-        },
-        error: function (error) {
-            console.log(error);
-            uploadSuccess.style.display = "none";
-            uploadError.innerHTML = (error && error.message) || "Some Error Occurred";
+    $('#singleUploadForm').submit(function(event) {
+        var formElement = this;
+        // You can directly create form data from the form element
+        // (Or you could get the files from input element and append them to FormData as we did in vanilla javascript)
+        var formData = new FormData(formElement);
 
-        }
+        var uploadError = $('#singleFileUploadError');
+        var uploadSuccess = $('#singleFileUploadSuccess');
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/uploadFile",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                console.log(response);
+                $.parseJSON(response);
+                uploadError.css('display', 'none');
+                uploadSuccess.html("<p>File Uploaded Successfully.</p><p>DownloadUrl : <a href='" + response.fileDownloadUri + "' target='_blank'>" + response.fileDownloadUri + "</a></p>");
+                uploadSuccess.css('display', 'block');
+            },
+            error: function (error) {
+                console.log(error);
+                uploadSuccess.css('display', 'none');
+                uploadError.text((error && error.message) || "Some Error Occurred");
+            }
+        });
+
+        event.preventDefault();
     });
 
-    event.preventDefault();
-});
+    $('#multipleUploadForm').submit(function(event) {
+        var formElement = this;
+        var formData = new FormData(formElement);
+
+        var uploadError = $('#multipleFileUploadError');
+        var uploadSuccess = $('#multipleFileUploadSuccess');
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "/uploadMultipleFiles",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                console.log(response);
+                uploadError.css('display', 'none');
+                var content = "<p>All Files Uploaded Successfully</p>";
+                for (var i = 0; i < response.length; i++){
+                    content += "<p>DownloadUrl : <a href='" + response[i].fileDownloadUri + "' target='_blank'>" + response[i].fileDownloadUri + "</a></p>";
+                }
+                uploadSuccess.html(content);
+                uploadSuccess.css('display', 'block');
+            },
+            error: function (error) {
+                console.log(error);
+                uploadSuccess.css('display', 'none');
+                uploadError.text((error && error.message) || "Some Error Occurred");
+
+            }
+        });
+
+        event.preventDefault();
+    });
+})
+
 //
 // 'use strict';
 //
