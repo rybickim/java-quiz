@@ -2,11 +2,14 @@ package com.rybickim.javaquiz.controller.impl;
 
 
 import com.rybickim.javaquiz.controller.FileRestController;
+import com.rybickim.javaquiz.domain.DBFile;
 import com.rybickim.javaquiz.payload.UploadFileResponse;
+import com.rybickim.javaquiz.service.DBFileStorageService;
 import com.rybickim.javaquiz.service.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -26,24 +29,24 @@ public class FileRestControllerImpl implements FileRestController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileRestControllerImpl.class);
 
-    private FileStorageService fileStorageService;
+    private DBFileStorageService dbFileStorageService;
 
     @Autowired
-    public FileRestControllerImpl(FileStorageService fileStorageService) {
-        this.fileStorageService = fileStorageService;
+    public FileRestControllerImpl(DBFileStorageService dbFileStorageService) {
+        this.dbFileStorageService = dbFileStorageService;
     }
 
     @PostMapping("/uploadFile")
     @Override
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
-        String fileName = fileStorageService.storeFile(file);
+        DBFile dbFile = dbFileStorageService.storeFile(file);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
-                .path(fileName)
+                .path(dbFile.getId())
                 .toUriString();
 
-        return new UploadFileResponse(fileName, fileDownloadUri, file.getContentType(), file.getSize());
+        return new UploadFileResponse(dbFile.getFileName(), fileDownloadUri, file.getContentType(), file.getSize());
     }
 
     @PostMapping("/uploadMultipleFiles")
@@ -54,26 +57,15 @@ public class FileRestControllerImpl implements FileRestController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/downloadFile/{fileName:.+}")
+    @GetMapping("/downloadFile/{fileId}")
     @Override
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
-        Resource resource = fileStorageService.loadFileAsResource(fileName);
+    public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) {
 
-        String contentType = null;
-        try {
-            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
-        } catch (IOException e) {
-            e.printStackTrace();
-            logger.error("Could not determine file type.");
-        }
-
-        if (contentType == null) {
-            contentType = "application/octet-stream";
-        }
+        DBFile dbFile = dbFileStorageService.getFile(fileId);
 
         return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(contentType))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-                .body(resource);
+                .contentType(MediaType.parseMediaType(dbFile.getFileType()))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
+                .body(new ByteArrayResource(dbFile.getData()));
     }
 }

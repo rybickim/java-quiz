@@ -12,6 +12,6 @@ public interface FileRestController {
 
     UploadFileResponse uploadFile(MultipartFile file);
     List<UploadFileResponse> uploadMultipleFiles(MultipartFile[] files);
-    ResponseEntity<Resource> downloadFile(String fileName, HttpServletRequest request);
+    ResponseEntity<Resource> downloadFile(String fileName);
 
 }
