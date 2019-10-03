@@ -1,11 +1,9 @@
 package com.rybickim.javaquiz;
 
 import com.rybickim.javaquiz.config.DatabaseConfig;
+import com.rybickim.javaquiz.config.FileStorageConfig;
 import com.rybickim.javaquiz.domain.*;
-import com.rybickim.javaquiz.service.CategoryService;
-import com.rybickim.javaquiz.service.ChosenQuestionService;
-import com.rybickim.javaquiz.service.ExplanationService;
-import com.rybickim.javaquiz.service.QuestionService;
+import com.rybickim.javaquiz.service.*;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
 import com.rybickim.javaquiz.utils.QuizDifficulty;
 import org.junit.Test;
@@ -17,7 +15,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
@@ -37,15 +37,17 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Rollback(false)
-@ContextConfiguration(classes = {JavaQuizApplication.class, DatabaseConfig.class })
-public class JavaQuizDatabaseTest {
+@ContextConfiguration(classes = {JavaQuizApplication.class, DatabaseConfig.class, FileStorageConfig.class})
+@WebAppConfiguration
+public class JavaQuizDatabaseServicesTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(JavaQuizDatabaseServicesTest.class);
 
     private QuestionService questionService;
     private CategoryService categoryService;
     private ChosenQuestionService chosenQuestionService;
     private ExplanationService explanationService;
+    private DBFileStorageService dbFileStorageService;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -68,6 +70,11 @@ public class JavaQuizDatabaseTest {
     @Autowired
     public void setExplanationService(ExplanationService explanationService) {
         this.explanationService = explanationService;
+    }
+
+    @Autowired
+    public void setDbFileStorageService(DBFileStorageService dbFileStorageService) {
+        this.dbFileStorageService = dbFileStorageService;
     }
 
     @Test
@@ -577,6 +584,26 @@ public class JavaQuizDatabaseTest {
 
     }
 
+    //TODO
+    // store and get image
+
+    @Transactional
+    @Test
+    public void testIfImageIsStored(){
+        // Given
+        String path = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
+        File file = new File(path);
+        //TODO
+        // write a file to multipartfile converter?
+
+        // When
+//        dbFileStorageService.storeFile(file);
+
+        // Then
+        assertNotNull(file);
+        assertEquals(file.getPath(), path);
+    }
+
     // TODO test explanation text and diagram
 
     @Transactional
@@ -630,9 +657,6 @@ public class JavaQuizDatabaseTest {
         // Then
 //        assertEquals(explanationDiagram, explanation.getExplanationDiagram());
     }
-
-    //TODO
-    // display deserialized image?
 
     /////////////////////////////////////////////
     //helper methods

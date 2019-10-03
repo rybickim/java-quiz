@@ -24,6 +24,6 @@ public class Explanations {
     @Column(name = "explanation_text")
     private String explanationText;
 
-    @Column(name = "explanation_diagram_file_name")
-    private String explanationDiagramFileName;
+    @Column(name = "explanation_diagram_file_id")
+    private String explanationDiagramFileId;
 }

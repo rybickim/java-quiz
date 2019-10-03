@@ -4,6 +4,7 @@ import com.rybickim.javaquiz.exception.FileStorageException;
 import com.rybickim.javaquiz.exception.MyFileNotFoundException;
 import com.rybickim.javaquiz.property.FileStorageProperties;
 import com.rybickim.javaquiz.service.FileStorageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -17,11 +18,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-@Service
+// db is used anyway
+//@Service
 public class FileStorageServiceImpl implements FileStorageService {
 
     private final Path fileStorageLocation;
 
+    @Autowired
     public FileStorageServiceImpl(FileStorageProperties fileStorageProperties) {
         this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir()).toAbsolutePath().normalize();
 
