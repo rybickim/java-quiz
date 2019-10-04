@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,7 +29,9 @@ import java.awt.image.DataBufferByte;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -584,27 +587,37 @@ public class JavaQuizDatabaseServicesTest {
 
     }
 
-    //TODO
-    // store and get image
-
     @Transactional
     @Test
     public void testIfImageIsStored(){
         // Given
-        String path = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
-        File file = new File(path);
-        //TODO
-        // write a file to multipartfile converter?
+//        linux
+//        String pathString = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+//        windows
+        String pathString = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
+
+        Path path = Paths.get(pathString);
+        String name = "concurrenthashmap.png";
+        String originalFileName = "concurrenthashmap.png";
+        String contentType = "image/png";
+        byte[] content = new byte[0];
+        try {
+            content = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MultipartFile file = new MockMultipartFile(name, originalFileName, contentType, content);
 
         // When
-//        dbFileStorageService.storeFile(file);
+        DBFile dbFile = dbFileStorageService.storeFile(file);
+        String fileId = dbFile.getId();
 
         // Then
-        assertNotNull(file);
-        assertEquals(file.getPath(), path);
+        assertNotNull(dbFile);
+        assertEquals(dbFile, dbFileStorageService.getFile(fileId));
     }
 
-    // TODO test explanation text and diagram
+    // TODO check if content type is png or jpeg, otherwise don't allow to store
 
     @Transactional
     @Test
@@ -635,27 +648,18 @@ public class JavaQuizDatabaseServicesTest {
         assertEquals(longString, explanation.getExplanationText());
     }
 
-    // TODO diagram is a filename now
     @Transactional
     @Test
     public void testIfExplanationDiagramIsSet(){
         // Given
-        byte[] explanationDiagram = new byte[0];
-        //linux
-//        String path = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
-        //windows
-        String path = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
-        try {
-            explanationDiagram = extractBytes(path);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        DBFile dbFile = dbFileStorageService.getFileByFileName("concurrenthashmap.png");
+
         long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
         // When
         Explanations explanation = createOrFindExplanation(firstQuestionId);
-//        explanation.setExplanationDiagram(explanationDiagram);
+        explanation.setExplanationDiagramFileId(dbFile.getId());
         // Then
-//        assertEquals(explanationDiagram, explanation.getExplanationDiagram());
+        assertEquals(explanation.getExplanationDiagramFileId(), dbFile.getId());
     }
 
     /////////////////////////////////////////////

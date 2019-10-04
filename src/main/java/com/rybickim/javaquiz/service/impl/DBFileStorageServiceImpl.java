@@ -44,4 +44,9 @@ public class DBFileStorageServiceImpl implements DBFileStorageService {
         return dbFileRepository.findById(fileId)
                 .orElseThrow(() -> new MyFileNotFoundException("File not found with id " + fileId));
     }
+
+    @Override
+    public DBFile getFileByFileName(String fileName) {
+        return dbFileRepository.findFirstByFileName(fileName);
+    }
 }
