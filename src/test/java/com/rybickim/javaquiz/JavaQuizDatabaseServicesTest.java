@@ -3,6 +3,7 @@ package com.rybickim.javaquiz;
 import com.rybickim.javaquiz.config.DatabaseConfig;
 import com.rybickim.javaquiz.config.FileStorageConfig;
 import com.rybickim.javaquiz.domain.*;
+import com.rybickim.javaquiz.exception.FileStorageException;
 import com.rybickim.javaquiz.service.*;
 import com.rybickim.javaquiz.utils.IncorrectDifficultyException;
 import com.rybickim.javaquiz.utils.QuizDifficulty;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -591,15 +593,15 @@ public class JavaQuizDatabaseServicesTest {
     @Test
     public void testIfImageIsStored(){
         // Given
+        String originalFileName = "concurrenthashmap.png";
 //        linux
 //        String pathString = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
 //        windows
-        String pathString = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\concurrenthashmap.png";
+        String pathString = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\" + originalFileName;
 
         Path path = Paths.get(pathString);
-        String name = "concurrenthashmap.png";
-        String originalFileName = "concurrenthashmap.png";
-        String contentType = "image/png";
+        String name = originalFileName;
+        String contentType = MediaType.IMAGE_PNG_VALUE;
         byte[] content = new byte[0];
         try {
             content = Files.readAllBytes(path);
@@ -617,7 +619,35 @@ public class JavaQuizDatabaseServicesTest {
         assertEquals(dbFile, dbFileStorageService.getFile(fileId));
     }
 
-    // TODO check if content type is png or jpeg, otherwise don't allow to store
+    @Transactional
+    @Test(expected = FileStorageException.class)
+    public void testIfExceptionIsThrownWhenTxtFileIsStored(){
+        // Given
+        String originalFileName = "dummyTxtFile.txt";
+//        linux
+//        String pathString = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+//        windows
+        String pathString = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\" + originalFileName;
+
+        Path path = Paths.get(pathString);
+        String name = originalFileName;
+        String contentType = MediaType.TEXT_PLAIN_VALUE;
+        byte[] content = new byte[0];
+        try {
+            content = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MultipartFile file = new MockMultipartFile(name, originalFileName, contentType, content);
+
+        // When
+        DBFile dbFile = dbFileStorageService.storeFile(file);
+        String fileId = dbFile.getId();
+
+        // Then
+        assertNotNull(dbFile);
+        assertEquals(dbFile, dbFileStorageService.getFile(fileId));
+    }
 
     @Transactional
     @Test

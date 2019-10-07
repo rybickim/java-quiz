@@ -31,6 +31,10 @@ public class DBFileStorageServiceImpl implements DBFileStorageService {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
+            if(!(fileName.contains(".png") || fileName.contains(".jpeg"))){
+                throw new FileStorageException("File must be a JPEG or PNG image.");
+            }
+
             DBFile dbFile = new DBFile(fileName, file.getContentType(), file.getBytes());
 
             return dbFileRepository.save(dbFile);
