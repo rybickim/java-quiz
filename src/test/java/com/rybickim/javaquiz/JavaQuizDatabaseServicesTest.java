@@ -692,6 +692,21 @@ public class JavaQuizDatabaseServicesTest {
         assertEquals(explanation.getExplanationDiagramFileId(), dbFile.getId());
     }
 
+    @Test
+    public void testIfQuestionWithCategoryAndMissingGapAnswerIsSaved(){
+
+        // Given
+        long questionsCount = questionService.countQuestions();
+        long categoriesCount = categoryService.countCategories();
+        Questions question = createQuestionWithCategoryAndMissingGapAnswer(questionsCount + 1, categoriesCount + 1);
+
+        // When
+        questionService.saveQuestion(question);
+
+        // Then
+        assertEquals(questionsCount + 1, questionService.countQuestions());
+    }
+
     /////////////////////////////////////////////
     //helper methods
     ///////////////////////////////////////////////////////////////
@@ -736,16 +751,39 @@ public class JavaQuizDatabaseServicesTest {
         return question;
     }
 
+    private Questions createQuestionWithCategoryAndMissingGapAnswer(long questionNo, long categoryNo){
+        Questions question = new Questions("Question_" + questionNo);
+
+        List<MissingWords> missingWords = new ArrayList<>();
+        for (int i = 1; i <= 5; i++){
+            missingWords.add(new MissingWords(i, "Word_" + i));
+        }
+
+        MissingGapAnswers answer = new MissingGapAnswers();
+        answer.addMissingWords(missingWords);
+
+        question.addAnswer(answer);
+
+        Categories category = new Categories("Category_" + categoryNo);
+        category.addQuestion(question);
+
+        logger.debug("Question - question: [{}], answer: [{}], category_name: [{}]",
+                question.getQuestion(),
+                question.getAnswers(),
+                question.getCategories().getCategoryName());
+
+        return question;
+    }
+
     private Questions createQuestionWithCategoryAndMultipleChoiceAnswer(long questionNo, long categoryNo){
         Questions question = new Questions("Question_" + questionNo);
 
-        List<SentencesToChoose> sentences = Arrays.asList(
-                new SentencesToChoose(1,"Sentence_" + questionNo),
-                new SentencesToChoose(2,"Sentence_" + questionNo),
-                new SentencesToChoose(3,"Sentence_" + questionNo));
+        List<SentencesToChoose> sentences = new ArrayList<>();
+        for (int i = 1; i <= 3; i++){
+            sentences.add(new SentencesToChoose(i, "Sentence_" + i));
+        }
 
         MultipleChoiceAnswers answer = new MultipleChoiceAnswers(2);
-
         answer.addSentences(sentences);
 
         question.addAnswer(answer);

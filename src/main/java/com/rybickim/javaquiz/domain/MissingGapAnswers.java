@@ -27,4 +27,14 @@ public class MissingGapAnswers extends Answers {
         missingWords.remove(missingWord);
         missingWord.setMissingGapAnswers(null);
     }
+
+    public void addMissingWords(List<MissingWords> words){
+        missingWords.addAll(words);
+        words.forEach(missingWord -> missingWord.setMissingGapAnswers(this));
+    }
+
+    public void removeMissingWords(List<MissingWords> words){
+        missingWords.removeAll(words);
+        words.forEach(missingWord -> missingWord.setMissingGapAnswers(null));
+    }
 }

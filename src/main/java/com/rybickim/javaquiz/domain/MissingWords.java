@@ -27,4 +27,8 @@ public class MissingWords {
     @JoinColumn(name = "question_id")
     private Answers missingGapAnswers;
 
+    public MissingWords(Integer ordinal, String missingTerm) {
+        this.ordinal = ordinal;
+        this.missingTerm = missingTerm;
+    }
 }
