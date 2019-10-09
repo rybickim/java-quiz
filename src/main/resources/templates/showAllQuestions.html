@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/quiz.css"/>
+    <title>Table of questions</title>
+</head>
+<body>
+    <h1>Table of questions</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th> Question </th>
+            <th> Category </th>
+            <th> Correct Answer </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="questionRow : ${questions}">
+            <td><span th:text="${question}"> Question </span></td>
+            <td><span th:text="${category}"> Category </span></td>
+            <td><span th:text="${correctAnswer}"> Correct Answer </span></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
