@@ -483,7 +483,7 @@ public class JavaQuizDatabaseServicesTest {
         // When
         ChosenQuestions chosenQuestion = createOrFindChosenQuestion(newQuestion.getId());
         chosenQuestionService.saveChosenQuestion(chosenQuestion);
-        long chosenQuestionId = chosenQuestion.getId();
+        long chosenQuestionId = chosenQuestion.getQuestions().getId();
 
         // Then
         assertNotNull(chosenQuestion);
@@ -496,7 +496,7 @@ public class JavaQuizDatabaseServicesTest {
     public void testIfRemovingSingleChosenQuestionWorks(){
         // Given
         long questionsChosenInDb = chosenQuestionService.countChosenQuestions();
-        long chosenQuestionId = chosenQuestionService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getId();
+        long chosenQuestionId = chosenQuestionService.findFirstChosenQuestions(PageRequest.of(0,1)).get(0).getQuestions().getId();
 
         // When
         removeChosenQuestion(chosenQuestionId);
@@ -523,7 +523,8 @@ public class JavaQuizDatabaseServicesTest {
         }
 
         Iterable<Long> chosenQuestionIds = convertIterableToList(chosenQuestionService.findAllChosenQuestionsById(questionIds)).stream()
-                .map(ChosenQuestions::getId)
+                .map(ChosenQuestions::getQuestions)
+                .map(Questions::getId)
                 .collect(Collectors.toList());
 
         // Then

@@ -2,7 +2,10 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.controller.ShowAllQuestionsController;
+import com.rybickim.javaquiz.domain.Categories;
+import com.rybickim.javaquiz.domain.QuestionDTO;
 import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.service.CategoryService;
 import com.rybickim.javaquiz.service.ExplanationService;
 import com.rybickim.javaquiz.service.QuestionService;
 import org.slf4j.Logger;
@@ -12,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,15 +24,17 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
 
     private static final Logger logger = LoggerFactory.getLogger(ShowAllQuestionsControllerImpl.class);
 
-//    private QuestionService questionService;
+    private QuestionService questionService;
+    private CategoryService categoryService;
 //    private List<Questions> questionsToShow;
 //    private ExplanationService explanationService;
 //
-//    public ShowAllQuestionsControllerImpl(QuestionService questionService, ExplanationService explanationService) {
-//        this.questionService = questionService;
+    public ShowAllQuestionsControllerImpl(QuestionService questionService, CategoryService categoryService) {
+        this.questionService = questionService;
+        this.categoryService = categoryService;
 //        this.questionsToShow = questionService.listQuestions();
 //        this.explanationService = explanationService;
-//    }
+    }
 
 
     @GetMapping(value = {"/showAllQuestions"})
@@ -36,22 +42,28 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
     public String showAllQuestions(Model dataModel) {
         logger.debug("showAllQuestions()");
 
+        List<Questions> questions = questionService.listQuestions();
 
-        String question = "Dummy Question";
-        String category = "Dummy Category";
+        String question;
+        String category;
         String correctAnswer = "Dummy Correct Answer";
 
-        List<String> questions = Arrays.asList(question,category,correctAnswer);
+        List<QuestionDTO> questionDTOs = new ArrayList<>();
 
-        logger.debug("question: {}", question);
-        logger.debug("question: {}", question);
-        logger.debug("category: {}", category);
-        logger.debug("correctAnswer: {}", correctAnswer);
+        for (Questions q : questions) {
+            question = q.getQuestion();
+            category = categoryService.findCategoryById(q.getCategories().getId())
+                    .orElse(new Categories())
+                    .getCategoryName();
+            questionDTOs.add(new QuestionDTO(question,category,correctAnswer));
+            logger.debug("question: {}", question);
+            logger.debug("category: {}", category);
+            logger.debug("correctAnswer: {}", correctAnswer);
+        }
 
-        dataModel.addAttribute("questions", questions);
-        dataModel.addAttribute("question", question);
-        dataModel.addAttribute("category", category);
-        dataModel.addAttribute("correctAnswer", correctAnswer);
+        logger.debug("questions: {}", questionDTOs);
+
+        dataModel.addAttribute("questions", questionDTOs);
 
         return "showAllQuestions";
     }

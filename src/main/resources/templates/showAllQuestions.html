@@ -3,13 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/quiz.css"/>
+    <link rel="stylesheet" type="text/css" href="css/showAllQuestions.css"/>
     <title>Table of questions</title>
 </head>
 <body>
     <h1>Table of questions</h1>
 
-    <table>
+    <table class="questionsTable">
         <thead>
         <tr>
             <th> Question </th>
@@ -19,9 +19,9 @@
         </thead>
         <tbody>
         <tr th:each="questionRow : ${questions}">
-            <td><span th:text="${question}"> Question </span></td>
-            <td><span th:text="${category}"> Category </span></td>
-            <td><span th:text="${correctAnswer}"> Correct Answer </span></td>
+            <td><span th:text="${questionRow.question}"> Question </span></td>
+            <td><span th:text="${questionRow.category}"> Category </span></td>
+            <td><span th:text="${questionRow.correctAnswer}"> Correct Answer </span></td>
         </tr>
         </tbody>
     </table>
