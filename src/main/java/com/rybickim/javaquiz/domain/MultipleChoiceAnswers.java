@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "multiple_choice_answers")
+@DiscriminatorValue("2")
 public class MultipleChoiceAnswers extends Answers {
 
     Integer correctOrdinal;

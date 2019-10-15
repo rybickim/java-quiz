@@ -12,6 +12,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "answers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+        discriminatorType = DiscriminatorType.INTEGER,
+        name = "answer_type_id",
+        columnDefinition = "TINYINT(1)"
+)
 public class Answers {
 
     @Id

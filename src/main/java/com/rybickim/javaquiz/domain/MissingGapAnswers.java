@@ -13,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Table(name = "missing_gap_answers")
+@DiscriminatorValue("3")
 public class MissingGapAnswers extends Answers {
 
     @OneToMany(mappedBy = "missingGapAnswers", cascade = CascadeType.ALL, orphanRemoval = true)
