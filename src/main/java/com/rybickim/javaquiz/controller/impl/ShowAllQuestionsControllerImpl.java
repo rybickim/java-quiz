@@ -2,14 +2,17 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.controller.ShowAllQuestionsController;
+import com.rybickim.javaquiz.domain.Answers;
 import com.rybickim.javaquiz.domain.Categories;
 import com.rybickim.javaquiz.domain.QuestionDTO;
 import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.service.AnswerService;
 import com.rybickim.javaquiz.service.CategoryService;
 import com.rybickim.javaquiz.service.ExplanationService;
 import com.rybickim.javaquiz.service.QuestionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,14 +29,12 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
 
     private QuestionService questionService;
     private CategoryService categoryService;
-//    private List<Questions> questionsToShow;
-//    private ExplanationService explanationService;
-//
-    public ShowAllQuestionsControllerImpl(QuestionService questionService, CategoryService categoryService) {
+    private AnswerService answerService;
+
+    public ShowAllQuestionsControllerImpl(QuestionService questionService, CategoryService categoryService, AnswerService answerService) {
         this.questionService = questionService;
         this.categoryService = categoryService;
-//        this.questionsToShow = questionService.listQuestions();
-//        this.explanationService = explanationService;
+        this.answerService = answerService;
     }
 
 
@@ -46,7 +47,7 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
 
         String question;
         String category;
-        String correctAnswer = "Dummy Correct Answer";
+        String correctAnswer;
 
         List<QuestionDTO> questionDTOs = new ArrayList<>();
 
@@ -55,7 +56,11 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
             category = categoryService.findCategoryById(q.getCategories().getId())
                     .orElse(new Categories())
                     .getCategoryName();
+            correctAnswer = answerService.findCorrectValue(q)
+                    .toString();
+
             questionDTOs.add(new QuestionDTO(question,category,correctAnswer));
+
             logger.debug("question: {}", question);
             logger.debug("category: {}", category);
             logger.debug("correctAnswer: {}", correctAnswer);
