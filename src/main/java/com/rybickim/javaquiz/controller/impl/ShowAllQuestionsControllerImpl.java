@@ -56,8 +56,7 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
             category = categoryService.findCategoryById(q.getCategories().getId())
                     .orElse(new Categories())
                     .getCategoryName();
-            correctAnswer = answerService.findCorrectValue(q)
-                    .toString();
+            correctAnswer = answerService.giveCorrectAnswer(q.getId());
 
             questionDTOs.add(new QuestionDTO(question,category,correctAnswer));
 

@@ -87,8 +87,46 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public Optional<Answers> findCorrectValue(Questions question) {
-        return answerCrudRepository.findCorrectValue(question);
+    public String giveCorrectAnswer(long questionId) {
+        switch (this.findAnswerTypeByQuestion(questionId)){
+            case 1:
+                return this.findCorrectValue(questionId);
+            case 2:
+                return this.findCorrectOrdinal(questionId);
+            case 3:
+                return this.findMissingTerms(questionId);
+            case 0:
+            default:
+                break;
+        }
+        return "N/A";
+    }
+
+    private Integer findAnswerTypeByQuestion(long questionId){
+        return answerCrudRepository.findAnswerTypeByQuestion(questionId).orElse(0);
+    }
+
+    private String findCorrectValue(Long questionId) {
+        return answerCrudRepository.findCorrectValue(questionId).orElse("N/A");
+    }
+
+    private String findCorrectOrdinal(Long questionId) {
+        return answerCrudRepository.findCorrectOrdinal(questionId).orElse("N/A");
+    }
+
+    private String findMissingTerms(Long questionId) {
+        String[] strings = answerCrudRepository.findMissingTerms(questionId);
+        String result = "";
+
+        if (strings.length != 0){
+            for (int i = 0; i < strings.length; i++){
+                result += strings[i];
+                if (i == strings.length - 1) break;
+                else result += ", ";
+            }
+            return result;
+        }
+        return result;
     }
 
 }
