@@ -33,5 +33,5 @@ public interface AnswerService {
 
     List<Answers> findFirstAnswers(Pageable pageable);
 
-    String giveCorrectAnswer(long questionId);
+    String[] giveCorrectAnswer(long questionId);
 }

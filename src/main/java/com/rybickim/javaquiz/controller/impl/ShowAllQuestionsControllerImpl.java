@@ -2,10 +2,7 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.controller.ShowAllQuestionsController;
-import com.rybickim.javaquiz.domain.Answers;
-import com.rybickim.javaquiz.domain.Categories;
-import com.rybickim.javaquiz.domain.QuestionDTO;
-import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.domain.*;
 import com.rybickim.javaquiz.service.AnswerService;
 import com.rybickim.javaquiz.service.CategoryService;
 import com.rybickim.javaquiz.service.ExplanationService;
@@ -47,7 +44,7 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
 
         String question;
         String category;
-        String correctAnswer;
+        String[] correctAnswer;
 
         List<QuestionDTO> questionDTOs = new ArrayList<>();
 
@@ -58,7 +55,11 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
                     .getCategoryName();
             correctAnswer = answerService.giveCorrectAnswer(q.getId());
 
-            questionDTOs.add(new QuestionDTO(question,category,correctAnswer));
+            questionDTOs.add(new QuestionDTOBuilder()
+                    .setQuestion(question)
+                    .setCategory(category)
+                    .setCorrectAnswer(correctAnswer)
+                    .buildQuestionDTO());
 
             logger.debug("question: {}", question);
             logger.debug("category: {}", category);

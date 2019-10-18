@@ -9,5 +9,9 @@ public class QuestionDTO {
 
     private String question;
     private String category;
-    private String correctAnswer;
+    private String[] correctAnswer;
+    private String answerText;
+    private String[] answersToChoose;
+    private String explanation;
+    private DBFile diagram;
 }

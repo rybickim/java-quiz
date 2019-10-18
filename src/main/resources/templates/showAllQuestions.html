@@ -21,10 +21,13 @@
         <tr th:each="questionRow : ${questions}">
             <td><span th:text="${questionRow.question}"> Question </span></td>
             <td><span th:text="${questionRow.category}"> Category </span></td>
-            <td><span th:text="${questionRow.correctAnswer}"> Correct Answer </span></td>
+            <td><span class="correct-answer"
+                    th:data-correct-answer="${questionRow.correctAnswer}"
+                      onload=extractAnswerFromArray(this.getAttribute('data-correct-answer')) > Correct Answer </span></td>
         </tr>
         </tbody>
     </table>
 
 </body>
+<script src="js/showAllQuestions.js"></script>
 </html>
