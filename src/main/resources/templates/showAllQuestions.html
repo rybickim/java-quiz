@@ -18,16 +18,30 @@
         </tr>
         </thead>
         <tbody>
+                    <script th:inline="javascript">
+                        var correctAnswerString = "";
+                        console.log(correctAnswerString);
+                    </script>
         <tr th:each="questionRow : ${questions}">
             <td><span th:text="${questionRow.question}"> Question </span></td>
             <td><span th:text="${questionRow.category}"> Category </span></td>
-            <td><span class="correct-answer"
-                    th:data-correct-answer="${questionRow.correctAnswer}"
-                      onload=extractAnswerFromArray(this.getAttribute('data-correct-answer')) > Correct Answer </span></td>
+            <td><span class="correct-answer"> Correct Answer </span></td>
+            <script th:inline="javascript" th:each="arrayElem : ${questionRow.correctAnswer}">
+                correctAnswerString = correctAnswerString.concat(/*[[${arrayElem}]]*/);
+                correctAnswerString = correctAnswerString.concat(", ");
+            </script>
+            <script>
+                console.log(correctAnswerString);
+                document.querySelector(".correct-answer").textContent="" + correctAnswerString;
+                correctAnswerString = "";
+                console.log(correctAnswerString);
+            </script>
         </tr>
         </tbody>
     </table>
 
 </body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="js/showAllQuestions.js"></script>
 </html>

@@ -63,7 +63,7 @@ public class ShowAllQuestionsControllerImpl implements ShowAllQuestionsControlle
 
             logger.debug("question: {}", question);
             logger.debug("category: {}", category);
-            logger.debug("correctAnswer: {}", correctAnswer);
+            logger.debug("correctAnswer: {}", correctAnswer.toString());
         }
 
         logger.debug("questions: {}", questionDTOs);
