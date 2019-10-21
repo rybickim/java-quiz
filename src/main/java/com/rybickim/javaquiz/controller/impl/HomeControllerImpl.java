@@ -2,6 +2,7 @@ package com.rybickim.javaquiz.controller.impl;
 
 import com.rybickim.javaquiz.controller.HomeController;
 import com.rybickim.javaquiz.domain.Questions;
+import com.rybickim.javaquiz.service.AnswerService;
 import com.rybickim.javaquiz.service.CategoryService;
 import com.rybickim.javaquiz.service.ExplanationService;
 import com.rybickim.javaquiz.service.QuestionService;
@@ -23,11 +24,15 @@ public class HomeControllerImpl implements HomeController {
 
     private QuestionService questionService;
     private List<Questions> questionsToShow;
+    private AnswerService answerService;
     private ExplanationService explanationService;
 
-    public HomeControllerImpl(QuestionService questionService, ExplanationService explanationService) {
+    public HomeControllerImpl(QuestionService questionService,
+                              AnswerService answerService,
+                              ExplanationService explanationService) {
         this.questionService = questionService;
         this.questionsToShow = questionService.listQuestions();
+        this.answerService = answerService;
         this.explanationService = explanationService;
     }
 
@@ -59,7 +64,8 @@ public class HomeControllerImpl implements HomeController {
         if (!questionsToShow.isEmpty()){
             question = questionsToShow.get(0).getQuestion();
             //TODO answers
-//            answer = questionsToShow.get(0).getCategories().getCategoryName();
+            answer = String.join(", ",
+                    answerService.giveCorrectAnswer(questionsToShow.get(0).getId()));
         }
         logger.debug("question: {}", question);
         logger.debug("answer: {}", answer);

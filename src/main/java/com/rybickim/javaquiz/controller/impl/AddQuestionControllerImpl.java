@@ -27,7 +27,9 @@ public class AddQuestionControllerImpl implements AddQuestionController {
     private CategoryService categoryService;
     private AnswerService answerService;
 
-    public AddQuestionControllerImpl(QuestionService questionService, CategoryService categoryService, AnswerService answerService) {
+    public AddQuestionControllerImpl(QuestionService questionService,
+                                     CategoryService categoryService,
+                                     AnswerService answerService) {
         this.questionService = questionService;
         this.categoryService = categoryService;
         this.answerService = answerService;
