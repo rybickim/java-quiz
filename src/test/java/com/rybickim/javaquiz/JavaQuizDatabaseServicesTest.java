@@ -682,15 +682,42 @@ public class JavaQuizDatabaseServicesTest {
     @Transactional
     @Test
     public void testIfExplanationDiagramIsSet(){
+
         // Given
-        DBFile dbFile = dbFileStorageService.getFileByFileName("concurrenthashmap.png");
+        long questionsCount = questionService.countQuestions();
+        Questions question = createQuestion(questionsCount + 1);
+        questionService.saveQuestion(question);
+
+        assertEquals(questionsCount + 1, questionService.countQuestions());
 
         long firstQuestionId = questionService.findFirstQuestions(PageRequest.of(0,1)).get(0).getId();
+
+        String originalFileName = "concurrenthashmap.png";
+//        linux
+//        String pathString = "/home/marcin/IdeaProjects/java-quiz/src/main/resources/static/img/concurrenthashmap.png";
+//        windows
+        String pathString = "C:\\Users\\laboratorium\\IdeaProjects\\java-quiz\\src\\main\\resources\\static\\img\\" + originalFileName;
+
+        Path path = Paths.get(pathString);
+        String name = originalFileName;
+        String contentType = MediaType.IMAGE_PNG_VALUE;
+        byte[] content = new byte[0];
+        try {
+            content = Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MultipartFile file = new MockMultipartFile(name, originalFileName, contentType, content);
+
+        DBFile dbFile = dbFileStorageService.storeFile(file);
+        String fileId = dbFile.getId();
+
         // When
         Explanations explanation = createOrFindExplanation(firstQuestionId);
-        explanation.setExplanationDiagramFileId(dbFile.getId());
+        explanation.setExplanationDiagramFileId(fileId);
+
         // Then
-        assertEquals(explanation.getExplanationDiagramFileId(), dbFile.getId());
+        assertEquals(explanation.getExplanationDiagramFileId(), fileId);
     }
 
     @Test
