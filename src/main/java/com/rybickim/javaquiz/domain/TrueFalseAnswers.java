@@ -18,7 +18,7 @@ import java.util.List;
 @DiscriminatorValue("1")
 public class TrueFalseAnswers extends Answers {
 
-    private static final List<String> values = Arrays.asList("FALSE","TRUE");
+    private static final List<String> values = Arrays.asList("true","false");
 
     private Boolean correctValue;
 

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Add a question</h1><br>
-    <form onsubmit="sendDTOToController()">
+    <form action="/addQuiz/submit" method="post" onsubmit="sendDTOToController()">
         <h3>Question: </h3><br>
         <input type="text" id="question" name="question" required
                minlength="2" size="50"><br>

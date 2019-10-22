@@ -1,12 +1,15 @@
 function sendDTOToController(){
 
+    var question = $("#question").val();
+    var category = $("#category").val();
+
     $.ajax({
-        type: "GET",
+        type: "POST",
         contentType: "application/json",
-        url: "/addQuiz/submit?question=" + data.question + "&category=" + data.category,
+        url: "/addQuiz/submit",
         data: {
-            question: $("#question").val(),
-            category: $("#category").val()
+            question: question,
+            category: category
         },
         success: function(data){
             console.log("addQuestionToDb(): AJAX call was successful, data: " +

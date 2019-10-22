@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +36,16 @@ public class AddQuestionControllerImpl implements AddQuestionController {
         this.answerService = answerService;
     }
 
-    @GetMapping(value = {"/addQuiz/submit"})
+    @PostMapping(value = {"/addQuiz/submit"})
     @Override
-    public String addQuestion(Model dataModel) {
+    public String addQuestion(Model dataModel,
+                              @RequestParam String question,
+                              @RequestParam String category)
+    {
         logger.debug("addQuestion()");
 
-        long questionsCount = questionService.countQuestions();
-        long categoriesCount = categoryService.countCategories();
-        Questions question = createQuestionWithCategory(questionsCount + 1, categoriesCount + 1);
-        questionService.saveQuestion(question);
+        Questions q = createQuestionWithCategory(question, category);
+        questionService.saveQuestion(q);
 
         return "addQuiz";
     }
@@ -68,10 +70,10 @@ public class AddQuestionControllerImpl implements AddQuestionController {
         return question;
     }
 
-    private Questions createQuestionWithCategory(long questionNo, long categoryNo){
-        Categories category = new Categories("Category_" + categoryNo);
+    private Questions createQuestionWithCategory(String questionName, String categoryName){
+        Categories category = new Categories(categoryName);
 
-        Questions question = new Questions("Question_" + questionNo);
+        Questions question = new Questions(questionName);
 
         category.addQuestion(question);
 
