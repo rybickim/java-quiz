@@ -1,11 +1,16 @@
-function addQuestionToDb(){
+function sendDTOToController(){
 
     $.ajax({
-        type: "POST",
+        type: "GET",
         contentType: "application/json",
-        url: "/addQuiz",
-        success: function(){
-            console.log("addQuestionToDb(): AJAX call was successful");
+        url: "/addQuiz/submit?question=" + data.question + "&category=" + data.category,
+        data: {
+            question: $("#question").val(),
+            category: $("#category").val()
+        },
+        success: function(data){
+            console.log("addQuestionToDb(): AJAX call was successful, data: " +
+            data.question + ", " + data.category);
         },
         error: function(e){
             console.log("ERROR: ", e);
@@ -15,5 +20,5 @@ function addQuestionToDb(){
         }
     });
 
-    document.querySelector(".addedNotification").textContent="Question was added";
+    $(".addedNotification").textContent="Question was added";
 }

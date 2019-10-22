@@ -35,13 +35,14 @@ public class AddQuestionControllerImpl implements AddQuestionController {
         this.answerService = answerService;
     }
 
-    @PostMapping(value = {"/addQuiz"})
+    @GetMapping(value = {"/addQuiz/submit"})
     @Override
     public String addQuestion(Model dataModel) {
         logger.debug("addQuestion()");
 
         long questionsCount = questionService.countQuestions();
-        Questions question = createQuestion(questionsCount + 1);
+        long categoriesCount = categoryService.countCategories();
+        Questions question = createQuestionWithCategory(questionsCount + 1, categoriesCount + 1);
         questionService.saveQuestion(question);
 
         return "addQuiz";
@@ -63,6 +64,20 @@ public class AddQuestionControllerImpl implements AddQuestionController {
 
         logger.debug("Question - question: [{}]",
                 question.getQuestion());
+
+        return question;
+    }
+
+    private Questions createQuestionWithCategory(long questionNo, long categoryNo){
+        Categories category = new Categories("Category_" + categoryNo);
+
+        Questions question = new Questions("Question_" + questionNo);
+
+        category.addQuestion(question);
+
+        logger.debug("Question - question: [{}], category_name: [{}]",
+                question.getQuestion(),
+                question.getCategories().getCategoryName());
 
         return question;
     }
