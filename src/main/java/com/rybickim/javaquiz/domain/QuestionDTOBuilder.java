@@ -5,7 +5,7 @@ public class QuestionDTOBuilder {
     private String question;
     private String category;
     private String[] correctAnswer;
-    private String answerText;
+    private String[] answerText;
     private String[] answersToChoose;
     private String explanation;
     private DBFile diagram;
@@ -25,7 +25,7 @@ public class QuestionDTOBuilder {
         return this;
     }
 
-    public QuestionDTOBuilder setAnswerText(String answerText){
+    public QuestionDTOBuilder setAnswerText(String[] answerText){
         this.answerText = answerText;
         return this;
     }

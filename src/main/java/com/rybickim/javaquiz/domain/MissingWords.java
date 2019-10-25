@@ -21,14 +21,19 @@ public class MissingWords {
     @Column(name = "mg_ordinal", nullable = false)
     Integer ordinal;
 
+    @Lob
+    @Column(name = "textPassage", columnDefinition = "CLOB")
+    String textPassage;
+
     String missingTerm;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "question_id")
     private Answers missingGapAnswers;
 
-    public MissingWords(Integer ordinal, String missingTerm) {
+    public MissingWords(Integer ordinal, String textPassage, String missingTerm) {
         this.ordinal = ordinal;
+        this.textPassage = textPassage;
         this.missingTerm = missingTerm;
     }
 }
